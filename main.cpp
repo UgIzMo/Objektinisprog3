@@ -13,7 +13,18 @@ struct Studentas
     string pavarde;
     vector<int> namuDarbai;
     int egzaminas;
+    double vidurkis;
 };
+
+double skaiciuotiVidurki(vector<int>& namuDarbai)
+{
+    double suma=0.0;
+    for(int i=0; i<namuDarbai.size(); i++)
+    {
+        suma+=namuDarbai[i];
+    }
+    return suma / namuDarbai.size();
+}
 
 int main()
 {
@@ -46,6 +57,8 @@ int main()
            cin >> pazymys;
            naujas.namuDarbai.push_back(pazymys);
        }
+
+        naujas.vidurkis=skaiciuotiVidurki(naujas.namuDarbai);
 
         cout << "Iveskite egzamino rezultata: ";
         cin >> naujas.egzaminas;
