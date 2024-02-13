@@ -26,6 +26,11 @@ double skaiciuotiVidurki(vector<int>& namuDarbai)
     return suma / namuDarbai.size();
 }
 
+double skaiciuotiGalutini(int egzaminas, double vidurkis)
+{
+        return 0.4 * vidurkis + 0.6 * egzaminas;
+}
+
 int main()
 {
     vector<Studentas> studentai; ///studentu duomenys
