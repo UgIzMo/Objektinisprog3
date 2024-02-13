@@ -14,6 +14,7 @@ struct Studentas
     vector<int> namuDarbai;
     int egzaminas;
     double vidurkis;
+    double galutinis;
 };
 
 double skaiciuotiVidurki(vector<int>& namuDarbai)
@@ -29,6 +30,16 @@ double skaiciuotiVidurki(vector<int>& namuDarbai)
 double skaiciuotiGalutini(int egzaminas, double vidurkis)
 {
         return 0.4 * vidurkis + 0.6 * egzaminas;
+}
+
+void spausdinimas(vector<Studentas> studentai)
+{
+    cout << "Vardas" << endl;
+    cout << "---------------------------------------------------------" <<endl;
+    for(int i=0; i<n; i++)
+    {
+        cout << studentas.vardas << " " << studentas.pavarde << " " << studentas.galutinis << endl;
+    }
 }
 
 int main()
@@ -68,8 +79,12 @@ int main()
         cout << "Iveskite egzamino rezultata: ";
         cin >> naujas.egzaminas;
 
+        naujas.galutinis=skaiciuotiGalutini(egzaminas, vidurkis);
+
         studentai.push_back(naujas);
+
     }
+    spausdinimas(studentai);
 
     return 0;
 }
