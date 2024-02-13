@@ -29,7 +29,7 @@ double skaiciuotiVidurki(vector<int>& namuDarbai)
 
 double skaiciuotiGalutini(int egzaminas, double vidurkis)
 {
-        return 0.4 * vidurkis + 0.6 * egzaminas;
+    return 0.4 * vidurkis + 0.6 * egzaminas;
 }
 
 void spausdinimas(vector<Studentas> studentai)
@@ -45,8 +45,6 @@ void spausdinimas(vector<Studentas> studentai)
 int main()
 {
     vector<Studentas> studentai; ///studentu duomenys
-
-    char testi;
     int n; ///studentu sk
     cout << "Kiek yra studentu: ";
     cin>> n;
@@ -67,12 +65,12 @@ int main()
         cout << "Kiek yra namu darbu: ";
         cin>> m;
 
-       for(int j=0; j<m; j++)
-       {
-           cout << j+1 << "-asis namu darbas: ";
-           cin >> pazymys;
-           naujas.namuDarbai.push_back(pazymys);
-       }
+        for(int j=0; j<m; j++)
+        {
+            cout << j+1 << "-asis namu darbas: ";
+            cin >> pazymys;
+            naujas.namuDarbai.push_back(pazymys);
+        }
 
         naujas.vidurkis=skaiciuotiVidurki(naujas.namuDarbai);
 
