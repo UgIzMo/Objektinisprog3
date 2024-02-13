@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <iomanip>
 #include <numeric>
+#include <random>
+#include <ctime>
 
 using namespace std;
 
@@ -14,8 +16,6 @@ struct Studentas
     int* namuDarbai;
     int namuDarbuDydis;
     int egzaminas;
-    double vidurkis;
-    double galutinis;
 };
 
 double skaiciuotiVidurki(int* namuDarbai, int dydis)
@@ -64,12 +64,39 @@ double skaiciuotiGalutini(int* namuDarbai, int dydis, int egzaminas, bool naudot
     }
 }
 
+void atsitiktiniai(Studentas& studentas)
+{
+    srand(time(NULL));
+    int dydis = rand() % 10 + 1;
+    studentas.namuDarbai = new int[dydis]; /// dinamiskai sukuriame masyva
+
+    for (int i = 0; i < dydis; ++i)
+    {
+        studentas.namuDarbai[i] = rand() % 10 + 1;
+    }
+
+    studentas.egzaminas = rand() % 10 + 1;
+}
+
+void atsitiktiniaiStudentai(Studentas& studentas)
+{
+    const char* vardai[] = {"Anna", "Gloria", "Sofia", "Ugne", "Aina", "Guoda"};
+    const char* pavardes[] = {"Mockute", "Liuc", "Mickute", "Macaite", "Miller", "Peleda"};
+    int vardasIndex = rand() % 6;
+    int pavardeIndex = rand() % 6;
+    studentas.vardas = vardai[vardasIndex];
+    studentas.pavarde = pavardes[pavardeIndex];
+    atsitiktiniai(studentas);
+
 int main()
 {
+    srand(static_cast <unsigned int>(time(nullptr)));
+
     Studentas* studentai = nullptr;
     int studentuSkaicius = 0;
 
     char testi;
+    int meniu=0;
     do
     {
         Studentas naujas;
@@ -153,4 +180,3 @@ int main()
 
     return 0;
 }
-
