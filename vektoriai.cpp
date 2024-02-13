@@ -105,7 +105,7 @@ int main()
         {
             do
             {
-                Studentas studentas; //sss
+                Studentas studentas;
 
                 cout << "Iveskite studento varda: ";
                 cin >> studentas.vardas;
@@ -113,7 +113,7 @@ int main()
                 cout << "Iveskite studento pavarde: ";
                 cin >> studentas.pavarde;
 
-                studentas.namuDarbai.clear(); /// Isvalome namų darbų pazymiu vektoriu
+                studentas.namuDarbai.clear(); /// Isvalome namų darbu pazymiu vektoriu
 
                 int pazymys;
                 cout << "Iveskite namu darbu rezultatus (iveskite -1 jei baigete ivedima): ";
@@ -122,7 +122,7 @@ int main()
                 while(true)
                 {
                     cout << k << "-asis pazymys: ";
-                    if(cin >> pazymys&& pazymys != -1)
+                    if(cin >> pazymys && pazymys != -1)
                     {
                         studentas.namuDarbai.push_back(pazymys);
                         k++;
@@ -162,7 +162,7 @@ int main()
 
             bool naudotiVidurki = (pasirinkimas == 1); /// Jei pasirinkimas = 1, naudosime vidurkį, kitu atveju medianą
 
-            cout << setw(13) << left << "Pavarde" << setw(13) << left << "Vardas" << setw(13) << left << "Galutinis (vid.)" << endl;
+            cout << setw(13) << left << "Pavarde" << setw(13) << left << "Vardas" << setw(13) << left << "Galutinis (vid./med.)" << endl;
             cout << "----------------------------------------------------------------------" <<endl;
             for (int i=0; i<studentai.size(); i++)
             {
@@ -176,6 +176,12 @@ int main()
             for (auto& studentas : studentai)
             {
                 atsitiktiniai(studentas);
+                cout << "Studentas: " << studentas.vardas << " " << studentas.pavarde << "\nEgzaminas: " << studentas.egzaminas << "\nNamu darbu pazymiai: ";
+                for (int pazymys : studentas.namuDarbai)
+                {
+                    cout << pazymys << " ";
+                }
+                cout << "\n\n";
             }
             break;
         }
@@ -186,7 +192,12 @@ int main()
                 Studentas naujasStudentas;
                 atsitiktiniaiStudentai(naujasStudentas);
                 studentai.push_back(naujasStudentas);
-
+                cout << "Naujas Studentas: " << naujasStudentas.vardas << " " << naujasStudentas.pavarde << "\nEgzaminas: " << naujasStudentas.egzaminas << "\nNamu darbu pazymiai: ";
+                for (int pazymys : naujasStudentas.namuDarbai)
+                {
+                    cout << pazymys << " ";
+                }
+                cout << "\n\n";
             }
             break;
         }
