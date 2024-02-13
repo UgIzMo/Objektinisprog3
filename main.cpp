@@ -34,11 +34,11 @@ double skaiciuotiGalutini(int egzaminas, double vidurkis)
 
 void spausdinimas(vector<Studentas> studentai)
 {
-    cout << "Vardas" << endl;
-    cout << "---------------------------------------------------------" <<endl;
-    for(int i=0; i<n; i++)
+    cout << setw(13) << left << "Pavarde" << setw(13) << left << "Vardas" << setw(13) << left << "Galutinis (vid.)" << endl;
+    cout << "----------------------------------------------------------------------" <<endl;
+    for(int i=0; i<studentai.size(); i++)
     {
-        cout << studentas.vardas << " " << studentas.pavarde << " " << studentas.galutinis << endl;
+        cout << setw(13) << left << studentai[i].vardas << setw(13) << left << studentai[i].pavarde << setw(13) << left << studentai[i].galutinis << endl;
     }
 }
 
@@ -60,7 +60,7 @@ int main()
         cout << "Iveskite studento pavarde: ";
         cin >> naujas.pavarde;
 
-        naujas.namuDarbai.clear(); /// Išvalome namu darbu pazymiu vektoriu
+        naujas.namuDarbai.clear(); /// Isvalome namu darbu pazymiu vektoriu
 
         int pazymys;
         int m; ///namu darbu pazymiai
@@ -79,7 +79,7 @@ int main()
         cout << "Iveskite egzamino rezultata: ";
         cin >> naujas.egzaminas;
 
-        naujas.galutinis=skaiciuotiGalutini(egzaminas, vidurkis);
+        naujas.galutinis=skaiciuotiGalutini(naujas.egzaminas, naujas.vidurkis);
 
         studentai.push_back(naujas);
 
