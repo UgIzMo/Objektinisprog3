@@ -14,6 +14,11 @@ struct Studentas
     int* namuDarbai;
     int namuDarbuDydis;
     int egzaminas;
+
+    ~Studentas()
+    {
+        delete[] namuDarbai;
+    }
 };
 
 double skaiciuotiVidurki(int* namuDarbai, int dydis)
@@ -87,13 +92,14 @@ void atsitiktiniaiStudentai(Studentas *studentas)
     atsitiktiniai(studentas);
 }
 
+
 int main()
 {
     srand(time(nullptr));
     Studentas* studentai = nullptr;
     int studentuSkaicius = 0;
     char testi;
-    int meniu, m = 0; ///stud sk-m
+    int meniu;
 
     do
     {
@@ -103,8 +109,6 @@ int main()
              << "3 - generuoti ir pazymius ir studentu vardus, pavardes \n"
              << "4 - baigti darba \n";
         cin >> meniu;
-
-        if(meniu==4) break;
 
         switch (meniu)
         {
@@ -178,6 +182,7 @@ int main()
                 cout << "Iveskite teisinga pasirinkima: ";
                 cin.clear();
                 cin.ignore(80, '\n');
+                cin >> pasirinkimas; // Added to get input again
             }
 
             bool naudotiVidurki = (pasirinkimas == 1);
@@ -188,48 +193,67 @@ int main()
             {
                 double galutinis = skaiciuotiGalutini(studentai[i].namuDarbai, studentai[i].namuDarbuDydis, studentai[i].egzaminas, naudotiVidurki);
                 cout << setw(13) << left << studentai[i].vardas << setw(13) << left << studentai[i].pavarde << setw(13) << left << fixed << setprecision(2) << galutinis << endl;
-                delete[] studentai[i].namuDarbai;
             }
             delete[] studentai;
             studentai = nullptr;
             break;
         }
         case 2:
+{
+    for (int i = 0; i < studentuSkaicius; ++i)
+    {
+        Studentas naujasStudentas;
+        atsitiktiniaiStudentai(&naujasStudentas);
+        cout << "Studentas: " << naujasStudentas.vardas << " " << naujasStudentas.pavarde << "\nEgzaminas: " << naujasStudentas.egzaminas << "\nNamu darbu pazymiai: ";
+        for (int j = 0; j < naujasStudentas.namuDarbuDydis; ++j)
         {
-            for (int i = 0; i < 6; ++i)
-            {
-                Studentas naujasStudentas;
-                atsitiktiniai(&naujasStudentas);
-                studentai = new Studentas[studentuSkaicius + 1];
-                for (int j = 0; j < studentuSkaicius; j++)
-                    studentai[j] = studentai[j];
-                studentai[studentuSkaicius++] = naujasStudentas;
-                cout << "Studentas: " << naujasStudentas.vardas << " " << naujasStudentas.pavarde << "\nEgzaminas: " << naujasStudentas.egzaminas << "\nNamu darbu pazymiai: ";
-                for (int j = 0; j < 10; ++j)
-                {
-                    cout << naujasStudentas.namuDarbai[j] << " ";
-                }
-                cout << "\n\n";
-            }
-            break;
+            cout << naujasStudentas.namuDarbai[j] << " ";
         }
-        case 3:
-        {
-            char testi = 't';
-            do
-            {
-                studentai = (Studentas *)realloc(studentai, (m + 1) * sizeof(Studentas));
-                atsitiktiniaiStudentai(&studentai[m]);
-                m++;
-                cout << "Sugeneruotas naujas studentas. Ar norite generuoti dar viena? (t/n): ";
-                cin >> testi;
-            }
-            while (testi == 't');
-            break;
+        cout << "\n\n";
+    }
+    break;
+}
 
+        case 3:
+{
+    do
+    {
+        Studentas* naujasStudentas = new Studentas[studentuSkaicius + 1];
+        for (int i = 0; i < studentuSkaicius; i++)
+            naujasStudentas[i] = studentai[i];
+        for (int i = 0; i < studentuSkaicius; ++i)
+            delete[] naujasStudentas[i].namuDarbai;
+        atsitiktiniaiStudentai(&naujasStudentas[studentuSkaicius]);
+        delete[] studentai;
+        studentai = naujasStudentas;
+        studentuSkaicius++;
+        cout << "Sugeneruotas naujas studentas. Ar norite generuoti dar viena? (t/n): ";
+        cin >> testi;
+    }
+    while (testi == 't');
+
+    cout << "Visi sugeneruoti studentai:\n";
+    for (int i = 0; i < studentuSkaicius; ++i)
+    {
+        cout << "Studentas " << i + 1 << ": " << studentai[i].vardas << " " << studentai[i].pavarde << "\nEgzaminas: " << studentai[i].egzaminas << "\nNamu darbu pazymiai: ";
+        for (int j = 0; j < studentai[i].namuDarbuDydis; ++j)
+        {
+            cout << studentai[i].namuDarbai[j] << " ";
         }
+        cout << "\n\n";
+    }
+    break;
+}
+
+        case 4:
+            cout << "Baigti darba.\n";
+            break;
+        default:
+            cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
+            break;
         }
     }
     while (meniu != 4);
+
     return 0;
 }
