@@ -78,7 +78,7 @@ void atsitiktiniaiStudentai(Studentas& studentas)
     atsitiktiniai(studentas);
 }
 
-void skaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
+void nuskaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
 {
     ifstream fd(failoPavadinimas);
     if (!fd.is_open())
@@ -91,7 +91,7 @@ void skaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
     string eilute;
     getline(fd, eilute); //praleidzia pirmaja eil.
 
-     while (getline(fd, eilute)) {
+    while (getline(fd, eilute)) {
         istringstream eilutesSrautas(eilute);
         eilutesSrautas >> studentas.vardas >> studentas.pavarde;
 
@@ -108,16 +108,17 @@ void skaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
     fd.close();
 }
 
-bool sortByVardas(const Studentas& a, const Studentas& b){
+
+bool rusiuoti(const Studentas& a, const Studentas& b){
     return a.vardas < b.vardas;
 }
 
-void spausdinimas(const vector<Studentas>& studentai)
-{
-    ofstream out("rezultatai.txt");
+void spausdinimas(const vector<Studentas>& studentai, const string& isvedimoFailas = "") {
+    ostream& out = isvedimoFailas.empty() ? cout : *new ofstream(isvedimoFailas);
 
+    ///rusiavimas atitinkamai pagal naudotojo pasirirnkima
     vector<Studentas> surusiuotiStudentai = studentai;
-    sort(surusiuotiStudentai.begin(), surusiuotiStudentai.end(), sortByVardas);
+    sort(surusiuotiStudentai.begin(), surusiuotiStudentai.end(), rusiuoti);
 
     out << fixed << setprecision(2);
     out << "Studentų galutiniai balai:\n";
@@ -125,15 +126,18 @@ void spausdinimas(const vector<Studentas>& studentai)
     out << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)\n";
     out << "----------------------------------------------------------------\n";
 
-    for (const Studentas& studentas : surusiuotiStudentai)
-    {
+    for (const Studentas& studentas : surusiuotiStudentai) {
         double galutinisVidurkis = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
         double galutineMediana = 0.4 * skaiciuotiMediana(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
         out << left << setw(15) << studentas.vardas << setw(15) << studentas.pavarde << setw(20) << galutinisVidurkis << setw(20) << galutineMediana << "\n";
     }
     out << "----------------------------------------------------------------\n";
-    out.close();
+
+    if (!isvedimoFailas.empty()) {
+        delete &out;
+    }
 }
+
 
 int main()
 {
@@ -216,7 +220,7 @@ int main()
 
             bool naudotiVidurki = (pasirinkimas == 1); /// Jei pasirinkimas = 1, naudosime vidurkį, kitu atveju medianą
 
-            cout << setw(13) << left << "Pavarde" << setw(13) << left << "Vardas" << setw(13) << left << "Galutinis (vid./med.)" << endl;
+            cout << setw(13) << left << "Vardas" << setw(13) << left << "Pavarde" << setw(13) << left << "Galutinis (vid./med.)" << endl;
             cout << "----------------------------------------------------------------------" <<endl;
             for (size_t i=0; i<studentai.size(); i++) // Changed int to size_t
             {
@@ -227,18 +231,13 @@ int main()
         }
         case 2:
 {
-    skaitymas(studentai, "kursiokai.txt");
-    for (auto& studentas : studentai)
-    {
-        cout << "Studentas: " << studentas.vardas << " " << studentas.pavarde << "\nEgzaminas: " << studentas.egzaminas << "\nNamu darbu pazymiai: ";
-        for (int pazymys : studentas.namuDarbai)
-        {
-            cout << pazymys << " ";
-        }
-        cout << "\n\n";
-    }
+    nuskaitymas(studentai, "kursiokai.txt"); // Nuskaitomas failas su studentų duomenimis
+
+    spausdinimas(studentai, "isvedimas.txt");
+}
     break;
 }
+
 
         case 3:
         {
@@ -264,3 +263,4 @@ int main()
 
     return 0;
 }
+
