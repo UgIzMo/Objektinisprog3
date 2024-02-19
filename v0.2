@@ -232,26 +232,31 @@ int main()
         }
         case 2:
         {
-            nuskaitymas(studentai, "kursiokai.txt"); // Nuskaitomas failas su studentų duomenimis
+            nuskaitymas(studentai, "studentai10000.txt"); // Nuskaitomas failas su studentų duomenimis
             spausdinimas(studentai, "isvedimas.txt");
             break;
         }
-        case 3:
-        {
-            for (int i=0; i<6; i++)
-            {
-                Studentas naujasStudentas;
-                atsitiktiniaiStudentai(naujasStudentas);
-                studentai.push_back(naujasStudentas);
-                cout << "Naujas Studentas: " << naujasStudentas.vardas << " " << naujasStudentas.pavarde << "\nEgzaminas: " << naujasStudentas.egzaminas << "\nNamu darbu pazymiai: ";
-                for (int pazymys : naujasStudentas.namuDarbai)
-                {
-                    cout << pazymys << " ";
-                }
-                cout << "\n\n";
-            }
-            break;
-        }
+     case 3:
+{
+    cout << fixed << setprecision(2);
+    cout << "Studentu galutiniai balai:\n";
+    cout << "----------------------------------------------------------------\n";
+    cout << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)\n";
+    cout << "----------------------------------------------------------------\n";
+
+    for (int i = 0; i < 6; i++)
+    {
+        Studentas naujasStudentas;
+        atsitiktiniaiStudentai(naujasStudentas);
+        studentai.push_back(naujasStudentas);
+
+        double galutinisVidurkis = skaiciuotiGalutini(naujasStudentas.namuDarbai, naujasStudentas.egzaminas, true);
+        double galutineMediana = skaiciuotiGalutini(naujasStudentas.namuDarbai, naujasStudentas.egzaminas, false);
+        cout << left << setw(15) << naujasStudentas.vardas << setw(15) << naujasStudentas.pavarde << setw(20) << galutinisVidurkis << setw(20) << galutineMediana << "\n";
+    }
+    cout << "----------------------------------------------------------------\n";
+    break;
+}
         case 4:
             break;
         }
