@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <string>
 #include <algorithm>
@@ -6,6 +7,7 @@
 #include <numeric>
 #include <random>
 #include <ctime>
+#include <sstream>
 
 using namespace std;
 
@@ -17,23 +19,19 @@ struct Studentas
     int egzaminas;
 };
 
-double skaiciuotiVidurki(vector<int>& namuDarbai)
+double skaiciuotiVidurki(const vector<int>& namuDarbai)
 {
     if (namuDarbai.empty())   ///tikriname, ar nd vektorius tuscias
         return 0;
-    double suma=0.0;
-    for(int i=0; i < namuDarbai.size(); i++)
-    {
-        suma+=namuDarbai[i];
-    }
+    double suma = accumulate(namuDarbai.begin(), namuDarbai.end(), 0.0);
     return suma / namuDarbai.size();
 }
 
-double skaiciuotiMediana(vector<int>& namuDarbai)
+double skaiciuotiMediana(const vector<int>& namuDarbai)
 {
     if (namuDarbai.empty()) return 0; ///tikriname, ar nd vektorius tuscias?
 
-    vector<int> tempNamuDarbai=namuDarbai;
+    vector<int> tempNamuDarbai = namuDarbai;
     sort(tempNamuDarbai.begin(), tempNamuDarbai.end()); /// didejimo tvarka
     int dydis = tempNamuDarbai.size();
     if (dydis % 2 == 0)
@@ -46,7 +44,7 @@ double skaiciuotiMediana(vector<int>& namuDarbai)
     }
 }
 
-double skaiciuotiGalutini(vector<int>& namuDarbai, int egzaminas, bool naudotiVidurki)
+double skaiciuotiGalutini(const vector<int>& namuDarbai, int egzaminas, bool naudotiVidurki)
 {
     if (naudotiVidurki)
     {
@@ -69,7 +67,6 @@ void atsitiktiniai(Studentas& studentas)
     studentas.egzaminas = rand() % 10 + 1;
 }
 
-
 void atsitiktiniaiStudentai(Studentas& studentas)
 {
     const char* vardai[] = {"Anna", "Gloria", "Sofia", "Ugne", "Aina", "Guoda"};
@@ -81,13 +78,70 @@ void atsitiktiniaiStudentai(Studentas& studentas)
     atsitiktiniai(studentas);
 }
 
+void skaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
+{
+    ifstream fd(failoPavadinimas);
+    if (!fd.is_open())
+    {
+        cout << "Nepavyko atidaryti failo." << endl;
+        return;
+    }
+
+    Studentas studentas;
+    string eilute;
+    getline(fd, eilute); //praleidzia pirmaja eil.
+
+     while (getline(fd, eilute)) {
+        istringstream eilutesSrautas(eilute);
+        eilutesSrautas >> studentas.vardas >> studentas.pavarde;
+
+        int pazymys;
+        studentas.namuDarbai.clear();
+        while (eilutesSrautas >> pazymys && pazymys != -1) {
+            studentas.namuDarbai.push_back(pazymys);
+        }
+
+        studentas.egzaminas = pazymys;
+        studentai.push_back(studentas);
+    }
+
+    fd.close();
+}
+
+bool sortByVardas(const Studentas& a, const Studentas& b){
+    return a.vardas < b.vardas;
+}
+
+void spausdinimas(const vector<Studentas>& studentai)
+{
+    ofstream out("rezultatai.txt");
+
+    vector<Studentas> surusiuotiStudentai = studentai;
+    sort(surusiuotiStudentai.begin(), surusiuotiStudentai.end(), sortByVardas);
+
+    out << fixed << setprecision(2);
+    out << "Studentų galutiniai balai:\n";
+    out << "----------------------------------------------------------------\n";
+    out << left << setw(15) << "Vardas" << setw(15) << "Pavarde" << setw(20) << "Galutinis (Vid.)" << setw(20) << "Galutinis (Med.)\n";
+    out << "----------------------------------------------------------------\n";
+
+    for (const Studentas& studentas : surusiuotiStudentai)
+    {
+        double galutinisVidurkis = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
+        double galutineMediana = 0.4 * skaiciuotiMediana(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
+        out << left << setw(15) << studentas.vardas << setw(15) << studentas.pavarde << setw(20) << galutinisVidurkis << setw(20) << galutineMediana << "\n";
+    }
+    out << "----------------------------------------------------------------\n";
+    out.close();
+}
+
 int main()
 {
     srand(static_cast <unsigned int>(time(nullptr)));
 
     vector<Studentas> studentai; ///studentu duomenys
     char testi;
-    int meniu=0;
+    int meniu = 0;
 
     do
     {
@@ -164,7 +218,7 @@ int main()
 
             cout << setw(13) << left << "Pavarde" << setw(13) << left << "Vardas" << setw(13) << left << "Galutinis (vid./med.)" << endl;
             cout << "----------------------------------------------------------------------" <<endl;
-            for (int i=0; i<studentai.size(); i++)
+            for (size_t i=0; i<studentai.size(); i++) // Changed int to size_t
             {
                 double galutinis = skaiciuotiGalutini(studentai[i].namuDarbai, studentai[i].egzaminas, naudotiVidurki);
                 cout << setw(13) << left << studentai[i].vardas << setw(13) << left << studentai[i].pavarde << setw(13) << left << fixed << setprecision(2) << galutinis << endl;
@@ -172,19 +226,20 @@ int main()
             break;
         }
         case 2:
+{
+    skaitymas(studentai, "kursiokai.txt");
+    for (auto& studentas : studentai)
+    {
+        cout << "Studentas: " << studentas.vardas << " " << studentas.pavarde << "\nEgzaminas: " << studentas.egzaminas << "\nNamu darbu pazymiai: ";
+        for (int pazymys : studentas.namuDarbai)
         {
-            for (auto& studentas : studentai)
-            {
-                atsitiktiniai(studentas);
-                cout << "Studentas: " << studentas.vardas << " " << studentas.pavarde << "\nEgzaminas: " << studentas.egzaminas << "\nNamu darbu pazymiai: ";
-                for (int pazymys : studentas.namuDarbai)
-                {
-                    cout << pazymys << " ";
-                }
-                cout << "\n\n";
-            }
-            break;
+            cout << pazymys << " ";
         }
+        cout << "\n\n";
+    }
+    break;
+}
+
         case 3:
         {
             for (int i=0; i<6; i++)
