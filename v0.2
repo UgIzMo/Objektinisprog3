@@ -216,6 +216,7 @@ int main()
                 cout << "Iveskite teisinga pasirinkima: " ;
                 cin.clear();
                 cin.ignore(80,'\n');
+                cin >> pasirinkimas;
             }
 
             bool naudotiVidurki = (pasirinkimas == 1); /// Jei pasirinkimas = 1, naudosime vidurkį, kitu atveju medianą
@@ -230,15 +231,11 @@ int main()
             break;
         }
         case 2:
-{
-    nuskaitymas(studentai, "kursiokai.txt"); // Nuskaitomas failas su studentų duomenimis
-
-    spausdinimas(studentai, "isvedimas.txt");
-}
-    break;
-}
-
-
+        {
+            nuskaitymas(studentai, "kursiokai.txt"); // Nuskaitomas failas su studentų duomenimis
+            spausdinimas(studentai, "isvedimas.txt");
+            break;
+        }
         case 3:
         {
             for (int i=0; i<6; i++)
@@ -263,4 +260,3 @@ int main()
 
     return 0;
 }
-
