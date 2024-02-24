@@ -84,36 +84,41 @@ void atsitiktiniaiStudentai(Studentas& studentas)
 
 void nuskaitymas(vector<Studentas>& studentai, const string& failoPavadinimas)
 {
-    ifstream fd(failoPavadinimas);
-    if (!fd.is_open())
+    try
     {
-        cout << "Nepavyko atidaryti failo." << endl;
-        return;
-    }
-
-    Studentas studentas;
-    string eilute;
-    getline(fd, eilute); //praleidzia pirmaja eil.
-
-    while (getline(fd, eilute))
-    {
-        istringstream eilutesSrautas(eilute);
-        eilutesSrautas >> studentas.vardas >> studentas.pavarde;
-
-        int pazymys;
-        studentas.namuDarbai.clear();
-        while (eilutesSrautas >> pazymys && pazymys != -1)
+        ifstream fd(failoPavadinimas);
+        if (!fd.is_open())
         {
-            studentas.namuDarbai.push_back(pazymys);
+            throw runtime_error("Nepavyko atidaryti failo.");
         }
 
-        studentas.egzaminas = pazymys;
-        studentai.push_back(studentas);
+        Studentas studentas;
+        string eilute;
+        getline(fd, eilute); //praleidzia pirmaja eil.
+
+        while (getline(fd, eilute))
+        {
+            istringstream eilutesSrautas(eilute);
+            eilutesSrautas >> studentas.vardas >> studentas.pavarde;
+
+            int pazymys;
+            studentas.namuDarbai.clear();
+            while (eilutesSrautas >> pazymys && pazymys != -1)
+            {
+                studentas.namuDarbai.push_back(pazymys);
+            }
+
+            studentas.egzaminas = pazymys;
+            studentai.push_back(studentas);
+        }
+
+        fd.close();
     }
-
-    fd.close();
+    catch(const exception& e)
+    {
+        cerr << e.what() << endl;
+    }
 }
-
 
 bool rusiuotiPagalVarda(const Studentas& a, const Studentas& b)
 {
