@@ -1,0 +1,11 @@
+Vardas         Pavarde        ND1  ND2  ND3  ND4  ND5  Egz. 
+Lina           Mockute        6    10   5    3    3    7    
+Kajus          Baciuska       4    7    8    2    7    5    
+Rugile         Antanaite      8    8    7    8    6    10   
+Egle           Petrauskiene   6    7    2    3    8    3    
+Petras         Grybauskas     9    7    10   4    9    6    
+Antanas        Zulkus         1    9    8    5    8    2    
+Rimas          Antanaitis     10   1    4    3    7    5    
+Titas          Zulkus         7    6    5    2    8    8    
+Ugne           Brazauskiene   10   1    4    3    4    6    
+Kajus          Grybauskas     9    2    3    1    7    3
