@@ -1,27 +1,30 @@
-# Kompiliatoriaus nustatymas
-CXX = g++
-CXXFLAGS = -std=c++11 -Wall
+CC = g++
+CFLAGS = -std=c++11 -Wall
 
-# Programos pavadinimas
-TARGET = programa
+# List of source files
+SRCS = main.cpp functions.cpp studentas.cpp
 
-# Objekto failų sąrašas
-OBJS = main.o studentas.o functions.o
+# List of object files
+OBJS = $(SRCS:.cpp=.o)
 
-# Pagrindinė taisyklė programos sukompiliavimui
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+# Name of the executable
+EXEC = main
 
-# Atskirų failų kompiliavimo taisyklės
-main.o: main.cpp studentas.h functions.h
-	$(CXX) $(CXXFLAGS) -c main.cpp
+# Makefile targets
+all: $(EXEC)
 
-Studentas.o: studentas.cpp studentas.h
-	$(CXX) $(CXXFLAGS) -c Studentas.cpp
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(EXEC)
 
-PagalbinesFunkcijos.o: functions.cpp functions.h studentas.h
-	$(CXX) $(CXXFLAGS) -c functions.cpp
+# Rules to generate object files from source files
+main.o: main.cpp functions.h studentas.h
+	$(CC) $(CFLAGS) -c main.cpp -o main.o
 
-# Valymo taisyklė
+functions.o: functions.cpp functions.h studentas.h
+	$(CC) $(CFLAGS) -c functions.cpp -o functions.o
+
+studentas.o: studentas.cpp studentas.h
+	$(CC) $(CFLAGS) -c studentas.cpp -o studentas.o
+
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f $(OBJS) $(EXEC)
