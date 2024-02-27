@@ -21,13 +21,6 @@ void nuskaitymas(std::vector<Studentas> &studentai, const std::string &failoPava
             throw std::runtime_error("Failas nerastas.");
         }
 
-        std::ifstream fd(failoPavadinimas);
-        if (!fd.is_open())
-        {
-            std::cout << "Nepavyko atidaryti failo." << std::endl;
-            return;
-        }
-
         Studentas studentas;
         std::string eilute;
         getline(fd, eilute); // praleidzia pirmaja eil.
@@ -113,7 +106,7 @@ void spausdinimas(const std::vector<Studentas> &studentai, const std::string &is
     out << std::fixed << std::setprecision(2);
     out << "Studentu galutiniai balai:\n";
     out << "----------------------------------------------------------------\n";
-    out << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavarde" << std::setw(20) << "Galutinis (Vid.)"
+    out << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavardė" << std::setw(20) << "Galutinis (Vid.)"
         << std::setw(20) << "Galutinis (Med.)" << std::endl;
     out << "----------------------------------------------------------------\n";
 
