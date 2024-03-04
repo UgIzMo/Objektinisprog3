@@ -31,7 +31,8 @@ int main()
                  << "3 - generuoti ir pazymius ir studentu vardus, pavardes \n"
                  << "4 - skaityti is failo \n"
                  << "5 - generuoti failus \n"
-                 << "6 - baigti darba \n";
+                 << "6 - rusiuoti studentus sugeneruotuose failuose \n"
+                 << "7 - baigti darba \n";
             try
             {
                 cin >> meniu;
@@ -240,6 +241,37 @@ int main()
             }
 
             case 6:
+            {
+                std::vector<std::string> failuPavadinimai = {
+                    "studentai_1000.txt", "studentai_10000.txt", "studentai_100000.txt",
+                    "studentai_1000000.txt", "studentai_10000000.txt"};
+
+                std::cout << "Pasirinkite, kurio sugeneruoto failo duomenis norite rusiuoti ir isvesti:" << std::endl;
+                for (int i = 0; i < failuPavadinimai.size(); i++)
+                {
+                    std::cout << i + 1 << ". " << failuPavadinimai[i] << std::endl;
+                }
+
+                int pasirinkimas;
+                std::cin >> pasirinkimas;
+
+                if (pasirinkimas < 1 || pasirinkimas > failuPavadinimai.size())
+                {
+                    std::cout << "Neteisingas pasirinkimas." << std::endl;
+                    break;
+                }
+
+                std::vector<Studentas> studentai;
+                std::string failoPavadinimas = failuPavadinimai[pasirinkimas - 1];
+                skaitymasGeneravimo(studentai, failoPavadinimas);
+
+                std::string vargsiukaiFailas = "vargsiukai.txt";
+                std::string kietiakaiFailas = "kietiakai.txt";
+                surusiuotiIrIsvesti(studentai, vargsiukaiFailas, kietiakaiFailas);
+                std::cout << "Studentai surusiuoti ir isvesti i failus 'vargsiukai.txt' ir 'kietiakai.txt'." << std::endl;
+                break;
+            }
+            case 7:
                 break;
 
             default:
@@ -259,7 +291,7 @@ int main()
         double laikas = time.count();                    // Issaugojamas laikas
         cout << "Visas sugaistas laikas: " << laikas << " s" << endl;
 
-    } while (meniu != 5);
+    } while (meniu != 7);
 
     double vidurkis = visoLaikoSuma / testuSkaicius;                    // Suskaiciuojamas laiku vidurkis
     cout << "Keliu testu laiku vidurkis: " << vidurkis << " s" << endl; // Isvedamas laiku vidurkis
