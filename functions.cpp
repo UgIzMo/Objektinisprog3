@@ -77,11 +77,11 @@ void skaitymasGeneravimo(std::vector<Studentas> &studentai, const std::string &f
 }
 
 // Funkcija, kuri padalina ir išveda studentus į dvi kategorijas
-void surusiuotiIrIsvesti(const std::vector<Studentas> &studentai, const std::string &vargsiukaiFailas, const std::string &kietiakiaiFailas) {
+void surusiuotiIrIsvesti(const std::vector<Studentas> &studentai, const std::string &vargsiukaiFailas, const std::string &kietiakaiFailas) {
     std::ofstream vargsiukaiFile(vargsiukaiFailas);
-    std::ofstream kietiakiaiFile(kietiakiaiFailas);
+    std::ofstream kietiakaiFile(kietiakaiFailas);
 
-    if (!vargsiukaiFile.is_open() || !kietiakiaiFile.is_open()) {
+    if (!vargsiukaiFile.is_open() || !kietiakaiFile.is_open()) {
         std::cerr << "Nepavyko atidaryti vieno ar kelių failų." << std::endl;
         return;
     }
@@ -91,12 +91,12 @@ void surusiuotiIrIsvesti(const std::vector<Studentas> &studentai, const std::str
         if (galutinis < 5.0) {
             vargsiukaiFile << studentas.vardas << " " << studentas.pavarde << std::endl;
         } else {
-            kietiakiaiFile << studentas.vardas << " " << studentas.pavarde << std::endl;
+            kietiakaiFile << studentas.vardas << " " << studentas.pavarde << std::endl;
         }
     }
 
     vargsiukaiFile.close();
-    kietiakiaiFile.close();
+    kietiakaiFile.close();
 }
 
 
