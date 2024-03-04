@@ -10,40 +10,35 @@
 #include <ctime>
 #include <sstream>
 #include <chrono>
+#include <cstdlib>
 
-// Funkcija, kuri generuoja studentų sąrašo failus
-void generateFiles() {
-    std::vector<int> recordCounts = {1000, 10000, 100000, 1000000, 10000000};
 
-    for (std::vector<int>::size_type i = 0; i < recordCounts.size(); ++i) {
-        std::string fileName = "studentai_" + std::to_string(recordCounts[i]) + ".txt";
-        std::ofstream outFile(fileName); 
+void generateStudentFiles(const std::vector<int>& sizes) {
+    for (int size : sizes) {
+        std::string fileName = "studentai" + std::to_string(size) + ".txt";
+        std::ofstream outFile(fileName);
 
-        if (!outFile.is_open()) {
-            std::cerr << "Unable to open file: " << fileName << std::endl;
-            return;
+        outFile << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavardė";
+        for (int i = 1; i <= 15; ++i) {
+            outFile << std::setw(10) << "ND" + std::to_string(i);
         }
+        outFile << std::setw(10) << "Egz." << std::endl;
 
-        try {
-            // Random number generator setup
-            std::random_device rd;
-            std::mt19937 gen(rd());
-            std::uniform_int_distribution<int> dist(1, 10); // Range for grades
+        for (int i = 1; i <= size; i++) {
+            std::string vardas = "Vardas" + std::to_string(i); // Pridedam skaičių prie vardo
+            std::string pavarde = "Pavardė" + std::to_string(i); // Pridedam skaičių prie pavardės
 
-            for (int j = 0; j < recordCounts[i]; ++j) {
-                outFile << "Vardas" << j + 1 << " Pavarde" << j + 1 << " ";
-                for (int k = 0; k < 5; ++k) {
-                    outFile << dist(gen) << " "; // Generating random grades
-                }
-                outFile << dist(gen) << std::endl; // Generating random exam grade
+            outFile << std::left << std::setw(15) << vardas << std::setw(15) << pavarde;
+            for (int j = 0; j < 15; j++) {
+                outFile << std::setw(10) << (rand() % 10 + 1);
             }
-            std::cout << "Failas " << fileName << " sekmingai sugeneruotas." << std::endl;
-        } catch (const std::ios_base::failure& e) {
-            std::cerr << "Nepavyko sugeneruoti failo: " << fileName << " Error: " << e.what() << std::endl;
+            outFile << std::setw(10) << (rand() % 10 + 1); 
+            outFile << std::endl;
         }
+
+        outFile.close();
     }
 }
-
 // Funkcija, kuri skaito studentų duomenis iš failo į vektorių
 void skaitymasGeneravimo(std::vector<Studentas> &studentai, const std::string &failoPavadinimas) {
     try {
