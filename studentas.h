@@ -12,4 +12,10 @@ struct Studentas
     int egzaminas;
 };
 
+double skaiciuotiVidurki(const std::vector<int>& nd);
+double skaiciuotiMediana(const std::vector<int>& namuDarbai);
+double skaiciuotiGalutini(const std::vector<int>& namuDarbai, int egzaminas, bool naudotiVidurki);
+void atsitiktiniai(Studentas& studentas);
+void atsitiktiniaiStudentai(Studentas& studentas);
+
 #endif // STUDENTAS_H
