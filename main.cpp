@@ -19,6 +19,8 @@ int main()
     double visoLaikoSuma = 0.0;
     int testuSkaicius = 0;
 
+    std::vector<int> sizes = {1000, 10000, 100000, 1000000, 10000000};
+
     do
     {
         auto start = chrono::high_resolution_clock::now(); // Pradedamas laiko skaiciavimas
@@ -229,17 +231,13 @@ int main()
 
             case 5:
             {
-                try
-                {
-                    generateFiles();
-                }
-                catch (const std::exception &e)
-                {
-                    std::cerr << "Klaida generuojant failus: " << e.what() << std::endl;
-                }
+                auto start = std::chrono::high_resolution_clock::now();
+                generateStudentFiles(sizes);
+                auto end = std::chrono::high_resolution_clock::now();
+                std::chrono::duration<double> elapsed = end - start;
+                std::cout << "Failu generavimas uztruko: " << elapsed.count() << " sekundziu." << std::endl;
                 break;
             }
-
             case 6:
             {
                 std::vector<std::string> failuPavadinimai = {
