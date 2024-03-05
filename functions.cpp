@@ -13,90 +13,107 @@
 #include <cstdlib>
 
 
-void generateStudentFiles(const std::vector<int>& sizes) {
-    for (int size : sizes) {
+void surusiuotiKategorijas(const std::vector<Studentas> &studentai, std::vector<Studentas> &vargsiukai, std::vector<Studentas> &kietiakai, double &laikas)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+    for (const auto &studentas : studentai)
+    {
+        double galutinisBalas = skaiciuotiGalutini(studentas.namuDarbai, studentas.egzaminas, true);
+        if (galutinisBalas < 5.0)
+        {
+            vargsiukai.push_back(studentas);
+        }
+        else
+        {
+            kietiakai.push_back(studentas);
+        }
+    }
+    auto end = std::chrono::high_resolution_clock::now();                                                   /// baigti laiko skaiciavima
+    std::chrono::duration<double> time = end - start;                                                       /// laikas
+    laikas = time.count();
+    std::cout << "Suskirstymas i vargsiukai.txt ir kietiakai.txt uztruko: " << laikas << " sekundziu." << std::endl;
+}
+
+void irasymasFaile(const std::vector<Studentas> &studentai, const std::string &failoPavadinimas, double &laikas)
+{
+    auto start = std::chrono::high_resolution_clock::now();
+    std::ofstream out(failoPavadinimas);
+    if (!out.is_open())
+    {
+        std::cerr << "Nepavyko atidaryti failo rašymui: " << failoPavadinimas << std::endl;
+        return;
+    }
+
+    out << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavarde" << std::setw(20) << "Galutinis" << std::endl;
+    out << "----------------------------------------------------------------\n";
+    for (const auto &studentas : studentai)
+    {
+        double galutinisBalas = skaiciuotiGalutini(studentas.namuDarbai, studentas.egzaminas, true);
+        out << std::left << std::setw(15) << studentas.vardas << std::setw(15) << studentas.pavarde << std::setw(15) << std::fixed << std::setprecision(2) << galutinisBalas << std::endl;
+    }
+    out.close();
+    auto end = std::chrono::high_resolution_clock::now();                                                   /// baigti laiko skaiciavima
+    std::chrono::duration<double> time = end - start;                                                       /// laikas
+    laikas = time.count();  
+}
+
+void rusiuotiStudentusIrIrasymas(const std::vector<Studentas> &studentai, double &laikas)
+{
+    std::vector<Studentas> vargsiukai, kietiakai;
+    surusiuotiKategorijas(studentai, vargsiukai, kietiakai, laikas);
+    auto start = std::chrono::high_resolution_clock::now();
+
+    irasymasFaile(vargsiukai, "vargsiukai.txt", laikas);
+    irasymasFaile(kietiakai, "kietiakai.txt", laikas);
+    auto end = std::chrono::high_resolution_clock::now();                                                   /// baigti laiko skaiciavima
+    std::chrono::duration<double> time = end - start;                                                       /// laikas
+    laikas = time.count();  
+}
+
+
+void generuotiStudentuFailus(const std::vector<int> &sizes)
+{
+    double laikas;
+    for (int size : sizes)
+    {
+        auto start = std::chrono::high_resolution_clock::now();
         std::string fileName = "studentai" + std::to_string(size) + ".txt";
         std::ofstream outFile(fileName);
 
         outFile << std::left << std::setw(15) << "Vardas" << std::setw(15) << "Pavardė";
-        for (int i = 1; i <= 15; ++i) {
+        for (int i = 1; i <= 15; ++i)
+        {
             outFile << std::setw(10) << "ND" + std::to_string(i);
         }
         outFile << std::setw(10) << "Egz." << std::endl;
 
-        for (int i = 1; i <= size; i++) {
-            std::string vardas = "Vardas" + std::to_string(i); // Pridedam skaičių prie vardo
-            std::string pavarde = "Pavardė" + std::to_string(i); // Pridedam skaičių prie pavardės
+        for (int i = 1; i <= size; i++)
+        {
+            std::string vardas = "Vardas" + std::to_string(i);
+            std::string pavarde = "Pavardė" + std::to_string(i);
 
             outFile << std::left << std::setw(15) << vardas << std::setw(15) << pavarde;
-            for (int j = 0; j < 15; j++) {
+            for (int j = 0; j < 15; j++)
+            {
                 outFile << std::setw(10) << (rand() % 10 + 1);
             }
-            outFile << std::setw(10) << (rand() % 10 + 1); 
+            outFile << std::setw(10) << (rand() % 10 + 1);
             outFile << std::endl;
         }
 
         outFile.close();
-    }
-}
-// Funkcija, kuri skaito studentų duomenis iš failo į vektorių
-void skaitymasGeneravimo(std::vector<Studentas> &studentai, const std::string &failoPavadinimas) {
-    try {
-        std::ifstream fd(failoPavadinimas);
-        if (!fd.is_open()) {
-            throw std::runtime_error("Failas nerastas.");
-        }
 
-        Studentas studentas;
-        std::string eilute;
-        getline(fd, eilute); // praleidzia pirmaja eil.
+        auto end = std::chrono::high_resolution_clock::now();                                                   /// baigti laiko skaiciavima
+    std::chrono::duration<double> time = end - start;                                                       /// laikas
+    laikas = time.count();  
 
-        while (getline(fd, eilute)) {
-            std::istringstream eilutesSrautas(eilute);
-            eilutesSrautas >> studentas.vardas >> studentas.pavarde;
-
-            int pazymys;
-            studentas.namuDarbai.clear();
-            while (eilutesSrautas >> pazymys && pazymys != -1) {
-                studentas.namuDarbai.push_back(pazymys);
-            }
-
-            studentas.egzaminas = pazymys;
-            studentai.push_back(studentas);
-        }
-
-        fd.close();
-    } catch (const std::exception &e) {
-        std::cerr << "Klaida skaitymo metu: " << e.what() << std::endl;
+        std::cout << "Sekmingai sugeneruotas failas: " << fileName << ". Failo generavimas uztruko: " << laikas << " sekundziu. " << std::endl;
     }
 }
 
-// Funkcija, kuri padalina ir išveda studentus į dvi kategorijas
-void surusiuotiIrIsvesti(const std::vector<Studentas> &studentai, const std::string &vargsiukaiFailas, const std::string &kietiakaiFailas) {
-    std::ofstream vargsiukaiFile(vargsiukaiFailas);
-    std::ofstream kietiakaiFile(kietiakaiFailas);
-
-    if (!vargsiukaiFile.is_open() || !kietiakaiFile.is_open()) {
-        std::cerr << "Nepavyko atidaryti vieno ar kelių failų." << std::endl;
-        return;
-    }
-
-    for (const auto &studentas : studentai) {
-        double galutinis = skaiciuotiGalutini(studentas.namuDarbai, studentas.egzaminas, true);
-        if (galutinis < 5.0) {
-            vargsiukaiFile << studentas.vardas << " " << studentas.pavarde << std::endl;
-        } else {
-            kietiakaiFile << studentas.vardas << " " << studentas.pavarde << std::endl;
-        }
-    }
-
-    vargsiukaiFile.close();
-    kietiakaiFile.close();
-}
-
-
-void nuskaitymas(std::vector<Studentas> &studentai, const std::string &failoPavadinimas)
+void nuskaitymas(std::vector<Studentas> &studentai, const std::string &failoPavadinimas, double &laikas)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     try
     {
         std::ifstream fd(failoPavadinimas);
@@ -126,12 +143,17 @@ void nuskaitymas(std::vector<Studentas> &studentai, const std::string &failoPava
         }
 
         fd.close();
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> duration = end - start; 
+        double time = duration.count(); 
+        laikas = time; 
     }
     catch (const std::exception &e)
     {
         std::cerr << "Klaida skaitymo metu: " << e.what() << std::endl;
     }
 }
+
 
 bool rusiuotiPagalVarda(const Studentas &a, const Studentas &b)
 {
