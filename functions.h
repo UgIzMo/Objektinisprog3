@@ -5,11 +5,12 @@
 #include <string>
 #include "studentas.h"
 
-void generateStudentFiles(const std::vector<int>& sizes);
-void skaitymasGeneravimo(std::vector<Studentas> &studentai, const std::string &failoPavadinimas);
-void surusiuotiIrIsvesti(const std::vector<Studentas> &studentai, const std::string &vargsiukaiFailas, const std::string &kietiakiaiFailas);
+void surusiuotiKategorijas(const std::vector<Studentas> &studentai, std::vector<Studentas> &vargsiukai, std::vector<Studentas> &kietiakai, double &laikas);
+void irasymasFaile(const std::vector<Studentas> &studentai, const std::string &failoPavadinimas, double &laikas);
+void rusiuotiStudentusIrIrasymas(const std::vector<Studentas> &studentai, double &laikas);
+void generuotiStudentuFailus(const std::vector<int>& sizes);
 
-void nuskaitymas(std::vector<Studentas>& studentai, const std::string& failoPavadinimas);
+void nuskaitymas(std::vector<Studentas>& studentai, const std::string& failoPavadinimas, double &laikas);
 bool rusiuotiPagalVarda(const Studentas& a, const Studentas& b);
 bool rusiuotiPagalPavarde(const Studentas& a, const Studentas& b);
 bool rusiuotiPagalGalutiniVidurki(const Studentas& a, const Studentas& b);
