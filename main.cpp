@@ -18,13 +18,13 @@ int main()
 
     double visoLaikoSuma = 0.0;
     int testuSkaicius = 0;
+    double laikas = 0;
+    double laikasGalutinis = 0;
 
-    std::vector<int> sizes = {1000, 10000, 100000, 1000000, 10000000};
+    vector<int> sizes = {1000, 10000, 100000, 1000000, 10000000};
 
     do
     {
-        auto start = chrono::high_resolution_clock::now(); // Pradedamas laiko skaiciavimas
-
         try
         {
             cout << "Pasirinkite buda:\n"
@@ -48,7 +48,7 @@ int main()
                 cerr << "Klaida: " << e.what() << endl;
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                continue; // Skip executing the switch statement
+                continue; 
             }
 
             switch (meniu)
@@ -120,7 +120,7 @@ int main()
                             cerr << "Klaida: " << e.what() << endl;
                             cin.clear();
                             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                            continue; // Skip adding invalid data to the vector
+                            continue; 
                         }
 
                         studentai.push_back(studentas);
@@ -214,7 +214,7 @@ int main()
                 try
                 {
                     auto startTest = chrono::high_resolution_clock::now();
-                    nuskaitymas(studentai, pasirinktiFaila());
+                    nuskaitymas(studentai, pasirinktiFaila(), laikas);
                     spausdinimas(studentai, "isvedimas.txt");
                     auto endTest = chrono::high_resolution_clock::now();
                     chrono::duration<double> timeTest = endTest - startTest;
@@ -232,43 +232,61 @@ int main()
             case 5:
             {
                 auto start = std::chrono::high_resolution_clock::now();
-                generateStudentFiles(sizes);
+                generuotiStudentuFailus(sizes);
                 auto end = std::chrono::high_resolution_clock::now();
-                std::chrono::duration<double> elapsed = end - start;
-                std::cout << "Failu generavimas uztruko: " << elapsed.count() << " sekundziu." << std::endl;
+                std::chrono::duration<double> laikas = end - start;
+                std::cout << "Failu generavimas uztruko: " << laikas.count() << " sekundziu." << std::endl;
+                laikasGalutinis += laikas.count();
                 break;
             }
+
             case 6:
             {
-                std::vector<std::string> failuPavadinimai = {
-                    "studentai_1000.txt", "studentai_10000.txt", "studentai_100000.txt",
-                    "studentai_1000000.txt", "studentai_10000000.txt"};
+                auto startTest = std::chrono::high_resolution_clock::now(); // pradzia matavimo
 
-                std::cout << "Pasirinkite, kurio sugeneruoto failo duomenis norite rusiuoti ir isvesti:" << std::endl;
-                for (int i = 0; i < failuPavadinimai.size(); i++)
+                std::cout << "Kuri faila noretumete isrusiuoti:" << std::endl;
+                for (int i = 0; i < sizes.size(); ++i)
                 {
-                    std::cout << i + 1 << ". " << failuPavadinimai[i] << std::endl;
+                    std::cout << i + 1 << ". studentai" << sizes[i] << ".txt" << std::endl;
                 }
 
-                int pasirinkimas;
-                std::cin >> pasirinkimas;
-
-                if (pasirinkimas < 1 || pasirinkimas > failuPavadinimai.size())
+                int choice;
+                std::cin >> choice;
+                if (choice < 1 || choice > sizes.size())
                 {
-                    std::cout << "Neteisingas pasirinkimas." << std::endl;
-                    break;
+                    std::cout << "Netinkamas pasirinkimas. Rušiuojamas pirmasis failas" << std::endl;
+                    choice = 1;
                 }
 
+                std::string failoPavadinimas = "studentai" + std::to_string(sizes[choice - 1]) + ".txt";
                 std::vector<Studentas> studentai;
-                std::string failoPavadinimas = failuPavadinimai[pasirinkimas - 1];
-                skaitymasGeneravimo(studentai, failoPavadinimas);
+                nuskaitymas(studentai, failoPavadinimas, laikas);
+                std::cout << "Nuskaitymas uztruko: " << laikas << " sekundziu" << std::endl;
+                laikasGalutinis += laikas;
 
-                std::string vargsiukaiFailas = "vargsiukai.txt";
-                std::string kietiakaiFailas = "kietiakai.txt";
-                surusiuotiIrIsvesti(studentai, vargsiukaiFailas, kietiakaiFailas);
-                std::cout << "Studentai surusiuoti ir isvesti i failus 'vargsiukai.txt' ir 'kietiakai.txt'." << std::endl;
+                std::vector<Studentas> vargsiukai;
+                std::vector<Studentas> kietiakai;
+
+                surusiuotiKategorijas(studentai, vargsiukai, kietiakai, laikas);
+                laikasGalutinis+=laikas;
+
+                auto endTest = std::chrono::high_resolution_clock::now(); // pabaiga laiko skaiciavimo
+                std::chrono::duration<double> timeTest = endTest - startTest;
+                double laikas = timeTest.count();
+                std::cout << "Rusiavimas uztruko: " << laikas << " sekundziu." << std::endl;
+                laikasGalutinis+=laikas;
+
+                irasymasFaile(vargsiukai, "vargsiukai.txt", laikas);
+                std::cout << "Isvedimas i faila vargsiukai.txt: " << laikas << std::endl;
+                laikasGalutinis+=laikas;
+                
+                irasymasFaile(kietiakai, "kietiakai.txt", laikas);
+                std::cout << "Isvedimas i faila kietiakai.txt: " << laikas << std::endl;
+                laikasGalutinis+=laikas;
+
                 break;
             }
+
             case 7:
                 break;
 
@@ -284,10 +302,7 @@ int main()
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
 
-        auto end = chrono::high_resolution_clock::now(); // Baigiamas laiko skaiciavimas
-        chrono::duration<double> time = end - start;     // Laikas
-        double laikas = time.count();                    // Issaugojamas laikas
-        cout << "Visas sugaistas laikas: " << laikas << " s" << endl;
+        cout << "Visas sugaistas laikas: " << laikasGalutinis << " s" << endl;
 
     } while (meniu != 7);
 
