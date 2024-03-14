@@ -14,8 +14,6 @@ using namespace std;
 
 int main()
 {
-    runApp();
-    /*
     srand(static_cast<unsigned int>(time(nullptr)));
 
     vector<Studentas> studentai;
@@ -321,6 +319,6 @@ int main()
 
     double vidurkis = visoLaikoSuma / testuSkaicius;                    // Suskaiciuojamas laiku vidurkis
     cout << "Keliu testu laiku vidurkis: " << vidurkis << " s" << endl; // Isvedamas laiku vidurkis
-*/
+
     return 0;
 }
