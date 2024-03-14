@@ -8,7 +8,7 @@
   
     Testavimas vyko su studentų failais: 1000, 10000, 100000, 1000000, 10000000 dydžio.
   
-    Testas nr.1
+Testas nr.1
     
       Vector:
       
@@ -214,7 +214,28 @@
   
     studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko.
 
+
+  DUOMENŲ SKAITYMAS: 
   
+  Skaitymo įtaka gali būti nesvarbi ir neįsimenama žmogaus akimis, bet jei vektorių pakeisime į sąrašą ar deque, laikas būtų šiek tiek mažesnis.
+  
+  DUOMENŲ RŪŠIAVIMAS:
+  
+  Vektorius suteikia greičiausią rūšiavimą, nes leidžia atsitiktinį prieigą (AP), kas yra labai gera sparčiai rūšiavimo algoritmui, naudojamam rūšiavime.
+  Sąrašas turi savo rūšiavimo metodą, kuris optimizuotas sąrašo operacijoms. Jis lėtesnis nei vektorius, nes negali pasiekti atsitiktinio prieigos (AP). Jis gana greitas, nes sukurtas greitai ir efektyviai įterpimams ir ištrynimams.
+  
+  Deque yra lėčiausias iš šių 3 dėl to, kad nepalaiko atsitiktinės prieigos (AP) ir nėra tam sukurtas, todėl yra lėčiausias.
+  
+  STUDENTŲ DALIJIMAS:
+  
+  Naudojant vektorių dalijimas gali reikšti daug elementų perkėlimo, ypač jei trinate elementus iš vidurio.
+  Sąrašas turėtų būti efektyvesnis nei vektorius dalijimui, nes gali įterpti ir pašalinti elementus be kitų perkėlimo.
+  
+  Deque yra geresnis nei vektorius viduriniams įterpimams/pašalinimams, bet ne taip efektyvus kaip sąrašas dėl savo dizaino.
+  
+  Trumpai tariant, jei Studento struktūros tipas pakeičiamas iš vektoriaus į sąrašą ar deque, galite pastebėti pagerėjusią veikimą tam tikrose operacijose (pvz., studentų dalijime) dėl sąrašo ir deque efektyvaus įterpimo ir pašalinimo galimybių. Tačiau rūšiavimas gali būti lėtesnis, ypač deque atveju. Tikras poveikis priklausys nuo konkrečių operacijų ir jų įgyvendinimo.
+  
+    
 
   
     
