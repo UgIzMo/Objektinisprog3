@@ -234,6 +234,9 @@ Testas nr.1
   Deque yra geresnis nei vektorius viduriniams įterpimams/pašalinimams, bet ne taip efektyvus kaip sąrašas dėl savo dizaino.
   
   Trumpai tariant, jei Studento struktūros tipas pakeičiamas iš vektoriaus į sąrašą ar deque, galite pastebėti pagerėjusią veikimą tam tikrose operacijose (pvz., studentų dalijime) dėl sąrašo ir deque efektyvaus įterpimo ir pašalinimo galimybių. Tačiau rūšiavimas gali būti lėtesnis, ypač deque atveju. Tikras poveikis priklausys nuo konkrečių operacijų ir jų įgyvendinimo.
+
+[!WARNING]  
+Atliekant šiuos bandymus reikia atlikti kuo daugiau, nes iš pirmo žvilgsnio skirtumai gali būti nepastebimi dėl įvairaus laiko, kurį visi veiksmai užima.
   
     
 
