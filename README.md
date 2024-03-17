@@ -213,6 +213,35 @@ Testas nr.1
       Rusiavimas ir skirstymas faile studentai1000000.txt: 23.4408s
   
     studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko.
+  
+
+  ### Vector Dataset:
+
+| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas (Reading) | 0.0066645s        | 0.0462343s         | 0.3692787s          | 4.0882833s           |
+| Rusiavimas (Sorting)| 0.0058004s        | 0.0983904s         | 0.864983s           | 13.8237s             |
+| Studentų skirstymas| 0.0009565s        | 0.0083181s         | 0.0896693s          | 0.8158047s           |
+| Rūšiavimas ir skirstymas į failus | 0.027965033s | 0.243667s          | 2.197123s           | 28.5720333s          |
+
+### List Dataset:
+
+| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas (Reading) | 0.0038921s        | 0.0408386s         | 0.3219756667s       | 3.7228833333s        |
+| Rusiavimas (Sorting)| 0.0043393s        | 0.0698747s         | 0.6907746667s       | 9.3062033333s        |
+| Skirstymas (Student distribution) | 0.0011129s | 0.008830933s   | 0.085275s           | 0.793989s            |
+| Rusiavimas ir skirstymas faile | 0.0259529s  | 0.2077537s        | 1.988316s           | 22.227867s           |
+
+### Deque Dataset:
+
+| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Nuskaitymas (Reading) | 0.003587033s     | 0.041980733s       | 0.485966667s        | 4.1078533333s        |
+| Rusiavimas (Sorting)| 0.0131578s        | 0.0746577s         | 0.818089667s        | 10.0307s             |
+| Skirstymas (Student distribution) | 0.0049959s | 0.0021739s     | 0.068268133s        | 0.557547333s         |
+| Rusiavimas ir skirstymas faile | 0.0555255s  | 0.201218667s      | 1.590213333s        | 17.887466667s        |
+
 
 
   DUOMENŲ SKAITYMAS: 
