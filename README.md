@@ -719,6 +719,34 @@ Deque:
     
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
+
+### Vector:
+
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0035236333s     | 0.0404204333s      | 0.312816s           | 3.1184133333s       |
+| Rusiavimas                        | 0.0046369333s     | 0.0761735s         | 0.8240156667s      | 9.9621133333s       |
+| Studentų skirstymas               | 0.0399638s        | 2.86117s           | 0.0628989667s      | 0.5722405s          |
+| Rūšiavimas ir skirstymas į failus | 0.0591602333s     | 3.0649033333s     | 2.101883333s       | 23.3209666667s      |
+
+### List:
+
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0033111667s     | 0.038730367s       | 0.3180406667s       | 3.114646s            |
+| Rusiavimas                        | 0.0032748333s     | 0.0596066s         | 0.6888773333s      | 8.8545033333s       |
+| Studentų skirstymas               | 0.0008176s        | 0.0068067333s      | 0.072308s           | 0.6919713333s       |
+| Rūšiavimas ir skirstymas į failus | 0.0262373667s     | 0.174844s          | 1.9722526667s      | 22.6643666667s      |
+
+### Deque:
+
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0032597333s     | 0.0380090333s      | 0.3293693333s      | 3.1797573333s       |
+| Rusiavimas                        | 0.0048872s        | 0.0692037s         | 0.7851183333s      | 9.7277666667s       |
+| Studentų skirstymas               | 0.0006891667s     | 0.0063285s         | 0.0736195667s      | 0.654332s           |
+| Rūšiavimas ir skirstymas į failus | 0.0245602333s     | 0.1779736667s      | 2.0890866667s      | 23.3183666667s      |
+
     Vector: 
     Naudojant vektorių, skaičiavimo laikas didėja kartu su studentų kiekiu dėl lėtesnio elemento pašalinimo. Tačiau skaitymo ir rūšiavimo laikas nėra labai didelis, nes vektorius turi greitą prieigą. Bendras veikimo laikas su dideliais failais gali būti ilgesnis nei su kitais konteineriais dėl lėto elemento pašalinimo. 
     List: 
