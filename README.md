@@ -671,3 +671,79 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
     
     Galutinė išvada: 
     Atsižvelgiant į visus faktorius (skaitymo laiką, rūšiavimo laiką, elementų pašalinimo laiką), efektyviausia strategija yra naudoti List konteinerį. Jis leidžia efektyviai šalinti elementus ir rūšiuoti juos, nors rūšiavimo laikas gali būti šiek tiek ilgesnis nei su vektoriumi. Tačiau su dideliais failais, vektorius gali tapti labiau nepatogus dėl lėto elemento pašalinimo.
+
+
+3 STRATEGIJA
+Vector:
+      
+    studentai1000.txt
+      Skaitymas uztruko (Vector): 0.0033218s
+      Rusiavimas uztruko (Vector): 0.0075136s
+      Skirstymas uztruko (Vector): 0.0038718s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0251346s
+      
+      Skaitymas uztruko (Vector): 0.0032836s
+      Rusiavimas uztruko (Vector): 0.0061897s
+      Skirstymas uztruko (Vector): 0.0010213s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0274347s
+      
+      Skaitymas uztruko (Vector): 0.0033413s
+      Rusiavimas uztruko (Vector): 0.0048515s
+      Skirstymas uztruko (Vector): 0.0007328s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0233031s
+
+    studentai10000.txt
+      Skaitymas uztruko (Vector): 0.0437951s
+      Rusiavimas uztruko (Vector): 0.0693555s
+      Skirstymas uztruko (Vector): 0.0053181s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.187203s
+      
+      Skaitymas uztruko (Vector): 0.0400321s
+      Rusiavimas uztruko (Vector): 0.0678129s
+      Skirstymas uztruko (Vector): 0.0084559s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.181871s
+      
+      Skaitymas uztruko (Vector): 0.0372836s
+      Rusiavimas uztruko (Vector): 0.0710017s
+      Skirstymas uztruko (Vector): 0.006056s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.186953s
+
+    studentai100000.txt
+      Skaitymas uztruko (Vector): 0.318782s
+      Rusiavimas uztruko (Vector): 0.811197s
+      Skirstymas uztruko (Vector): 0.0905247s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 2.08579s
+      
+      Skaitymas uztruko (Vector): 0.31829s
+      Rusiavimas uztruko (Vector): 0.804114s
+      Skirstymas uztruko (Vector): 0.0771467s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 2.11749s
+      
+      Skaitymas uztruko (Vector): 0.311331s
+      Rusiavimas uztruko (Vector): 0.814471s
+      Skirstymas uztruko (Vector): 0.091747s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 1.82401s
+
+    studentai100000.txt
+      Skaitymas uztruko (Vector): 3.21867s
+      Rusiavimas uztruko (Vector): 9.54152s
+      Skirstymas uztruko (Vector): 0.696916s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 21.5175s
+      
+      Skaitymas uztruko (Vector): 3.18514s
+      Rusiavimas uztruko (Vector): 9.75661s
+      Skirstymas uztruko (Vector): 0.697254s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 21.6673s
+      
+      Skaitymas uztruko (Vector): 3.02382s
+      Rusiavimas uztruko (Vector): 9.55083s
+      Skirstymas uztruko (Vector): 0.701034s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 21.5117s
+    
+studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
+
+
+
+
+
+      
