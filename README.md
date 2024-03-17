@@ -453,6 +453,7 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
       List gali būti patrauklesnis pasirinkimas, jei reikalavimai dėl atminties yra dideli, bet veikimo greitis nėra kritiškai svarbus.
       Deque gali būti efektyvesnis pasirinkimas nei vector dėl jo efektyvesnio manipuliavimo su atmintimi.
 
+  Efektyviausias konteineris šiame kontekste yra deque dėl jo greičio, ypač esant dideliems duomenų kiekiams, ir jo galimybės efektyviai valdyti atminties išnaudojimą.
   
     
 
