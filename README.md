@@ -237,8 +237,19 @@ Testas nr.1
 
   > [!WARNING]
   > Atliekant šiuos bandymus reikia atlikti kuo daugiau, nes iš pirmo žvilgsnio skirtumai gali būti nepastebimi dėl įvairaus laiko, kurį visi veiksmai užima.
-    
-    
+> 
+
+
+
+
+      Vector vs List vs Deque: 
+      Remiantis vidutiniais laikais, matome, kad vector pasižymi greičiausiu skaitymo laiku, bet ilgesniu rūšiavimo laiku palyginus su list ir deque. List, atvirkščiai, pasižymi trumpesniu rūšiavimo laiku, bet ilgesniu skaitymo laiku palyginus su vector ir deque. Deque pasižymi tarpiniu elgesiu, jei skirstymas į "vargšiukų" ir "kietiakų" kategorijas nevyksta labai dažnai.
+      
+      Studentų skirstymas į vargšiukus trunka trumpiausiai naudojant deque konteinerį, o ilgiausiai naudojant list konteinerį. Didėjant duomenų kiekiui, studentų skirstymas į vargšiukus užtrunka ilgiau visiems konteineriams, tačiau deque konteineris pasirodo greičiau nei vector ir list. Didžiausias studentų skirstymo laikas yra su 100000 duomenų, o mažiausias su 1000 duomenų.
+          
+      Vector gali turėti didelį veikimo spartos sumažėjimą dėl papildomo atminties kopijavimo.
+      List gali būti patrauklesnis pasirinkimas, jei reikalavimai dėl atminties yra dideli, bet veikimo greitis nėra kritiškai svarbus.
+      Deque gali būti efektyvesnis pasirinkimas nei vector dėl jo efektyvesnio manipuliavimo su atmintimi.
 
   
     
