@@ -215,27 +215,27 @@ Testas nr.1
     studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko.
   
 
-  ### Vector Dataset:
+  ### Vector:
 
-| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
 |---------------------|-------------------|--------------------|---------------------|----------------------|
 | Skaitymas (Reading) | 0.0066645s        | 0.0462343s         | 0.3692787s          | 4.0882833s           |
 | Rusiavimas (Sorting)| 0.0058004s        | 0.0983904s         | 0.864983s           | 13.8237s             |
 | Studentų skirstymas| 0.0009565s        | 0.0083181s         | 0.0896693s          | 0.8158047s           |
 | Rūšiavimas ir skirstymas į failus | 0.027965033s | 0.243667s          | 2.197123s           | 28.5720333s          |
 
-### List Dataset:
+### List:
 
-| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
 |---------------------|-------------------|--------------------|---------------------|----------------------|
 | Skaitymas (Reading) | 0.0038921s        | 0.0408386s         | 0.3219756667s       | 3.7228833333s        |
 | Rusiavimas (Sorting)| 0.0043393s        | 0.0698747s         | 0.6907746667s       | 9.3062033333s        |
 | Skirstymas (Student distribution) | 0.0011129s | 0.008830933s   | 0.085275s           | 0.793989s            |
 | Rusiavimas ir skirstymas faile | 0.0259529s  | 0.2077537s        | 1.988316s           | 22.227867s           |
 
-### Deque Dataset:
+### Deque:
 
-| Operation           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
 |---------------------|-------------------|--------------------|---------------------|----------------------|
 | Nuskaitymas (Reading) | 0.003587033s     | 0.041980733s       | 0.485966667s        | 4.1078533333s        |
 | Rusiavimas (Sorting)| 0.0131578s        | 0.0746577s         | 0.818089667s        | 10.0307s             |
@@ -472,6 +472,34 @@ Deque:
       Rusiavimas ir skirstymas faile studentai1000000.txt: 25.4968s
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
+
+### Vector:
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas (Reading) | 0.0160934s        | 0.0408041s         | 0.3148856667s       | 3.243656s            |
+| Rusiavimas (Sorting)| 0.010088s         | 0.076046s          | 0.729097s           | 9.591233333s         |
+| Studentų skirstymas| 0.0009212s        | 0.0079428s         | 0.0754993s          | 0.7065057s           |
+| Rūšiavimas ir skirstymas faile | 0.0542467s | 0.179192s          | 1.76957s            | 21.5588667s          |
+
+
+### List:
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas (Reading) | 0.0035947s        | 0.043162533s       | 0.368562s           | 3.9452983333s        |
+| Rusiavimas (Sorting)| 0.0038927s        | 0.0711263s         | 0.701653s           | 9.9794566667s        |
+| Skirstymas (Student distribution) | 0.0009952s | 0.007903s     | 0.0769213333s       | 0.686424s            |
+| Rusiavimas ir skirstymas faile | 0.0297854s  | 0.214118s         | 1.993011s           | 22.529312s           |
+
+
+### Deque:
+| Veiksmas           | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|---------------------|-------------------|--------------------|---------------------|----------------------|
+| Nuskaitymas (Reading) | 0.0036359s       | 0.048847433s       | 0.545421s           | 4.27029s             |
+| Rusiavimas (Sorting)| 0.0058582s        | 0.071128s          | 0.783618s           | 9.86406s             |
+| Skirstymas (Student distribution) | 0.0008478s | 0.0060573s     | 0.0701217s          | 0.5900667s           |
+| Rusiavimas ir skirstymas faile | 0.0242287s  | 0.1913237s        | 1.812978s           | 21.17298s            |
+
+
 
       Vector vs List vs Deque: 
       Remiantis vidutiniais laikais, matome, kad vector pasižymi greičiausiu skaitymo laiku, bet ilgesniu rūšiavimo laiku palyginus su list ir deque. List, atvirkščiai, pasižymi trumpesniu rūšiavimo laiku, bet ilgesniu skaitymo laiku palyginus su vector ir deque. Deque pasižymi tarpiniu elgesiu, jei skirstymas į "vargšiukų" ir "kietiakų" kategorijas nevyksta labai dažnai.
