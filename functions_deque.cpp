@@ -126,7 +126,7 @@ void divideStudentsDeque(const std::string &fileName)
     kietiakaiFile.close();
     vargsiukaiFile.close();
 }
-*/
+
 // 1 strategija
 void divideStudentsDeque(const std::string &failoVardas) {
     std::deque<Studentas> studentai;
@@ -172,6 +172,63 @@ void divideStudentsDeque(const std::string &failoVardas) {
     }
 
     for (const auto &studentas : vargsiukai) {
+        vargsiukaiFile << studentas.vardas << " " << studentas.pavarde << " "
+                       << std::fixed << std::setprecision(2)
+                       << (0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas)
+                       << std::endl;
+    }
+
+    kietiakaiFile.close();
+    vargsiukaiFile.close();
+}
+*/
+
+// 2 strategija
+void divideStudentsDeque(const std::string &failoVardas)
+{
+    std::deque<Studentas> studentai;
+
+    auto readStart = std::chrono::high_resolution_clock::now();
+    readDataDeque(studentai, failoVardas);
+    auto readEnd = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> readElapsed = readEnd - readStart;
+    std::cout << "Skaitymas uztruko (Deque): " << readElapsed.count() << "s\n";
+
+    auto sortStart = std::chrono::high_resolution_clock::now();
+    std::sort(studentai.begin(), studentai.end(), [](const Studentas &a, const Studentas &b)
+              { return (0.4 * skaiciuotiVidurki(a.namuDarbai) + 0.6 * a.egzaminas) < (0.4 * skaiciuotiVidurki(b.namuDarbai) + 0.6 * b.egzaminas); });
+    auto sortEnd = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> sortElapsed = sortEnd - sortStart;
+    std::cout << "Rusiavimas uztruko (Deque): " << sortElapsed.count() << "s\n";
+
+    auto divideStart = std::chrono::high_resolution_clock::now();
+    std::deque<Studentas> vargsiukai;
+    studentai.erase(std::remove_if(studentai.begin(), studentai.end(), [&vargsiukai](const Studentas &studentas) {
+                        double galutinisBalas = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
+                        if (galutinisBalas < 5.0)
+                        {
+                            vargsiukai.push_back(studentas);
+                            return true;
+                        }
+                        return false;
+                    }),
+                    studentai.end());
+    auto divideEnd = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
+    std::cout << "Studentu skirstymas uztruko (Deque): " << divideElapsed.count() << "s\n";
+
+    std::ofstream kietiakaiFile("kietiakai.txt"), vargsiukaiFile("vargsiukai.txt");
+
+    for (const auto &studentas : studentai)
+    {
+        kietiakaiFile << studentas.vardas << " " << studentas.pavarde << " "
+                      << std::fixed << std::setprecision(2)
+                      << (0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas)
+                      << std::endl;
+    }
+
+    for (const auto &studentas : vargsiukai)
+    {
         vargsiukaiFile << studentas.vardas << " " << studentas.pavarde << " "
                        << std::fixed << std::setprecision(2)
                        << (0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas)
