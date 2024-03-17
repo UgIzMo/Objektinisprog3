@@ -965,6 +965,34 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
+
+### Vector:
+
+| Veiksmas                            | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-------------------------------------|-------------------|---------------------|----------------------|-----------------------|
+| Skaitymas                           | 0.0033218s        | 0.0437951s          | 0.318782s           | 3.21867s             |
+| Rusiavimas                          | 0.0075136s        | 0.0693555s          | 0.811197s           | 9.54152s             |
+| Skirstymas                          | 0.0038718s        | 0.0053181s          | 0.0905247s          | 0.696916s            |
+| Rūšiavimas ir skirstymas faile      | 0.0251346s        | 0.187203s           | 2.08579s            | 21.5175s             |
+
+### List:
+
+| Veiksmas                            | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-------------------------------------|-------------------|---------------------|----------------------|-----------------------|
+| Skaitymas                           | 0.0057648s        | 0.0389067s          | 0.318642s           | 3.11746s             |
+| Rusiavimas                          | 0.0050445s        | 0.0583021s          | 0.725073s           | 8.98259s             |
+| Skirstymas                          | 0.0008918s        | 0.0038022s          | 0.0723346s          | 0.638074s            |
+| Rūšiavimas ir skirstymas faile      | 0.0298014s        | 0.169925s           | 1.75633s            | 21.0702s             |
+
+### Deque:
+
+| Veiksmas                            | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-------------------------------------|-------------------|---------------------|----------------------|-----------------------|
+| Skaitymas                           | 0.0032285s        | 0.0415868s          | 0.313488s           | 3.1287s              |
+| Rusiavimas                          | 0.0052067s        | 0.0714552s          | 0.830005s           | 11.0726s             |
+| Skirstymas                          | 0.0008615s        | 0.0075121s          | 0.0928324s          | 0.790744s            |
+| Rūšiavimas ir skirstymas faile      | 0.0298986s        | 0.186936s           | 1.90757s            | 23.6434s             |
+
     Išvados:
 
     Skaitymo laikas: 
