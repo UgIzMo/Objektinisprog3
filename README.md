@@ -743,6 +743,76 @@ Vector:
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
 
+List:
+      
+    studentai1000.txt
+      Skaitymas uztruko (List): 0.0057648s
+      Rusiavimas uztruko (List): 0.0050445s
+      Skirstymas uztruko (List): 0.0008918s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0298014s
+      
+      Skaitymas uztruko (List): 0.0033402s
+      Rusiavimas uztruko (List): 0.0034079s
+      Skirstymas uztruko (List): 0.0005583s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0189231s
+      
+      Skaitymas uztruko (List): 0.003197s
+      Rusiavimas uztruko (List): 0.0035153s
+      Skirstymas uztruko (List): 0.0005448s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0192233s
+
+    studentai10000.txt
+      Skaitymas uztruko (List): 0.0389067s
+      Rusiavimas uztruko (List): 0.0583021s
+      Skirstymas uztruko (List): 0.0038022s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.169925s
+      
+      Skaitymas uztruko (List): 0.0350237s
+      Rusiavimas uztruko (List): 0.0591118s
+      Skirstymas uztruko (List): 0.0059885s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.167235s
+      
+      Skaitymas uztruko (List): 0.0368045s
+      Rusiavimas uztruko (List): 0.0570199s
+      Skirstymas uztruko (List): 0.0060095s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.164672s
+
+    studentai100000.txt
+      Skaitymas uztruko (List): 0.318642s
+      Rusiavimas uztruko (List): 0.725073s
+      Skirstymas uztruko (List): 0.0723346s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 1.75633s
+      
+      Skaitymas uztruko (List): 0.319293s
+      Rusiavimas uztruko (List): 0.775831s
+      Skirstymas uztruko (List): 0.0758029s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 2.01474s
+      
+      Skaitymas uztruko (List): 0.315888s
+      Rusiavimas uztruko (List): 0.743659s
+      Skirstymas uztruko (List): 0.0853816s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 1.84381s
+
+    studentai1000000.txt
+      Skaitymas uztruko (List): 3.11746s
+      Rusiavimas uztruko (List): 8.98259s
+      Skirstymas uztruko (List): 0.638074s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 21.0702s
+      
+      Skaitymas uztruko (List): 3.17805s
+      Rusiavimas uztruko (List): 10.0361s
+      Skirstymas uztruko (List): 0.640781s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 22.236s
+      
+      Skaitymas uztruko (List): 3.19478s
+      Rusiavimas uztruko (List): 8.80374s
+      Skirstymas uztruko (List): 0.639499s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 21.039s
+      
+studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
+
+
+
 
 
 
