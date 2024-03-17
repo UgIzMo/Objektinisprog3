@@ -879,4 +879,14 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
       Rusiavimas ir skirstymas faile studentai1000000.txt: 22.2599s
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
+
+    Išvados:
+
+    Skaitymo laikas: 
+    Visi konteineriai pasižymi panašiu skaitymo laiku, kuris padidėja proporcingai su duomenų dydžiu. Tai rodo, kad skaitymo laikas labiau priklauso nuo failo dydžio ir skaitymo veiksmų sudėtingumo, o ne naudojamo konteinerio tipo. 
+    Rūšiavimo laikas: Šioje srityje vector pasirodo geriausiai, pasižymėdamas mažesniais laikais nei list ir deque, ypač didesnių duomenų dydžių atveju. Tai gali būti dėl to, kad vector palaiko efektyvų atminties valdymą ir turi geresnę (kontinuacinės) atminties prieigą. 
+    Skirstymo laikas: deque šiek tiek lenkia vector ir list skirstymo laiku. Tai gali būti dėl to, kad deque palaiko efektyvų elementų įterpimą į priekį ir gali būti greitesnis tam tikrais atvejais, nei list, kuris turi pereiti per visus elementus į norimą vietą. 
+    Rūšiavimo ir skirstymo laikai faile: Palyginus rūšiavimo ir skirstymo laikus failuose, galima pastebėti, kad vector pasirodo geriausiai, vėl pasižymėdamas efektyviu atminties valdymu ir greita elementų prieiga. 
+    Efektyviausias konteinerio naudojimas: Iš šių rezultatų matome, kad efektyviausias konteinerio naudojimas rūšiavimo ir skirstymo operacijoms yra vector. Jis pasižymi geriausiu rūšiavimo laiku tiek su mažais, tiek su dideliais duomenų kiekiais. 
+    Taigi, remiantis šiais testų rezultatais, efektyviausias konteinerio naudojimas yra vector, ypač kai svarbu greitas rūšiavimas ir skirstymas.
       
