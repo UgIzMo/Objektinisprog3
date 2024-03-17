@@ -661,3 +661,13 @@ Deque:
       Rusiavimas ir skirstymas faile studentai1000000.txt: 24.1662s
     
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
+
+    Vector: 
+    Naudojant vektorių, skaičiavimo laikas didėja kartu su studentų kiekiu dėl lėtesnio elemento pašalinimo. Tačiau skaitymo ir rūšiavimo laikas nėra labai didelis, nes vektorius turi greitą prieigą. Bendras veikimo laikas su dideliais failais gali būti ilgesnis nei su kitais konteineriais dėl lėto elemento pašalinimo. 
+    List: 
+    Sąrašo naudojimas leidžia greitai šalinti elementus, todėl studentų skirstymas į "kietiakus" ir "vargšiukus" yra efektyvus. Tačiau rūšiavimo laikas gali būti ilgesnis nei su vektoriumi dėl prieigos, ypač su dideliais failais. 
+    Deque: 
+    Deque pasižymi geresniu nei vektorius atsitiktiniu prieigų laiku, tačiau jo naudojimas gali būti ne tokias efektyvus kaip sąrašo. Studentų skirstymo ir rūšiavimo laikas yra vidutiniškai greitas, tačiau gali būti šiek tiek ilgesnis nei su sąrašu. 
+    
+    Galutinė išvada: 
+    Atsižvelgiant į visus faktorius (skaitymo laiką, rūšiavimo laiką, elementų pašalinimo laiką), efektyviausia strategija yra naudoti List konteinerį. Jis leidžia efektyviai šalinti elementus ir rūšiuoti juos, nors rūšiavimo laikas gali būti šiek tiek ilgesnis nei su vektoriumi. Tačiau su dideliais failais, vektorius gali tapti labiau nepatogus dėl lėto elemento pašalinimo.
