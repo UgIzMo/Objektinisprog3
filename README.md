@@ -759,6 +759,9 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 
 
 3 STRATEGIJA
+  Plačiau apie strategiją:
+  Su vector stable::partition, o su list ir deque naudojama std::remove_if. Pasirinkau šiuos metodus dėl programos veikimo efektyvumo pagerinimo.
+  
 Vector:
       
     studentai1000.txt
@@ -1002,4 +1005,5 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
     Rūšiavimo ir skirstymo laikai faile: Palyginus rūšiavimo ir skirstymo laikus failuose, galima pastebėti, kad vector pasirodo geriausiai, vėl pasižymėdamas efektyviu atminties valdymu ir greita elementų prieiga. 
     Efektyviausias konteinerio naudojimas: Iš šių rezultatų matome, kad efektyviausias konteinerio naudojimas rūšiavimo ir skirstymo operacijoms yra vector. Jis pasižymi geriausiu rūšiavimo laiku tiek su mažais, tiek su dideliais duomenų kiekiais. 
     Taigi, remiantis šiais testų rezultatais, efektyviausias konteinerio naudojimas yra vector, ypač kai svarbu greitas rūšiavimas ir skirstymas.
-      
+
+
