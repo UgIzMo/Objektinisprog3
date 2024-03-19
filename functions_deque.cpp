@@ -72,9 +72,9 @@ void generateStudentFilesDeque(int size)
     outFile.close();
 }
 
-/*
+
 // 1 strategija
-void divideStudentsDeque(const std::string &failoVardas) {
+void divideStudentsDeque1(const std::string &failoVardas) {
     std::deque<Studentas> studentai;
 
     // Start timer for reading data
@@ -129,7 +129,7 @@ void divideStudentsDeque(const std::string &failoVardas) {
 }
 
 // 2 strategija
-void divideStudentsDeque(const std::string &failoVardas)
+void divideStudentsDeque2(const std::string &failoVardas)
 {
     std::deque<Studentas> studentai;
 
@@ -183,7 +183,7 @@ void divideStudentsDeque(const std::string &failoVardas)
     kietiakaiFile.close();
     vargsiukaiFile.close();
 }
-*/
+
 
 // 3 strategija
 void divideStudentsDeque3(const std::string &failoVardas)
