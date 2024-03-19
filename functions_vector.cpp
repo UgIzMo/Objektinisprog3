@@ -78,9 +78,9 @@ void generateStudentFilesVector(int size)
     outFile.close();
 }
 
-/*
+
 // 1 strategija
-void rusiuotStudentusVector(const std::string &failoVardas) {
+void rusiuotStudentusVector1(const std::string &failoVardas) {
     std::vector<Studentas> studentai;
 
     // Start timer for reading data
@@ -135,7 +135,7 @@ void rusiuotStudentusVector(const std::string &failoVardas) {
 }
 
 //2 startegija
-void rusiuotStudentusVector(const std::string &failoVardas)
+void rusiuotStudentusVector2(const std::string &failoVardas)
 {
     std::vector<Studentas> studentai;
 
@@ -193,10 +193,10 @@ void rusiuotStudentusVector(const std::string &failoVardas)
     kietiakaiFile.close();
     vargsiukaiFile.close();
 }
-*/
+
 
 //3 strategija
-void rusiuotStudentusVector(const std::string &failoVardas)
+void rusiuotStudentusVector3(const std::string &failoVardas)
 {
     std::vector<Studentas> studentai;
 
