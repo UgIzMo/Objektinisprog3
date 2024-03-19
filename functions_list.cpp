@@ -81,9 +81,9 @@ void generateStudentFilesList(int size)
     outFile.close();
 }
 
-/*
+
 // 1 strategija
-void divideStudentsList(const std::string &failoVardas) {
+void divideStudentsList1(const std::string &failoVardas) {
     std::list<Studentas> studentai;
 
     // Start timer for reading data
@@ -139,7 +139,7 @@ void divideStudentsList(const std::string &failoVardas) {
 
 
 // 2 strategija
-void divideStudentsList(const std::string &failoVardas)
+void divideStudentsList2(const std::string &failoVardas)
 {
     std::list<Studentas> studentai;
 
@@ -192,10 +192,10 @@ void divideStudentsList(const std::string &failoVardas)
     kietiakaiFile.close();
     vargsiukaiFile.close();
 }
-*/
+
 
 // 3 strategija
-void divideStudentsList(const std::string &failoVardas)
+void divideStudentsList3(const std::string &failoVardas)
 {
     std::list<Studentas> studentai;
 
