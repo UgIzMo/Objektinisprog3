@@ -132,13 +132,19 @@ void performAction(ContainerType containerChoice, Action actionChoice, const std
             auto start = std::chrono::high_resolution_clock::now();
             switch (containerChoice) {
                 case ContainerType::Vector:
-                    rusiuotStudentusVector(filename);
+                    rusiuotStudentusVector1(filename);
+                    //rusiuotStudentusVector2(filename);
+                    //rusiuotStudentusVector3(filename);
                     break;
                 case ContainerType::List:
-                    divideStudentsList(filename);
+                    divideStudentsList1(filename);
+                    //divideStudentsList2(filename);
+                    //divideStudentsList3(filename);
                     break;
                 case ContainerType::Deque:
-                    divideStudentsDeque(filename);
+                    divideStudentsDeque1(filename);
+                    //divideStudentsDeque2(filename);
+                    //divideStudentsDeque3(filename);
                     break;
                 default:
                     std::cout << "Netinkamas konteinerio tipas.\n";
