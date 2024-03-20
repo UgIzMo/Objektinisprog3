@@ -139,7 +139,7 @@ void divideStudentsList1(const std::string &failoVardas) {
 
 
 // 2 strategija
-void divideStudentsList2(const std::string &failoVardas)
+void divideStudentsList2(const std::string &failoVardas) 
 {
     std::list<Studentas> studentai;
 
@@ -158,15 +158,23 @@ void divideStudentsList2(const std::string &failoVardas)
 
     auto divideStart = std::chrono::high_resolution_clock::now();
     std::list<Studentas> vargsiukai;
-    studentai.remove_if([&vargsiukai](const Studentas &studentas) {
-        double galutinisBalas = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
+
+    auto it = std::prev(studentai.end());
+    double galutinisBalas = 0.4 * skaiciuotiVidurki(it->namuDarbai) + 0.6 * it->namuDarbai.back();
+
+    while (galutinisBalas<5)
+    {
+        it = std::prev(studentai.end());
+        galutinisBalas = 0.4 * skaiciuotiVidurki(it->namuDarbai) + 0.6 * it->egzaminas;
         if (galutinisBalas < 5.0)
         {
-            vargsiukai.push_back(studentas);
-            return true;
+            vargsiukai.push_back(std::move(*it));
+            studentai.pop_back(); // salinam
         }
-        return false;
-    });
+        it = std::prev(studentai.end());
+        galutinisBalas = 0.4 * skaiciuotiVidurki((it--)->namuDarbai) + 0.6 * it->egzaminas;
+    }
+
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
     std::cout << "Studentu skirstymas uztruko (List): " << divideElapsed.count() << "s\n";
