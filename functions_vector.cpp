@@ -135,7 +135,7 @@ void rusiuotStudentusVector1(const std::string &failoVardas) {
 }
 
 //2 startegija
-void rusiuotStudentusVector2(const std::string &failoVardas)
+void rusiuotStudentusVector2(const std::string &failoVardas) 
 {
     std::vector<Studentas> studentai;
 
@@ -157,16 +157,22 @@ void rusiuotStudentusVector2(const std::string &failoVardas)
     // Start timer for dividing students
     auto divideStart = std::chrono::high_resolution_clock::now();
     std::vector<Studentas> vargsiukai;
-    auto it = std::remove_if(studentai.begin(), studentai.end(), [&vargsiukai](const Studentas &studentas) {
-        double galutinisBalas = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
+
+    for (auto it = studentai.begin(); it != studentai.end();)
+    {
+        double galutinisBalas = 0.4 * skaiciuotiVidurki(it->namuDarbai) + 0.6 * it->egzaminas;
         if (galutinisBalas < 5.0)
         {
-            vargsiukai.push_back(studentas);
-            return true;
+            vargsiukai.push_back(*it); 
+            *it = std::move(studentai.back()); 
+            studentai.pop_back(); 
         }
-        return false;
-    });
-    studentai.erase(it, studentai.end());
+        else
+        {
+            ++it;
+        }
+    }
+
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
     std::cout << "Studentu skirstymas uztruko: " << divideElapsed.count() << "s\n";
