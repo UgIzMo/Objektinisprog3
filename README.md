@@ -752,7 +752,6 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 | Rūšiavimas ir skirstymas į failus | 0.036620s         | 2.2724293333s      | 3.548804s           | 39.036138s           |
 
 
-
 >[!NOTE]
  >Atsižvelgiant į visus veiksnius (skaitymo laiką, rūšiavimo laiką, elemento pašalinimo laiką), efektyviausia strategija yra naudoti Vektoriaus konteinerį. 
   Nepaisant galimų sulėtėjimų elemento pašalinimo atveju, vektoriai išsiskiria greitu skaitymo ir rūšiavimo laiku dėl greito prieigos galimybių. 
