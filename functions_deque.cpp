@@ -129,7 +129,7 @@ void divideStudentsDeque1(const std::string &failoVardas) {
 }
 
 // 2 strategija
-void divideStudentsDeque2(const std::string &failoVardas)
+void divideStudentsDeque2(const std::string &failoVardas) // 2 strategija
 {
     std::deque<Studentas> studentai;
 
@@ -148,16 +148,23 @@ void divideStudentsDeque2(const std::string &failoVardas)
 
     auto divideStart = std::chrono::high_resolution_clock::now();
     std::deque<Studentas> vargsiukai;
-    studentai.erase(std::remove_if(studentai.begin(), studentai.end(), [&vargsiukai](const Studentas &studentas) {
-                        double galutinisBalas = 0.4 * skaiciuotiVidurki(studentas.namuDarbai) + 0.6 * studentas.egzaminas;
-                        if (galutinisBalas < 5.0)
-                        {
-                            vargsiukai.push_back(studentas);
-                            return true;
-                        }
-                        return false;
-                    }),
-                    studentai.end());
+
+    auto it = std::prev(studentai.end());
+    double galutinisBalas = 0.4 * skaiciuotiVidurki(it->namuDarbai) + 0.6 * it->namuDarbai.back();
+
+    while (galutinisBalas<5)
+    {
+        it = std::prev(studentai.end());
+        galutinisBalas = 0.4 * skaiciuotiVidurki(it->namuDarbai) + 0.6 * it->egzaminas;
+        if (galutinisBalas < 5.0)
+        {
+            vargsiukai.push_back(std::move(*it));
+            studentai.pop_back(); // salinam
+        }
+        it = std::prev(studentai.end());
+        galutinisBalas = 0.4 * skaiciuotiVidurki((it--)->namuDarbai) + 0.6 * it->egzaminas;
+    }
+
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
     std::cout << "Studentu skirstymas uztruko (Deque): " << divideElapsed.count() << "s\n";
@@ -183,7 +190,6 @@ void divideStudentsDeque2(const std::string &failoVardas)
     kietiakaiFile.close();
     vargsiukaiFile.close();
 }
-
 
 // 3 strategija
 void divideStudentsDeque3(const std::string &failoVardas)
