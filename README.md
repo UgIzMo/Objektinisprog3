@@ -523,68 +523,69 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 Vector:
       
       studentai1000.txt
-        Skaitymas uztruko: 0.003535s
-        Rusiavimas uztruko: 0.0047205s
-        Studentu skirstymas uztruko: 0.0389334s
-        Rusiavimas ir skirstymas faile studentai1000.txt: 0.0613139s
+        Skaitymas uztruko: 0.0043497s
+        Rusiavimas uztruko: 0.0129496s
+        Studentu skirstymas uztruko: 0.001427s
+        Rusiavimas ir skirstymas faile studentai1000.txt: 0.0305066s
+
+        Skaitymas uztruko: 0.0043619s
+        Rusiavimas uztruko: 0.0119375s
+        Studentu skirstymas uztruko: 0.0013025s
+        Rusiavimas ir skirstymas faile studentai1000.txt: 0.0276224s
         
-        Skaitymas uztruko: 0.003594s
-        Rusiavimas uztruko: 0.0052969s
-        Studentu skirstymas uztruko: 0.0367596s
-        Rusiavimas ir skirstymas faile studentai1000.txt: 0.0558034s
-        
-        Skaitymas uztruko: 0.0034404s
-        Rusiavimas uztruko: 0.0048914s
-        Studentu skirstymas uztruko: 0.0401964s
-        Rusiavimas ir skirstymas faile studentai1000.txt: 0.060365s
+        Skaitymas uztruko: 0.0041301s
+        Rusiavimas uztruko: 0.0058366s
+        Studentu skirstymas uztruko: 0.0011301s
+        Rusiavimas ir skirstymas faile studentai1000.txt: 0.028518s
 
       studentai10000.txt
-        Skaitymas uztruko: 0.0456291s
-        Rusiavimas uztruko: 0.0826456s
-        Studentu skirstymas uztruko: 2.89927s
-        Rusiavimas ir skirstymas faile studentai10000.txt: 3.12348s
+        Skaitymas uztruko: 0.0683688s
+        Rusiavimas uztruko: 0.150192s
+        Studentu skirstymas uztruko: 0.010218s
+        Rusiavimas ir skirstymas faile studentai10000.txt: 0.358723s
+              
+        Skaitymas uztruko: 0.0465143s
+        Rusiavimas uztruko: 0.112834s
+        Studentu skirstymas uztruko: 0.0084627s
+        Rusiavimas ir skirstymas faile studentai10000.txt: 0.313045s
         
-        Skaitymas uztruko: 0.037683s
-        Rusiavimas uztruko: 0.0680981s
-        Studentu skirstymas uztruko: 2.95475s
-        Rusiavimas ir skirstymas faile studentai10000.txt: 3.14977s
-        
-        Skaitymas uztruko: 0.0379508s
-        Rusiavimas uztruko: 0.0677769s
-        Studentu skirstymas uztruko: 2.73259s
-        Rusiavimas ir skirstymas faile studentai10000.txt: 2.91936s
+        Skaitymas uztruko: 0.0496303s
+        Rusiavimas uztruko: 0.145951s
+        Studentu skirstymas uztruko: 0.0102278s
+        Rusiavimas ir skirstymas faile studentai10000.txt: 0.323194s
 
       studentai100000.txt
-        Skaitymas uztruko: 0.31286s
-        Rusiavimas uztruko: 0.750397s
-        Studentu skirstymas uztruko: 0.0598513s
-        Rusiavimas ir skirstymas faile studentai100000.txt: 1.91536s
+        Skaitymas uztruko: 0.399849s
+        Rusiavimas uztruko: 1.19425s
+        Studentu skirstymas uztruko: 0.0682982s
+        Rusiavimas ir skirstymas faile studentai100000.txt: 2.62569s
         
-        Skaitymas uztruko: 0.313872s
-        Rusiavimas uztruko: 0.782544s
-        Studentu skirstymas uztruko: 0.0642542s
-        Rusiavimas ir skirstymas faile studentai100000.txt: 2.11744s
+        Skaitymas uztruko: 0.601016s
+        Rusiavimas uztruko: 1.15939s
+        Studentu skirstymas uztruko: 0.112394s
+        Rusiavimas ir skirstymas faile studentai100000.txt: 2.84119s
         
-        Skaitymas uztruko: 0.311716s
-        Rusiavimas uztruko: 0.941106s
-        Studentu skirstymas uztruko: 0.0636214s
-        Rusiavimas ir skirstymas faile studentai100000.txt: 2.28177s
+        Skaitymas uztruko: 0.380664s
+        Rusiavimas uztruko: 1.45773s
+        Studentu skirstymas uztruko: 0.0857439s
+        Rusiavimas ir skirstymas faile studentai100000.txt: 2.8436s
 
       studentai100000.txt
-        Skaitymas uztruko: 3.02228s
-        Rusiavimas uztruko: 9.36674s
-        Studentu skirstymas uztruko: 0.551697s
-        Rusiavimas ir skirstymas faile studentai1000000.txt: 23.1929s
+        Skaitymas uztruko: 3.71174s
+        Rusiavimas uztruko: 11.7216s
+        Studentu skirstymas uztruko: 0.808025s
+        Rusiavimas ir skirstymas faile studentai1000000.txt: 25.702s
         
-        Skaitymas uztruko: 3.19861s
-        Rusiavimas uztruko: 10.2941s
-        Studentu skirstymas uztruko: 0.57321s
-        Rusiavimas ir skirstymas faile studentai1000000.txt: 24.3205s
+        Skaitymas uztruko: 4.42725s
+        Rusiavimas uztruko: 12.5398s
+        Studentu skirstymas uztruko: 0.77029s
+        Rusiavimas ir skirstymas faile studentai1000000.txt: 26.7935s
         
-        Skaitymas uztruko: 3.13635s
-        Rusiavimas uztruko: 9.62509s
-        Studentu skirstymas uztruko: 0.595201s
-        Rusiavimas ir skirstymas faile studentai1000000.txt: 23.6206s
+        Skaitymas uztruko: 4.22256s
+        Rusiavimas uztruko: 12.376s
+        Studentu skirstymas uztruko: 0.811648s
+        Rusiavimas ir skirstymas faile studentai1000000.txt: 26.7441s
+
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
@@ -592,88 +593,89 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 List:
       
     studentai1000.txt
-      Skaitymas uztruko (List): 0.0032541s
-      Rusiavimas uztruko (List): 0.0032606s
-      Studentu skirstymas uztruko (List): 0.0007553s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0247565s
+      Skaitymas uztruko (List): 0.0042908s
+      Rusiavimas uztruko (List): 0.0054309s
+      Studentu skirstymas uztruko (List): 1.906s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0282741s
       
-      Skaitymas uztruko (List): 0.0033668s
-      Rusiavimas uztruko (List): 0.0032723s
-      Studentu skirstymas uztruko (List): 0.0007255s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0333992s
+      Skaitymas uztruko (List): 0.0041809s
+      Rusiavimas uztruko (List): 0.0047067s
+      Studentu skirstymas uztruko (List): 2.106s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0249145s
       
-      Skaitymas uztruko (List): 0.0033141s
-      Rusiavimas uztruko (List): 0.003291s
-      Studentu skirstymas uztruko (List): 0.000971s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0205564s
+      Skaitymas uztruko (List): 0.0040831s
+      Rusiavimas uztruko (List): 0.0055742s
+      Studentu skirstymas uztruko (List): 1.706s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0284864s
 
     studentai10000.txt
-      Skaitymas uztruko (List): 0.0406568s
-      Rusiavimas uztruko (List): 0.0546622s
-      Studentu skirstymas uztruko (List): 0.0076416s
-      Rusiavimas ir skirstymas faile studentai10000.txt: 0.169502s
+      Skaitymas uztruko (List): 0.0487153s
+      Rusiavimas uztruko (List): 0.0707905s
+      Studentu skirstymas uztruko (List): 2.0000006s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.202996s
       
-      Skaitymas uztruko (List): 0.0402358s
-      Rusiavimas uztruko (List): 0.0594131s
-      Studentu skirstymas uztruko (List): 0.0052356s
-      Rusiavimas ir skirstymas faile studentai10000.txt: 0.173331s
+      Skaitymas uztruko (List): 0.0624651s
+      Rusiavimas uztruko (List): 0.124431s
+      Studentu skirstymas uztruko (List): 3.2006s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.302483s
       
-      Skaitymas uztruko (List): 0.0373565s
-      Rusiavimas uztruko (List): 0.0577427s
-      Studentu skirstymas uztruko (List): 0.0055412s
-      Rusiavimas ir skirstymas faile studentai10000.txt: 0.167829s
+      Skaitymas uztruko (List): 0.0451905s
+      Rusiavimas uztruko (List): 0.117506s
+      Studentu skirstymas uztruko (List): 3.700006s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.372197s
 
     studentai100000.txt
-      Skaitymas uztruko (List): 0.32125s
-      Rusiavimas uztruko (List): 0.677729s
-      Studentu skirstymas uztruko (List): 0.0729288s
-      Rusiavimas ir skirstymas faile studentai100000.txt: 1.95871s
+      Skaitymas uztruko (List): 0.505262s
+      Rusiavimas uztruko (List): 1.15595s
+      Studentu skirstymas uztruko (List): 3.206s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 2.95329s
       
-      Skaitymas uztruko (List): 0.317323s
-      Rusiavimas uztruko (List): 0.688935s
-      Studentu skirstymas uztruko (List): 0.0733059s
-      Rusiavimas ir skirstymas faile studentai100000.txt: 1.94539s
+      Skaitymas uztruko (List): 0.44816s
+      Rusiavimas uztruko (List): 0.992374s
+      Studentu skirstymas uztruko (List): 2.006s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 3.2279s
       
-      Skaitymas uztruko (List): 0.316549s
-      Rusiavimas uztruko (List): 0.678969s
-      Studentu skirstymas uztruko (List): 0.0706913s
-      Rusiavimas ir skirstymas faile studentai100000.txt: 2.01405s
+      Skaitymas uztruko (List): 0.521137s
+      Rusiavimas uztruko (List): 1.46345s
+      Studentu skirstymas uztruko (List): 3.1006s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 3.27211s
+
 
     studentai1000000.txt
-      Skaitymas uztruko (List): 3.18539s
-      Rusiavimas uztruko (List): 8.57168s
-      Studentu skirstymas uztruko (List): 0.694621s
-      Rusiavimas ir skirstymas faile studentai1000000.txt: 23.4408s
+      Skaitymas uztruko (List): 4.33173s
+      Rusiavimas uztruko (List): 11.4199s
+      Studentu skirstymas uztruko (List): 2.0000006s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 28.1543s
       
-      Skaitymas uztruko (List): 3.07927s
-      Rusiavimas uztruko (List): 8.79572s
-      Studentu skirstymas uztruko (List): 0.717412s
-      Rusiavimas ir skirstymas faile studentai1000000.txt: 23.082s
+      Skaitymas uztruko (List): 4.04639s
+      Rusiavimas uztruko (List): 11.3706s
+      Studentu skirstymas uztruko (List): 1.9006s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 27.3998s
       
-      Skaitymas uztruko (List): 3.08888s
-      Rusiavimas uztruko (List): 9.28851s
-      Studentu skirstymas uztruko (List): 0.684702s
-      Rusiavimas ir skirstymas faile studentai1000000.txt: 23.5083s
+      Skaitymas uztruko (List): 5.21437s
+      Rusiavimas uztruko (List): 15.4866s
+      Studentu skirstymas uztruko (List): 2.5e-06s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 32.5958s
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
 Deque:
   
     studentai1000.txt
-      Skaitymas uztruko (Deque): 0.0032761s
-      Rusiavimas uztruko (Deque): 0.0049549s
-      Studentu skirstymas uztruko (Deque): 0.0006636s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0260502s
+      Skaitymas uztruko (Deque): 0.0073875s
+      Rusiavimas uztruko (Deque): 0.0128828s
+      Studentu skirstymas uztruko (Deque): 1.08005s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0363177s
       
-      Skaitymas uztruko (Deque): 0.0032177s
-      Rusiavimas uztruko (Deque): 0.0049325s
-      Studentu skirstymas uztruko (Deque): 0.0005361s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0210839s
+      Skaitymas uztruko (Deque): 0.0040566s
+      Rusiavimas uztruko (Deque): 0.0117809s
+      Studentu skirstymas uztruko (Deque): 4.42005s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.031623s
       
-      Skaitymas uztruko (Deque): 0.0032854s
-      Rusiavimas uztruko (Deque): 0.0047742s
-      Studentu skirstymas uztruko (Deque): 0.0008368s
-      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0255385s
+      Skaitymas uztruko (Deque): 0.0039371s
+      Rusiavimas uztruko (Deque): 0.0118714s
+      Studentu skirstymas uztruko (Deque): 5.1006s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0262343s
 
     studentai10000.txt
       Skaitymas uztruko (Deque): 0.0392094s
