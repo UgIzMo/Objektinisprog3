@@ -1043,12 +1043,9 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 4. Susitvarkę tai, grįžtame į savo turimą projektą failų naršyklėje.
 5. Nukopijuojame savo projekto kelią su visais failais (ĮSKAITANT MAKEFILE!)
 6. Atsidarome CMD (Command Prompt).
-7. Įveskite 'cd ' ir įklijuokite kelią.
-8. Dabar paspauskite Enter ir tiesiog įsitikiname, kad esate tinkamoje vietoje, įrašome 'ls' ir patikriname, ar visi failai yra ten.
-9. Dabar įvedame 'make' ir palaukiame.
-10. Kai viskas baigta, įvedame 'main.exe', nes tai yra mano tikslinis/nukreipiamasis makefile (pagrindinis failas, į kurį sudėti visi kiti failai)
-11. Jeigu viskas sėkminga, galite pridėti 'run' prie kelio.
-
+7. Įveskite 'cd ' ir įklijuokite kelią. (cd C:\Users\Asus\Desktop\II pusmetis\bandymai\V1.0_galutinis)
+8. Tuomet parašome „mingw32-make“
+9. O vėliau „programa.exe“
 
 ### Išmanusis būdas, kurį atradau pati
 1. Atsisiųskite Xcode arba MinGW kompiliatorių.
