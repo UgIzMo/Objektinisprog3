@@ -752,28 +752,6 @@ studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad t
 | Rūšiavimas ir skirstymas į failus | 0.036620s         | 2.2724293333s      | 3.548804s           | 39.036138s           |
 
 
-    Vector:
-    Pateikia panašius rezultatus kaip List ir Deque.
-    Naudojamas pagal nurodytus testus.
-    Vidutiniškai lėtesnis nei List ir Deque, ypač didesniuose failuose.
-    Atrodo, kad gali būti efektyvesnis mažesniuose failuose, tačiau praranda greitį, kai failo dydis didėja.
-    
-    List:
-    Greičiausias studentų skirstymo veiksmas.
-    Vidutiniškai greitesnis nei Vector, tačiau lėtesnis nei Deque.
-    Efektyvus naudojant mažesnius failus, bet lėtėja su didesniais failais.
-    Turi vidutinį naudojimą.
-    
-    Deque:
-    Vidutiniškai greitesnis nei Vector, ypač didesniuose failuose.
-    Turi efektyvų naudojimą tiek mažesniuose, tiek didesniuose failuose.
-    Skirstymo operacijų greitis vidutiniškai panašus į List, bet visiškai efektyvus su didelėmis duomenų struktūromis.
-    Atrodo, kad yra efektyviausias konteineris, nes išlaiko greitį ir efektyvumą su dideliais failais.
-
-Remiantis pateiktais duomenimis, galima padaryti šią išvadą: 
-Deque yra efektyviausias naudoti konteineris, nes jis pasižymi greitu įterpimu/deletinimu tiek priekyje, tiek gale, bei greitu atsitiktinio elemento prieigos laiku. 
-Vector ir List taip pat gali būti naudojami, ypač su mažesniais duomenų kiekiais, bet praranda efektyvumą su didesniais failais.
-
 
 >[!NOTE]
  >Atsižvelgiant į visus veiksnius (skaitymo laiką, rūšiavimo laiką, elemento pašalinimo laiką), efektyviausia strategija yra naudoti Vektoriaus konteinerį. 
