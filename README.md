@@ -727,24 +727,54 @@ Deque:
 
 studentai10000000.txt: šis failo dydis mano kompiuteriui yra per didelis, tad testavimo su juo atlikti nepavyko, nes jo mano kompiuteris net nesugeneruoja.
 
+## Vector
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0036713667s     | 0.0416054667s      | 0.3778433333s       | 3.254186s            |
+| Rusiavimas                        | 0.0086140667s     | 0.1148871667s      | 1.270156s           | 11.3391233333s       |
+| Studentų skirstymas               | 0.0015532667s     | 2.0638307333s      | 0.0882077s          | 0.6575311667s        |
+| Rūšiavimas ir skirstymas į failus | 0.0401114667s     | 2.535923s          | 2.167458s           | 27.0033666667s       |
+
+## List
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0041866s        | 0.0532449667s      | 0.497743s           | 3.2855483333s        |
+| Rusiavimas                        | 0.0113381s        | 0.1194731s         | 1.212853s           | 12.0284666667s       |
+| Studentų skirstymas               | 2.0046028667s     | 2.4869362333s      | 2.7699343667s       | 2.1357673667s        |
+| Rūšiavimas ir skirstymas į failus | 0.0320404667s     | 1.5009323333s      | 2.0974203333s       | 29.8925556667s       |
+
+## Deque
+| Veiksmas                          | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------------------------|-------------------|--------------------|---------------------|----------------------|
+| Skaitymas                         | 0.0051287667s     | 0.0571438s         | 0.4968816667s       | 3.345053s            |
+| Rusiavimas                        | 0.0130797667s     | 0.1185526667s      | 1.5249633333s       | 15.1304446667s       |
+| Studentų skirstymas               | 0.0196872s        | 3.191681s          | 5.267135s           | 4.195545s            |
+| Rūšiavimas ir skirstymas į failus | 0.036620s         | 2.2724293333s      | 3.548804s           | 39.036138s           |
 
 
-    Vector: 
-    Naudojant vektorių, skaičiavimo laikas didėja kartu su studentų kiekiu dėl lėtesnio elemento pašalinimo. 
-    Tačiau skaitymo ir rūšiavimo laikas nėra labai didelis, nes vektorius turi greitą prieigą.
-    Bendras veikimo laikas su dideliais failais gali būti ilgesnis nei su kitais konteineriais dėl lėto elemento pašalinimo. 
-    List: 
-    Sąrašo naudojimas leidžia greitai šalinti elementus, todėl studentų skirstymas į "kietiakus" ir "vargšiukus" yra efektyvus. 
-    Tačiau rūšiavimo laikas gali būti ilgesnis nei su vektoriumi dėl prieigos, ypač su dideliais failais. 
-    Deque: 
-    Deque pasižymi geresniu nei vektorius atsitiktiniu prieigų laiku, tačiau jo naudojimas gali būti ne tokias efektyvus kaip sąrašo. 
-    Studentų skirstymo ir rūšiavimo laikas yra vidutiniškai greitas, tačiau gali būti šiek tiek ilgesnis nei su sąrašu. 
+    Vector:
+    Pateikia panašius rezultatus kaip List ir Deque.
+    Naudojamas pagal nurodytus testus.
+    Vidutiniškai lėtesnis nei List ir Deque, ypač didesniuose failuose.
+    Atrodo, kad gali būti efektyvesnis mažesniuose failuose, tačiau praranda greitį, kai failo dydis didėja.
     
-    Galutinė išvada: 
-    Atsižvelgiant į visus faktorius (skaitymo laiką, rūšiavimo laiką, elementų pašalinimo laiką), efektyviausia strategija yra naudoti List konteinerį. 
-    Jis leidžia efektyviai šalinti elementus ir rūšiuoti juos, nors rūšiavimo laikas gali būti šiek tiek ilgesnis nei su vektoriumi. 
-    Tačiau su dideliais failais, vektorius gali tapti labiau nepatogus dėl lėto elemento pašalinimo.
+    List:
+    Greičiausias studentų skirstymo veiksmas.
+    Vidutiniškai greitesnis nei Vector, tačiau lėtesnis nei Deque.
+    Efektyvus naudojant mažesnius failus, bet lėtėja su didesniais failais.
+    Turi vidutinį naudojimą.
     
+    Deque:
+    Vidutiniškai greitesnis nei Vector, ypač didesniuose failuose.
+    Turi efektyvų naudojimą tiek mažesniuose, tiek didesniuose failuose.
+    Skirstymo operacijų greitis vidutiniškai panašus į List, bet visiškai efektyvus su didelėmis duomenų struktūromis.
+    Atrodo, kad yra efektyviausias konteineris, nes išlaiko greitį ir efektyvumą su dideliais failais.
+
+Remiantis pateiktais duomenimis, galima padaryti šią išvadą: 
+Deque yra efektyviausias naudoti konteineris, nes jis pasižymi greitu įterpimu/deletinimu tiek priekyje, tiek gale, bei greitu atsitiktinio elemento prieigos laiku. 
+Vector ir List taip pat gali būti naudojami, ypač su mažesniais duomenų kiekiais, bet praranda efektyvumą su didesniais failais.
+
+
 >[!NOTE]
  >Atsižvelgiant į visus veiksnius (skaitymo laiką, rūšiavimo laiką, elemento pašalinimo laiką), efektyviausia strategija yra naudoti Vektoriaus konteinerį. 
   Nepaisant galimų sulėtėjimų elemento pašalinimo atveju, vektoriai išsiskiria greitu skaitymo ir rūšiavimo laiku dėl greito prieigos galimybių. 
