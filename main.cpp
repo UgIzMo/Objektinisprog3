@@ -7,8 +7,7 @@
 #include "functions_old.h"
 #include "functions.h"
 #include "functions_vector.h"
-#include "functions_deque.h"
-#include "functions_list.h"
+
 
 using namespace std;
 
@@ -67,13 +66,16 @@ int main()
                         Studentas studentas;
 
                         cout << "Iveskite studento varda: ";
-                        cin >> studentas.vardas;
+                        string vardas;
+                        cin >> vardas;
+                        studentas.setVardas(vardas);
 
                         cout << "Iveskite studento pavarde: ";
-                        cin >> studentas.pavarde;
+                        string pavarde;
+                        cin >> pavarde;
+                        studentas.setPavarde(pavarde);
 
-                        studentas.namuDarbai.clear();
-
+                        studentas.setNamuDarbai({}); // Clear previous data
                         int pazymys;
                         cout << "Iveskite namu darbu rezultatus (iveskite 0 jei baigete ivedima): " << endl;
                         int k = 1;
@@ -81,52 +83,29 @@ int main()
                         while (true)
                         {
                             cout << k << "-asis pazymys: ";
-                            try
+                            cin >> pazymys;
+                            if (pazymys == 0)
                             {
-                                cin >> pazymys;
-                                if (!cin)
-                                {
-                                    throw runtime_error("Neteisingas ivedimas. Iveskite skaiciu.");
-                                }
-                                if (pazymys == 0)
-                                {
-                                    break;
-                                }
-                                if (pazymys < 1 || pazymys > 10)
-                                {
-                                    throw runtime_error("Neteisingas pazymys. Iveskite skaiciu nuo 1 iki 10.");
-                                }
-                                studentas.namuDarbai.push_back(pazymys);
-                                k++;
+                                break;
                             }
-                            catch (const std::exception &e)
+                            if (pazymys < 1 || pazymys > 10)
                             {
-                                cerr << "Klaida: " << e.what() << endl;
-                                cin.clear();
-                                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                cout << "Neteisingas pazymys. Iveskite skaiciu nuo 1 iki 10." << endl;
+                                continue;
                             }
+                            studentas.getNamuDarbai().push_back(pazymys);
+                            k++;
                         }
 
                         cout << "Iveskite egzamino rezultata: ";
-                        try
+                        int egzaminas;
+                        cin >> egzaminas;
+                        if (egzaminas < 1 || egzaminas > 10)
                         {
-                            cin >> studentas.egzaminas;
-                            if (!cin)
-                            {
-                                throw runtime_error("Neteisingas ivedimas. Iveskite skaiciu.");
-                            }
-                            if (studentas.egzaminas < 1 || studentas.egzaminas > 10)
-                            {
-                                throw runtime_error("Neteisingas egzamino rezultatas. Iveskite skaiciu nuo 1 iki 10.");
-                            }
+                            cout << "Neteisingas egzamino rezultatas. Iveskite skaiciu nuo 1 iki 10." << endl;
+                            continue;
                         }
-                        catch (const std::exception &e)
-                        {
-                            cerr << "Klaida: " << e.what() << endl;
-                            cin.clear();
-                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                            continue; 
-                        }
+                        studentas.setEgzaminas(egzaminas);
 
                         studentai.push_back(studentas);
 
@@ -149,22 +128,22 @@ int main()
                 {
                     for (auto &studentas : studentai)
                     {
-                        auto startTest = chrono::high_resolution_clock::now(); // Pradedamas laiko skaiciavimas testui
+                        auto startTest = chrono::high_resolution_clock::now();
 
-                        atsitiktiniai(studentas);
-                        cout << "Studentas: \nEgzaminas: " << studentas.egzaminas
+                        studentas.atsitiktiniai();
+                        cout << "Studentas: \nEgzaminas: " << studentas.getEgzaminas()
                              << "\nNamu darbu pazymiai: ";
-                        for (int pazymys : studentas.namuDarbai)
+                        for (int pazymys : studentas.getNamuDarbai())
                         {
                             cout << pazymys << " ";
                         }
                         cout << "\n\n";
 
-                        auto endTest = chrono::high_resolution_clock::now();     // Baigiamas laiko skaiciavimas testui
-                        chrono::duration<double> timeTest = endTest - startTest; // Laikas testui
-                        double laikasTest = timeTest.count();                    // Laikas testui
-                        visoLaikoSuma += laikasTest;                             // Pridedamas laikas prie viso laiko sumos
-                        testuSkaicius++;                                         // Pridedamas vienetinis testų skaičius
+                        auto endTest = chrono::high_resolution_clock::now();
+                        chrono::duration<double> timeTest = endTest - startTest;
+                        double laikasTest = timeTest.count();
+                        visoLaikoSuma += laikasTest;
+                        testuSkaicius++;
                     }
                 }
                 catch (const std::exception &e)
@@ -178,7 +157,7 @@ int main()
             {
                 try
                 {
-                    auto startTest = chrono::high_resolution_clock::now(); // Pradedamas laiko skaiciavimas testui
+                    auto startTest = chrono::high_resolution_clock::now();
 
                     cout << fixed << setprecision(2);
                     cout << "Studentu galutiniai balai:\n";
@@ -190,22 +169,22 @@ int main()
                     for (int i = 0; i < 6; i++)
                     {
                         Studentas naujasStudentas;
-                        atsitiktiniaiStudentai(naujasStudentas);
+                        naujasStudentas.atsitiktiniaiStudentai(); 
                         studentai.push_back(naujasStudentas);
 
-                        double galutinisVidurkis = skaiciuotiGalutini(naujasStudentas.namuDarbai, naujasStudentas.egzaminas, true);
-                        double galutineMediana = skaiciuotiGalutini(naujasStudentas.namuDarbai, naujasStudentas.egzaminas, false);
-                        cout << left << setw(15) << naujasStudentas.vardas << setw(15)
-                             << naujasStudentas.pavarde << setw(20) << galutinisVidurkis << setw(20)
+                        double galutinisVidurkis = naujasStudentas.skaiciuotiGalutini(true);
+                        double galutineMediana = naujasStudentas.skaiciuotiGalutini(false);
+                        cout << left << setw(15) << naujasStudentas.getVardas() << setw(15)
+                             << naujasStudentas.getPavarde() << setw(20) << galutinisVidurkis << setw(20)
                              << galutineMediana << "\n";
                     }
                     cout << "----------------------------------------------------------------\n";
 
-                    auto endTest = chrono::high_resolution_clock::now();     // Baigiamas laiko skaiciavimas testui
-                    chrono::duration<double> timeTest = endTest - startTest; // Laikas testui
-                    double laikasTest = timeTest.count();                    // Laikas testui
-                    visoLaikoSuma += laikasTest;                             // Pridedamas laikas prie viso laiko sumos
-                    testuSkaicius++;                                         // Pridedamas vienetinis testų skaičius
+                    auto endTest = chrono::high_resolution_clock::now();
+                    chrono::duration<double> timeTest = endTest - startTest;
+                    double laikasTest = timeTest.count();
+                    visoLaikoSuma += laikasTest;
+                    testuSkaicius++;
                 }
                 catch (const std::exception &e)
                 {
