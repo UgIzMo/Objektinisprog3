@@ -72,7 +72,7 @@ void performAction(Action actionChoice, const std::vector<int>& sizes) {
             generateStudentFilesVector(size);
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
-            std::cout << "Failu generavimas uztruko " << size << ": " << elapsed.count() << "s\n";
+            std::cout << std::fixed << std::setprecision(7) << "Failu generavimas uztruko " << size << ": " << elapsed.count() << "s\n";
         }
     } else if (actionChoice == Action::Sort) {
         std::string filename = getSortingFileChoice();
@@ -83,7 +83,7 @@ void performAction(Action actionChoice, const std::vector<int>& sizes) {
             rusiuotStudentusVector3(filename); 
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
-            std::cout << "Rusiavimas ir skirstymas faile " << filename << ": " << elapsed.count() << "s\n";
+            std::cout << std::fixed << std::setprecision(7) << "Rusiavimas ir skirstymas faile " << filename << ": " << elapsed.count() << "s\n";
         }
     }
 }
