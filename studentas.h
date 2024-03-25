@@ -4,18 +4,38 @@
 #include <string>
 #include <vector>
 
-struct Studentas
+class Studentas
 {
+public:
+    Studentas();                                                      // Constructor
+    Studentas(const std::string &vardas, const std::string &pavarde); // Constructor with parameters
+
+    // Public member functions
+    void setVardas(const std::string &vardas);
+    std::string getVardas() const;
+
+    void setPavarde(const std::string &pavarde);
+    std::string getPavarde() const;
+
+    void setNamuDarbai(const std::vector<int> &nd);
+    std::vector<int> getNamuDarbai() const;
+
+    void setEgzaminas(int egzaminas);
+    int getEgzaminas() const;
+
+    double skaiciuotiVidurki() const;
+    double skaiciuotiMediana() const;
+    double skaiciuotiGalutini(bool naudotiVidurki) const;
+    void atsitiktiniai();
+    void atsitiktiniaiStudentai();
+    
+
+private:
+    // Private data members
     std::string vardas;
     std::string pavarde;
     std::vector<int> namuDarbai;
     int egzaminas;
 };
-
-double skaiciuotiVidurki(const std::vector<int>& nd);
-double skaiciuotiMediana(const std::vector<int>& namuDarbai);
-double skaiciuotiGalutini(const std::vector<int>& namuDarbai, int egzaminas, bool naudotiVidurki);
-void atsitiktiniai(Studentas& studentas);
-void atsitiktiniaiStudentai(Studentas& studentas);
 
 #endif // STUDENTAS_H
