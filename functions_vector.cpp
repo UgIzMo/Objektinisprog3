@@ -93,7 +93,7 @@ void rusiuotStudentusVector1(const std::string &failoVardas)
     readDataVector(studentai, failoVardas);
     auto readEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> readElapsed = readEnd - readStart;
-    std::cout << "Skaitymas uztruko: " << readElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Skaitymas uztruko: " << readElapsed.count() << "s\n";
 
     // Start timer for sorting data
     auto sortStart = std::chrono::high_resolution_clock::now();
@@ -101,7 +101,7 @@ void rusiuotStudentusVector1(const std::string &failoVardas)
               { return (0.4 * a.skaiciuotiVidurki() + 0.6 * a.getEgzaminas()) < (0.4 * b.skaiciuotiVidurki() + 0.6 * b.getEgzaminas()); });
     auto sortEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> sortElapsed = sortEnd - sortStart;
-    std::cout << "Rusiavimas uztruko: " << sortElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Rusiavimas uztruko: " << sortElapsed.count() << "s\n";
 
     // Start timer for dividing students
     auto divideStart = std::chrono::high_resolution_clock::now();
@@ -120,7 +120,7 @@ void rusiuotStudentusVector1(const std::string &failoVardas)
     }
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
-    std::cout << "Studentu skirstymas uztruko: " << divideElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Studentu skirstymas uztruko: " << divideElapsed.count() << "s\n";
 
     // Writing sorted students into separate files
     std::ofstream kietiakaiFile("kietiakai.txt"), vargsiukaiFile("vargsiukai.txt");
@@ -155,7 +155,7 @@ void rusiuotStudentusVector2(const std::string &failoVardas)
     readDataVector(studentai, failoVardas);
     auto readEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> readElapsed = readEnd - readStart;
-    std::cout << "Skaitymas uztruko: " << readElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Skaitymas uztruko: " << readElapsed.count() << "s\n";
 
     // Start timer for sorting data
     auto sortStart = std::chrono::high_resolution_clock::now();
@@ -164,7 +164,7 @@ void rusiuotStudentusVector2(const std::string &failoVardas)
     });
     auto sortEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> sortElapsed = sortEnd - sortStart;
-    std::cout << "Rusiavimas uztruko: " << sortElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Rusiavimas uztruko: " << sortElapsed.count() << "s\n";
 
     // Start timer for dividing students
     auto divideStart = std::chrono::high_resolution_clock::now();
@@ -186,7 +186,7 @@ void rusiuotStudentusVector2(const std::string &failoVardas)
 
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
-    std::cout << "Studentu skirstymas uztruko: " << divideElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Studentu skirstymas uztruko: " << divideElapsed.count() << "s\n";
 
     // Writing sorted students into separate files
     std::ofstream kietiakaiFile("kietiakai.txt"), vargsiukaiFile("vargsiukai.txt");
@@ -221,7 +221,7 @@ void rusiuotStudentusVector3(const std::string &failoVardas)
     readDataVector(studentai, failoVardas);
     auto readEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> readElapsed = readEnd - readStart;
-    std::cout << "Skaitymas uztruko (Vector): " << readElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Skaitymas uztruko (Vector): " << readElapsed.count() << "s\n";
 
     // Start timer for sorting data
     auto sortStart = std::chrono::high_resolution_clock::now();
@@ -230,7 +230,7 @@ void rusiuotStudentusVector3(const std::string &failoVardas)
     });
     auto sortEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> sortElapsed = sortEnd - sortStart;
-    std::cout << "Rusiavimas uztruko (Vector): " << sortElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Rusiavimas uztruko (Vector): " << sortElapsed.count() << "s\n";
 
     // Start timer for dividing students
     auto divideStart = std::chrono::high_resolution_clock::now();
@@ -242,7 +242,7 @@ void rusiuotStudentusVector3(const std::string &failoVardas)
     vargsiukai.assign(iter, studentai.end());
     auto divideEnd = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> divideElapsed = divideEnd - divideStart;
-    std::cout << "Skirstymas uztruko (Vector): " << divideElapsed.count() << "s\n";
+    std::cout << std::fixed << std::setprecision(7) << "Skirstymas uztruko (Vector): " << divideElapsed.count() << "s\n";
 
     // Writing sorted students into separate files
     std::ofstream kietiakaiFile("kietiakai.txt"), vargsiukaiFile("vargsiukai.txt");
