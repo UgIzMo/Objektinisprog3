@@ -152,7 +152,8 @@ Vector: (naudojau 3 strategiją iš v1.0)
 | Skirstymas                          | 0.0038718s        | 0.0053181s          | 0.0905247s          | 0.696916s            |
 | Rūšiavimas ir skirstymas faile      | 0.0251346s        | 0.187203s           | 2.08579s            | 21.5175s             |
 
-## Vector su klase:
+### Vector su klase:
+
 | Veiksmas                            | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
 |-------------------------------------|-------------------|--------------------|---------------------|----------------------|
 | Skaitymas                           | 0.0121924s        | 0.0793812s         | 0.6770433s          | 7.198465s            |
