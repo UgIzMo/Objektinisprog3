@@ -284,6 +284,8 @@ Vector: (naudojau 3 strategiją iš v1.0)
 | Skirstymas uztruko (Vector)        | 0.0000152s   | 0.0001270s   | 0.0000017s   | 0.0000016s   |
 | Rusiavimas ir skirstymas faile     | 0.0097141s   | 0.0758411s   | 0.6559339s   | 6.5841905s   |
 
+![image](https://github.com/UgIzMo/Objektinisprog2/assets/152986822/a85d8683-03ca-4603-bff6-c7b316404b28)
+
     
     Flag 01 pasižymi labai greitu duomenų rūšiavimu (sorting), kuris yra išskirtinai greitas net su dideliais duomenų kiekiais. 
     Tai gali būti naudinga, jei sistema dažnai naudoja rūšiavimo operacijas.
