@@ -9,6 +9,9 @@ Studentas::Studentas() : egzaminas(0) {}
 Studentas::Studentas(const std::string& vardas, const std::string& pavarde)
     : vardas(vardas), pavarde(pavarde), egzaminas(0) {}
 
+// Destructor
+Studentas::~Studentas() {}
+
 // Public member functions
 void Studentas::setVardas(const std::string& vardas) {
     this->vardas = vardas;
