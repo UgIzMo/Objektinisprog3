@@ -368,3 +368,6 @@ Vector: (naudojau 3 strategiją iš v1.0)
     Skirstymas uztruko (Vector): 0.797709s
     Rusiavimas ir skirstymas faile studentai1000000.txt: 23.7494s
 
+    ![image](https://github.com/UgIzMo/Objektinisprog2/assets/152986822/10a037db-f65a-4e76-b5d2-be142f508ed6)
+
+
