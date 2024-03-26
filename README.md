@@ -162,3 +162,28 @@ Vector: (naudojau 3 strategiją iš v1.0)
 | Rūšiavimas ir skirstymas faile      | 0.0150785s        | 0.0819302s         | 0.6791681s          | 7.1989373s           |
 
 
+    Efektyvumas: 
+    Vector su klase pasižymi didesniu efektyvumu nei Vector su struktūra visuose veiksmuose ir visuose failuose. 
+    Vidutiniškai skaitymas užtrunka 4 kartus ilgiau naudojant Vector su struktūra, o rūšiavimas ir skirstymas faile net 10 kartų ilgiau.
+    
+    Skaitymo laikas: 
+    Nepriklausomai nuo failo dydžio, skaitymo laikas naudojant Vector su klase yra reikšmingai didesnis nei naudojant Vector su struktūra.
+    
+    Rūšiavimas ir skirstymas faile: 
+    Šis veiksmas yra brangiausias tiek naudojant Vector su struktūra, tiek su klase. 
+    Tačiau, naudojant Vector su klase, jis užtrunka mažiau nei naudojant Vector su struktūra.
+    
+    Skirstymo laikas: 
+    Skirstymas užtrunka mažiau nei skaitymas ir rūšiavimas visais atvejais ir su abiem struktūromis. 
+    Tačiau, skirtumas tarp Vector su struktūra ir su klase yra nereikšmingas.
+    
+    Rūšiavimo laikas: 
+    Rūšiavimas užtrunka trumpiausią laiką iš visų veiksmų. 
+    Naudojant Vector su klase, šis veiksmas yra dar labiau optimizuotas ir užtrunka beveik nulinį laiką.
+    
+    Efektyvumo skirtumai didėjant failo dydžiui: 
+    Nepaisant didėjančio failo dydžio, efektyvumo skirtumai tarp Vector su klase ir su struktūra išlieka panašūs. 
+    Tačiau, naudojant Vector su struktūra, veiksmai tampa reikšmingai lėtesni.
+    
+    Iš šių išvadų galima daryti prielaidą, kad naudojant Vector su klase, galima pasiekti didesnį veiksmingumą ir greitį nei naudojant Vector su struktūra. 
+
