@@ -187,3 +187,71 @@ Vector: (naudojau 3 strategiją iš v1.0)
     
     Iš šių išvadų galima daryti prielaidą, kad naudojant Vector su klase, galima pasiekti didesnį veiksmingumą ir greitį nei naudojant Vector su struktūra. 
 
+
+Eksperimentas su flag'ais:
+
+01
+
+Skaitymas uztruko (Vector): 0.0069346s
+Rusiavimas uztruko (Vector): 0.0000058s
+Skirstymas uztruko (Vector): 0.0000123s
+Rusiavimas ir skirstymas faile studentai1000.txt: 0.0101802s
+
+Skaitymas uztruko (Vector): 0.0818425s
+Rusiavimas uztruko (Vector): 0.0000011s
+Skirstymas uztruko (Vector): 0.0000021s
+Rusiavimas ir skirstymas faile studentai10000.txt: 0.0841137s
+
+Skaitymas uztruko (Vector): 0.6699247s
+Rusiavimas uztruko (Vector): 0.0000006s
+Skirstymas uztruko (Vector): 0.0000021s
+Rusiavimas ir skirstymas faile studentai100000.txt: 0.6718357s
+
+Skaitymas uztruko (Vector): 6.6682522s
+Rusiavimas uztruko (Vector): 0.0000004s
+Skirstymas uztruko (Vector): 0.0000015s
+Rusiavimas ir skirstymas faile studentai1000000.txt: 6.6702568s
+
+02
+
+Skaitymas uztruko (Vector): 0.0079698s
+Rusiavimas uztruko (Vector): 0.0000305s
+Skirstymas uztruko (Vector): 0.0000183s
+Rusiavimas ir skirstymas faile studentai1000.txt: 0.0105668s
+
+Skaitymas uztruko (Vector): 0.0751332s
+Rusiavimas uztruko (Vector): 0.0000006s
+Skirstymas uztruko (Vector): 0.0000015s
+Rusiavimas ir skirstymas faile studentai10000.txt: 0.0775096s
+
+Skaitymas uztruko (Vector): 0.6578850s
+Rusiavimas uztruko (Vector): 0.0000005s
+Skirstymas uztruko (Vector): 0.0000020s
+Rusiavimas ir skirstymas faile studentai100000.txt: 0.6602256s
+
+Skaitymas uztruko (Vector): 6.5864492s
+Rusiavimas uztruko (Vector): 0.0000009s
+Skirstymas uztruko (Vector): 0.0000015s
+Rusiavimas ir skirstymas faile studentai1000000.txt: 6.5886644s
+
+03
+
+Skaitymas uztruko (Vector): 0.0067135s
+Rusiavimas uztruko (Vector): 0.0000113s
+Skirstymas uztruko (Vector): 0.0000152s
+Rusiavimas ir skirstymas faile studentai1000.txt: 0.0097141s
+
+Skaitymas uztruko (Vector): 0.0733475s
+Rusiavimas uztruko (Vector): 0.0000006s
+Skirstymas uztruko (Vector): 0.0001270s
+Rusiavimas ir skirstymas faile studentai10000.txt: 0.0758411s
+
+Skaitymas uztruko (Vector): 0.6536643s
+Rusiavimas uztruko (Vector): 0.0000005s
+Skirstymas uztruko (Vector): 0.0000017s
+Rusiavimas ir skirstymas faile studentai100000.txt: 0.6559339s
+
+Skaitymas uztruko (Vector): 6.5815596s
+Rusiavimas uztruko (Vector): 0.0000007s
+Skirstymas uztruko (Vector): 0.0000016s
+Rusiavimas ir skirstymas faile studentai1000000.txt: 6.5841905s
