@@ -188,7 +188,9 @@ Vector: (naudojau 3 strategiją iš v1.0)
     Iš šių išvadų galima daryti prielaidą, kad naudojant Vector su klase, galima pasiekti didesnį veiksmingumą ir greitį nei naudojant Vector su struktūra. 
 
 
+
     Eksperimentas su flag'ais:
+    Su klasėmis
     
 ### Flag 01 
     
@@ -300,4 +302,69 @@ Vector: (naudojau 3 strategiją iš v1.0)
     Jei rūšiavimas duomenų yra kritinė operacija, galbūt geriausia pasirinkti Flag 01. 
     Jei skaitomų duomenų greitis yra svarbiausias, Flag 02 galėtų būti geriausias pasirinkimas. 
     Jei efektyvus mokinių skirstymas yra pagrindinis prioritetas, tuomet geriausia būtų pasirinkti Flag 03.
+
+  Su struktūromis:
+
+ ### Flag 01 
+    Skaitymas uztruko (Vector): 0.0033097s
+    Rusiavimas uztruko (Vector): 0.0051793s
+    Skirstymas uztruko (Vector): 0.0009405s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0240453s
+    
+    Skaitymas uztruko (Vector): 0.0433573s
+    Rusiavimas uztruko (Vector): 0.0693692s
+    Skirstymas uztruko (Vector): 0.0064495s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.193511s
+    
+    Skaitymas uztruko (Vector): 0.325751s
+    Rusiavimas uztruko (Vector): 0.785876s
+    Skirstymas uztruko (Vector): 0.0901419s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 2.00657s
+    
+    Skaitymas uztruko (Vector): 3.10028s
+    Rusiavimas uztruko (Vector): 9.50956s
+    Skirstymas uztruko (Vector): 0.811582s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 23.4056s
+
+ ### Flag 02
+    Skaitymas uztruko (Vector): 0.0036692s
+    Rusiavimas uztruko (Vector): 0.0046932s
+    Skirstymas uztruko (Vector): 0.0009639s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0281482s
+    
+    Skaitymas uztruko (Vector): 0.0369655s
+    Rusiavimas uztruko (Vector): 0.0689622s
+    Skirstymas uztruko (Vector): 0.0077428s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.178479s
+    
+    Skaitymas uztruko (Vector): 0.316309s
+    Rusiavimas uztruko (Vector): 0.783843s
+    Skirstymas uztruko (Vector): 0.0902974s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 2.11135s
+    
+    Skaitymas uztruko (Vector): 3.16208s
+    Rusiavimas uztruko (Vector): 9.55881s
+    Skirstymas uztruko (Vector): 0.809942s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 23.6463s
+
+  ### Flag 03
+    Skaitymas uztruko (Vector): 0.0038644s
+    Rusiavimas uztruko (Vector): 0.0078124s
+    Skirstymas uztruko (Vector): 0.0008419s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0274917s
+    
+    Skaitymas uztruko (Vector): 0.0359233s
+    Rusiavimas uztruko (Vector): 0.0718192s
+    Skirstymas uztruko (Vector): 0.007244s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.181551s
+    
+    Skaitymas uztruko (Vector): 0.315474s
+    Rusiavimas uztruko (Vector): 0.786454s
+    Skirstymas uztruko (Vector): 0.0942303s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 2.02788s
+    
+    Skaitymas uztruko (Vector): 3.03208s
+    Rusiavimas uztruko (Vector): 9.56887s
+    Skirstymas uztruko (Vector): 0.797709s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 23.7494s
 
