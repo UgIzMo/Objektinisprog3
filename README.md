@@ -370,4 +370,60 @@ Vector: (naudojau 3 strategiją iš v1.0)
 
     ![image](https://github.com/UgIzMo/Objektinisprog2/assets/152986822/10a037db-f65a-4e76-b5d2-be142f508ed6)
 
+ ### Flag 01
+ 
+| Veiksmas        | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------|--------------------|---------------------|----------------------|---------------------|
+| Skaitymas       | 0.0033097s         | 0.0433573s          | 0.325751s           | 3.10028s             |
+| Rūšiavimas      | 0.0051793s         | 0.0693692s          | 0.785876s           | 9.50956s             |
+| Skirstymas      | 0.0009405s         | 0.0064495s          | 0.0901419s          | 0.811582s            |
+| Abu             | 0.0240453s         | 0.193511s           | 2.00657s            | 23.4056s             |
 
+
+ ### Flag 02
+
+| Veiksmas        | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------|--------------------|---------------------|----------------------|---------------------|
+| Skaitymas       | 0.0036692s         | 0.0369655s          | 0.316309s           | 3.16208s             |
+| Rūšiavimas      | 0.0046932s         | 0.0689622s          | 0.783843s           | 9.55881s             |
+| Skirstymas      | 0.0009639s         | 0.0077428s          | 0.0902974s          | 0.809942s            |
+| Abu             | 0.0281482s         | 0.178479s           | 2.11135s            | 23.6463s             |
+
+
+ ### Flag 03
+
+| Veiksmas       | studentai1000.txt | studentai10000.txt | studentai100000.txt | studentai1000000.txt |
+|-----------------|--------------------|---------------------|----------------------|---------------------|
+| Skaitymas       | 0.0038644s         | 0.0359233s          | 0.315474s           | 3.03208s             |
+| Rūšiavimas      | 0.0078124s         | 0.0718192s          | 0.786454s           | 9.56887s             |
+| Skirstymas      | 0.0008419s         | 0.007244s           | 0.0942303s          | 0.797709s            |
+| Abu             | 0.0274917s         | 0.181551s           | 2.02788s            | 23.7494s             |
+
+  Flag 01 parodė, kad skaitymo, rūšiavimo ir skirstymo operacijos atliekamos greičiau nei naudojant kitus flagus. 
+  Šis flagas buvo efektyviausias tiek mažesnių, tiek didesnių failų atžvilgiu.
+  Skaitymo, rūšiavimo ir skirstymo operacijų bendras laikas buvo mažiausias lyginant su kitais flagais. 
+  
+  Flag 02 pasižymėjo greitu skaitymo ir rūšiavimo veiksmų vykdymu, tačiau skirstymo operacija užtruko ilgiau nei naudojant kitus flagus. 
+  Bendras laikas buvo minimaliai didesnis nei su Flag 01, tačiau šis flagas vis tiek pasižymėjo gana efektyviu veikimu. 
+  
+  Flag 03 buvo lėtesnis nei kiti flagai, ypač esant dideliems failams. 
+  Skaitymo, rūšiavimo ir skirstymo operacijos užtruko ilgiau nei naudojant kitus flagus. 
+  Bendras laikas buvo didžiausias lyginant su kitais flagais. 
+  
+  Išvada: 
+  Jei svarbu maksimalus veikimo greitis, rekomenduojama naudoti Flag 01, kuris pasižymi geru veikimu tiek su mažais, tiek su dideliais failais. 
+  Tačiau, jei svarbu optimalus rūšiavimo veikimas, gali būti naudinga pasirinkti Flag 02, nors šis flagas gali užtrukti šiek tiek ilgiau skirstymo operacijos atlikimui. 
+  Flag 03 gali būti tinkamas, jei yra tam tikrų specifinių reikalavimų ar apribojimų, tačiau bendrai jis yra lėtesnis nei kiti flagai.
+
+    Flags eksperimento palyginimas tarp klasės ir struktūros naudojimo:
+    
+    Duomenų skaitymas:
+    Klasės metodas paprastai parodo greitesnius skaitymo laikus palyginti su struktūros metodu visų vėliavų atžvilgiu.
+    Duomenų rūšiavimas:
+    Struktūros metodas atrodo šiek tiek geriau veikia duomenų rūšiavimą visų vėliavų atžvilgiu, nors skirtumas nėra reikšmingas.
+    Studentų skaidymas:
+    Klasės metodas atrodo turi šiek tiek greitesnius laikus studentų skaidymui palyginti su struktūros metodu visų vėliavų atžvilgiu.
+    Bendrai
+    Bendrai, klasės metodas linkęs turėti geresnį veikimą, jei kalbame apie duomenų skaitymą ir studentų skaidymą, 
+    tuo tarpu struktūros metodas šiek tiek geriau veikia duomenų rūšiavimą. 
+    Tačiau skirtumai veikime tarp šių dviejų metodų yra santykinai nedideli ir gali skirtis priklausomai nuo konkrečių įgyvendinimų ir sistemos konfigūracijos.
