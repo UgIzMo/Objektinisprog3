@@ -76,71 +76,71 @@ Vector: (naudojau 3 strategiją iš v1.0)
     
   Testavimo rezultatai naudojant klasę:
     
-  Vector:
-
-  studentai1000.txt
-    Skaitymas uztruko (Vector): 0.0221134s 
-    Rusiavimas uztruko (Vector): 0.0000102s
-    Skirstymas uztruko (Vector): 0.0000101s
-    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0253457s
-
-    Skaitymas uztruko (Vector): 0.0075651s
-    Rusiavimas uztruko (Vector): 0.0000007s
-    Skirstymas uztruko (Vector): 0.0000018s
-    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0114621s
-    
-    Skaitymas uztruko (Vector): 0.0078987s
-    Rusiavimas uztruko (Vector): 0.0000005s
-    Skirstymas uztruko (Vector): 0.0000018s
-    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0104276s
-
-  studentai10000.txt
-    Skaitymas uztruko (Vector): 0.0799754s
-    Rusiavimas uztruko (Vector): 0.0000021s
-    Skirstymas uztruko (Vector): 0.0000020s
-    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0820118s
-    
-    Skaitymas uztruko (Vector): 0.0804271s
-    Rusiavimas uztruko (Vector): 0.0000006s
-    Skirstymas uztruko (Vector): 0.0000017s
-    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0835031s
-    
-    Skaitymas uztruko (Vector): 0.0787410s
-    Rusiavimas uztruko (Vector): 0.0000008s
-    Skirstymas uztruko (Vector): 0.0000019s
-    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0812756s
-
-  studentai100000.txt
-    Skaitymas uztruko (Vector): 0.6802234s
-    Rusiavimas uztruko (Vector): 0.0000005s
-    Skirstymas uztruko (Vector): 0.0000024s
-    Rusiavimas ir skirstymas faile studentai100000.txt: 0.6823547s
-    
-    Skaitymas uztruko (Vector): 0.6741534s
-    Rusiavimas uztruko (Vector): 0.0000006s
-    Skirstymas uztruko (Vector): 0.0000015s
-    Rusiavimas ir skirstymas faile studentai100000.txt: 0.6774207s
-    
-    Skaitymas uztruko (Vector): 0.6787532s
-    Rusiavimas uztruko (Vector): 0.0000005s
-    Skirstymas uztruko (Vector): 0.0000014s
-    Rusiavimas ir skirstymas faile studentai100000.txt: 0.6807290s
-
-  studentai1000000.txt
-    Skaitymas uztruko (Vector): 6.6421388s
-    Rusiavimas uztruko (Vector): 0.0000070s
-    Skirstymas uztruko (Vector): 0.0000020s
-    Rusiavimas ir skirstymas faile studentai1000000.txt: 6.6441141s 
-    
-    Skaitymas uztruko (Vector): 7.4105007s
-    Rusiavimas uztruko (Vector): 0.0000005s
-    Skirstymas uztruko (Vector): 0.0000016s
-    Rusiavimas ir skirstymas faile studentai1000000.txt: 7.4127964s
-    
-    Skaitymas uztruko (Vector): 7.5417555s
-    Rusiavimas uztruko (Vector): 0.0000005s
-    Skirstymas uztruko (Vector): 0.0000016s
-    Rusiavimas ir skirstymas faile studentai1000000.txt: 7.5439013s
+    Vector:
+  
+    studentai1000.txt
+      Skaitymas uztruko (Vector): 0.0221134s 
+      Rusiavimas uztruko (Vector): 0.0000102s
+      Skirstymas uztruko (Vector): 0.0000101s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0253457s
+  
+      Skaitymas uztruko (Vector): 0.0075651s
+      Rusiavimas uztruko (Vector): 0.0000007s
+      Skirstymas uztruko (Vector): 0.0000018s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0114621s
+      
+      Skaitymas uztruko (Vector): 0.0078987s
+      Rusiavimas uztruko (Vector): 0.0000005s
+      Skirstymas uztruko (Vector): 0.0000018s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0104276s
+  
+    studentai10000.txt
+      Skaitymas uztruko (Vector): 0.0799754s
+      Rusiavimas uztruko (Vector): 0.0000021s
+      Skirstymas uztruko (Vector): 0.0000020s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0820118s
+      
+      Skaitymas uztruko (Vector): 0.0804271s
+      Rusiavimas uztruko (Vector): 0.0000006s
+      Skirstymas uztruko (Vector): 0.0000017s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0835031s
+      
+      Skaitymas uztruko (Vector): 0.0787410s
+      Rusiavimas uztruko (Vector): 0.0000008s
+      Skirstymas uztruko (Vector): 0.0000019s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0812756s
+  
+    studentai100000.txt
+      Skaitymas uztruko (Vector): 0.6802234s
+      Rusiavimas uztruko (Vector): 0.0000005s
+      Skirstymas uztruko (Vector): 0.0000024s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.6823547s
+      
+      Skaitymas uztruko (Vector): 0.6741534s
+      Rusiavimas uztruko (Vector): 0.0000006s
+      Skirstymas uztruko (Vector): 0.0000015s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.6774207s
+      
+      Skaitymas uztruko (Vector): 0.6787532s
+      Rusiavimas uztruko (Vector): 0.0000005s
+      Skirstymas uztruko (Vector): 0.0000014s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.6807290s
+  
+    studentai1000000.txt
+      Skaitymas uztruko (Vector): 6.6421388s
+      Rusiavimas uztruko (Vector): 0.0000070s
+      Skirstymas uztruko (Vector): 0.0000020s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 6.6441141s 
+      
+      Skaitymas uztruko (Vector): 7.4105007s
+      Rusiavimas uztruko (Vector): 0.0000005s
+      Skirstymas uztruko (Vector): 0.0000016s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 7.4127964s
+      
+      Skaitymas uztruko (Vector): 7.5417555s
+      Rusiavimas uztruko (Vector): 0.0000005s
+      Skirstymas uztruko (Vector): 0.0000016s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 7.5439013s
 
 
 ### Vector su struktūra:
@@ -188,9 +188,9 @@ Vector: (naudojau 3 strategiją iš v1.0)
     Iš šių išvadų galima daryti prielaidą, kad naudojant Vector su klase, galima pasiekti didesnį veiksmingumą ir greitį nei naudojant Vector su struktūra. 
 
 
-
-    Eksperimentas su flag'ais:
-    Su klasėmis
+  
+## Eksperimentas su flag'ais:
+Su klasėmis:
     
 ### Flag 01 
     
@@ -368,7 +368,7 @@ Vector: (naudojau 3 strategiją iš v1.0)
     Skirstymas uztruko (Vector): 0.797709s
     Rusiavimas ir skirstymas faile studentai1000000.txt: 23.7494s
 
-    ![image](https://github.com/UgIzMo/Objektinisprog2/assets/152986822/10a037db-f65a-4e76-b5d2-be142f508ed6)
+![image](https://github.com/UgIzMo/Objektinisprog2/assets/152986822/10a037db-f65a-4e76-b5d2-be142f508ed6)
 
  ### Flag 01
  
