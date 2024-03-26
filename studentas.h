@@ -28,8 +28,9 @@ public:
     double skaiciuotiGalutini(bool naudotiVidurki) const;
     void atsitiktiniai();
     void atsitiktiniaiStudentai();
-    
 
+    ~Studentas();
+    
 private:
     // Private data members
     std::string vardas;
