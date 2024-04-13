@@ -78,16 +78,13 @@ void performAction(Action actionChoice, const std::vector<int>& sizes) {
         std::string filename = getSortingFileChoice();
         if (!filename.empty()) {
             auto start = std::chrono::high_resolution_clock::now();
-            //rusiuotStudentusVector1(filename); 
-            //rusiuotStudentusVector2(filename); 
-            rusiuotStudentusVector3(filename); 
+            rusiuotStudentusVector1(filename); // Choose the sorting strategy to use
             auto end = std::chrono::high_resolution_clock::now();
             std::chrono::duration<double> elapsed = end - start;
             std::cout << std::fixed << std::setprecision(7) << "Rusiavimas ir skirstymas faile " << filename << ": " << elapsed.count() << "s\n";
         }
     }
 }
-
 
 void runApp() {
     std::vector<int> sizes = {1000, 10000, 100000, 1000000, 10000000};
@@ -107,7 +104,7 @@ void runApp() {
         if (userChoice == 'N' || userChoice == 'n') {
             exitProgram = true;
         }
-        else if (userChoice == 'T' || userChoice == 'T')
+        else if (userChoice == 'T' || userChoice == 't')
         {
             continue;
         }
