@@ -1,11 +1,10 @@
 #include "studentas.h"
 #include <algorithm>
-#include <cstdlib> // For rand()
+#include <cstdlib> 
 
-// Constructor
+// Constructors
 Studentas::Studentas() : egzaminas(0) {}
 
-// Constructor with parameters
 Studentas::Studentas(const std::string& vardas, const std::string& pavarde)
     : vardas(vardas), pavarde(pavarde), egzaminas(0) {}
 
@@ -14,8 +13,38 @@ Studentas::~Studentas() {
     namuDarbai.clear();
 }
 
+// Copy Constructor
+Studentas::Studentas(const Studentas& other)
+    : vardas(other.vardas), pavarde(other.pavarde), namuDarbai(other.namuDarbai), egzaminas(other.egzaminas) {}
 
-// Public member functions
+// Copy Assignment Operator
+Studentas& Studentas::operator=(const Studentas& other) {
+    if (this != &other) {
+        vardas = other.vardas;
+        pavarde = other.pavarde;
+        namuDarbai = other.namuDarbai;
+        egzaminas = other.egzaminas;
+    }
+    return *this;
+}
+
+// Move Constructor
+Studentas::Studentas(Studentas&& other) noexcept
+    : vardas(std::move(other.vardas)), pavarde(std::move(other.pavarde)),
+      namuDarbai(std::move(other.namuDarbai)), egzaminas(other.egzaminas) {}
+
+// Move Assignment Operator
+Studentas& Studentas::operator=(Studentas&& other) noexcept {
+    if (this != &other) {
+        vardas = std::move(other.vardas);
+        pavarde = std::move(other.pavarde);
+        namuDarbai = std::move(other.namuDarbai);
+        egzaminas = other.egzaminas;
+    }
+    return *this;
+}
+
+// Getters and Setters
 void Studentas::setVardas(const std::string& vardas) {
     this->vardas = vardas;
 }
@@ -48,6 +77,7 @@ int Studentas::getEgzaminas() const {
     return egzaminas;
 }
 
+// Calculations
 double Studentas::skaiciuotiVidurki() const {
     double suma = 0.0;
     for (int pazymys : namuDarbai) {
@@ -69,6 +99,7 @@ double Studentas::skaiciuotiGalutini(bool naudotiVidurki) const {
     return galutinis;
 }
 
+// Randomization
 void Studentas::atsitiktiniai() {
     namuDarbai.resize(rand() % 10 + 1);
     for (int& pazymys : namuDarbai) {
@@ -85,4 +116,24 @@ void Studentas::atsitiktiniaiStudentai() {
     vardas = vardai[vardasIndex];
     pavarde = pavardes[pavardeIndex];
     atsitiktiniai();
+}
+
+// Output Operator (Serialization)
+std::ostream& operator<<(std::ostream& os, const Studentas& student) {
+    os << student.vardas << " " << student.pavarde << " " << student.egzaminas << " ";
+    for (int pazymys : student.namuDarbai) {
+        os << pazymys << " ";
+    }
+    return os;
+}
+
+// Input Operator (Deserialization)
+std::istream& operator>>(std::istream& is, Studentas& student) {
+    is >> student.vardas >> student.pavarde >> student.egzaminas;
+    student.namuDarbai.clear();
+    int pazymys;
+    while (is >> pazymys) {
+        student.namuDarbai.push_back(pazymys);
+    }
+    return is;
 }
