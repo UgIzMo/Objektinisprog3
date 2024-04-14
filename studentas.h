@@ -1,11 +1,12 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 
+#include "zmogus.h" // Include base class if needed
 #include <iostream>
 #include <string>
 #include <vector>
 
-class Studentas {
+class Studentas : public Zmogus {
 public:
     // Constructors
     Studentas();
@@ -13,18 +14,6 @@ public:
 
     // Destructor
     ~Studentas();
-
-    // Copy Constructor
-    Studentas(const Studentas& other);
-
-    // Copy Assignment Operator
-    Studentas& operator=(const Studentas& other);
-
-    // Move Constructor
-    Studentas(Studentas&& other) noexcept;
-
-    // Move Assignment Operator
-    Studentas& operator=(Studentas&& other) noexcept;
 
     // Getters and Setters
     void setVardas(const std::string& vardas);
@@ -35,6 +24,10 @@ public:
     std::vector<int> getNamuDarbai() const;
     void setEgzaminas(int egzaminas);
     int getEgzaminas() const;
+
+    // Implementing Zmogus virtual functions
+    int getAge() const override; // Override Zmogus method to get age
+    std::string getName() const override;
 
     // Calculations
     double skaiciuotiVidurki() const;
@@ -54,6 +47,7 @@ private:
     std::string pavarde;
     std::vector<int> namuDarbai;
     int egzaminas;
+    int age; // Member variable to store age
 };
 
 #endif
