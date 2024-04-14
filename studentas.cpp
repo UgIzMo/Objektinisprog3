@@ -4,45 +4,14 @@
 #include <iostream>
 
 // Constructors
-Studentas::Studentas() : egzaminas(0) {}
+Studentas::Studentas() : egzaminas(0), age(0) {}
 
 Studentas::Studentas(const std::string& vardas, const std::string& pavarde)
-    : vardas(vardas), pavarde(pavarde), egzaminas(0) {}
+    : vardas(vardas), pavarde(pavarde), egzaminas(0), age(0) {}
 
 // Destructor
 Studentas::~Studentas() {
     namuDarbai.clear();
-}
-
-// Copy Constructor
-Studentas::Studentas(const Studentas& other)
-    : vardas(other.vardas), pavarde(other.pavarde), namuDarbai(other.namuDarbai), egzaminas(other.egzaminas) {}
-
-// Copy Assignment Operator
-Studentas& Studentas::operator=(const Studentas& other) {
-    if (this != &other) {
-        vardas = other.vardas;
-        pavarde = other.pavarde;
-        namuDarbai = other.namuDarbai;
-        egzaminas = other.egzaminas;
-    }
-    return *this;
-}
-
-// Move Constructor
-Studentas::Studentas(Studentas&& other) noexcept
-    : vardas(std::move(other.vardas)), pavarde(std::move(other.pavarde)),
-      namuDarbai(std::move(other.namuDarbai)), egzaminas(other.egzaminas) {}
-
-// Move Assignment Operator
-Studentas& Studentas::operator=(Studentas&& other) noexcept {
-    if (this != &other) {
-        vardas = std::move(other.vardas);
-        pavarde = std::move(other.pavarde);
-        namuDarbai = std::move(other.namuDarbai);
-        egzaminas = other.egzaminas;
-    }
-    return *this;
 }
 
 // Getters and Setters
@@ -76,6 +45,18 @@ void Studentas::setEgzaminas(int egzaminas) {
 
 int Studentas::getEgzaminas() const {
     return egzaminas;
+}
+
+// Implementing Zmogus virtual functions
+int Studentas::getAge() const {
+    // Implement logic to calculate and return the age of the student
+    // For example, if 'age' is stored as a member variable or computed based on birthdate:
+    return age;
+}
+
+std::string Studentas::getName() const {
+    // Implement logic to construct and return the full name of the student
+    return vardas + " " + pavarde;
 }
 
 // Calculations
