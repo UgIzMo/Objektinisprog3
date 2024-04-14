@@ -3,10 +3,12 @@
 #include <iomanip>
 #include <chrono>
 #include <limits>
+
 #include "studentas.h"
 #include "functions_old.h"
 #include "functions.h"
 #include "functions_vector.h"
+#include "zmogus.h"
 
 
 using namespace std;
@@ -14,6 +16,7 @@ using namespace std;
 int main()
 {
     srand(static_cast<unsigned int>(time(nullptr)));
+    //Zmogus zmogus;
 
     vector<Studentas> studentai;
     char testi;
