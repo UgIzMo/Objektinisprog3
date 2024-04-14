@@ -1,60 +1,38 @@
-  V1.2
+  V1.5
 
-  "Rule of Five" yra C++ programavimo taisyklė, kuri susijusi su specialiųjų narių valdymu objektuose, 
-  kuriems reikia rankinio resursų valdymo (pvz., dinaminė atmintis ar ištekliai, kurie negali būti valdomi automatiškai). 
-  Ši taisyklė apima penkis specialiuosius narius:
+  Ši programa yra skirta valdyti studentų duomenis. Vietoje vienos klasės Studentas buvo sukurtos dvi klases: abstrakti bazinė klasė Zmogus ir iš jos paveldėta išvestinė klasė Studentas.
 
-# Destructor (Destruktorius):
 
-  ~Studentas() yra klasės destruktorius. 
-  Jis naudojamas išvalyti resursus, kurie buvo skirti objekto veikimui.
-  Destruktorius ~Studentas() išvalo namų darbų vektorių namuDarbai naudodamas clear() metodą.
+  Žmogus klasė 
+  Zmogus yra abstrakti bazinė klasė, skirta apibrėžti bendrus žmogaus savybes ir veiksmus. 
+  Iš šios klasės negalima sukurti objektų tiesiogiai, tačiau ji yra naudojama kaip pagrindas Studentas klasės paveldėjimui. 
   
-# Copy Constructor (Kopijavimo konstruktorius):
-
-  Studentas(const Studentas& other) yra kopijavimo konstruktorius. 
-  Jis naudojamas sukurti naują objektą, kuris yra kopija esamo objekto.
-  Konstruktorius Studentas(const Studentas& other) kopijuoja visus duomenis iš other objekto į naują Studentas objektą.
-
-# Copy Assignment Operator (Kopijavimo priskyrimo operatorius):
-
-  Studentas& operator=(const Studentas& other) yra kopijavimo priskyrimo operatorius. 
-  Jis nukopijuoja vieno objekto turinį į kitą jau egzistuojantį objektą.
-  Kopijavimo priskyrimo operatorius nukopijuoja visus duomenis iš other objekto į esamą Studentas objektą.
-
-# Move Constructor (Perkėlimo konstruktorius):
-
-  Studentas(Studentas&& other) noexcept yra perkėlimo konstruktorius. 
-  Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į naują objektą.
-  Perkėlimo konstruktorius Studentas(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į naują Studentas objektą.
-
-# Move Assignment Operator (Perkėlimo priskyrimo operatorius):
-
-  Studentas& operator=(Studentas&& other) noexcept yra perkėlimo priskyrimo operatorius. 
-  Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į jau egzistuojantį objektą.
-  Perkėlimo priskyrimo operatorius Studentas& operator=(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į esamą Studentas objektą.
-
-
-# Įvesties ir išvesties operatoriai: 
-  std::ostream& operator<<(std::ostream& os, const Studentas& student) - Išvedimo operatorius, leidžiantis išvesti studento duomenis. 
-  std::istream& operator>>(std::istream& is, Studentas& student) - Įvedimo operatorius, leidžiantis nuskaityti studento duomenis.
-  Šie metodai yra esminiai norint turėti galimybę dirbti su Studentas objektais išoriniuose šaltiniuose, pvz., failuose.
-
-  Rankinis būdas:
-  operator>> metodas leidžia rankiniu būdu nuskaityti duomenis iš srauto (pvz., iš std::cin).
-  Naudojant šį metodą, galima tiesiogiai įvesti studento vardą, pavardę, egzamino rezultatą ir namų darbų rezultatus iš terminalo.
-
-  Automatinis būdas:
-  operator>> metodas taip pat gali būti naudojamas automatiškai nuskaitant duomenis iš kito šaltinio, pvz., iš failo.
-  Leidžia nuskaitinėti iš failo ir užpildyti Studentas objektą duomenimis.
-
-  Į ekraną:
-  operator<< metodas leidžia išvesti Studentas objekto duomenis į ekraną (pvz., į std::cout).
-  Išveda studento vardą, pavardę, egzamino rezultatą ir namų darbų rezultatus į terminalą.
-
-  Į failą:
-  operator<< metodas taip pat gali būti naudojamas išvesti duomenis į failą.
-  Leidžia įrašyti Studentas objekto duomenis į failą, kurie vėliau gali būti perskaityti.
-
-# Apibendrinant  
-Perdengti operator<< ir operator>> metodai Studentas klasei suteikia universalumą duomenų įvedimui ir išvedimui iš įvairių šaltinių (įskaitant terminalą ir failus). Jie leidžia naudotis Studentas klase patogiai ir efektyviai, manipuliuojant duomenimis ir integruojant įvairius šaltinius duomenų apdorojimui.
+  Metodai 
+  virtual int getAge() const = 0; - šis metodas grąžina žmogaus amžių. 
+  virtual std::string getName() const = 0; - šis metodas grąžina žmogaus vardą ir pavardę. 
+  
+  Studentas klasė 
+  Studentas yra Zmogus išvestinė klasė, kuri paveldi bendras savybes ir veiksmus iš Zmogus bazinės klasės. 
+  Ši klasė papildomai turi studento specifinius metodus ir savybes. 
+  Savybės 
+  std::string vardas - studento vardas. 
+  std::string pavarde - studento pavardė. 
+  std::vector<int> namuDarbai - studento namų darbų rezultatų vektorius. 
+  int egzaminas - studento egzamino rezultatas. 
+  
+  Metodai Konstruktorius: 
+  Studentas(), Studentas(const std::string& vardas, const std::string& pavarde). 
+  virtual int getAge() const override; - grąžina studento amžių. 
+  virtual std::string getName() const override; - grąžina studento vardą ir pavardę. 
+  
+  Getteriai ir setteriai: setVardas, getVardas, setPavarde, getPavarde, setNamuDarbai, getNamuDarbai, setEgzaminas, getEgzaminas. 
+  
+  Skaičiavimo metodai: skaiciuotiVidurki, skaiciuotiMediana, skaiciuotiGalutini. 
+  
+  Randomizacijos metodai: atsitiktiniai, atsitiktiniaiStudentai. 
+  
+  Išvesties ir įvesties operatoriai: operator<<, operator>>. 
+  
+  Veikimo logika 
+  Programa veikia pagal 1.2 versijos reikalavimus, įskaitant visus pridėtus metodus ir jų veikimo logiką. 
+  Studento klasė tinkamai paveldi Zmogus bazinės klasės metodus ir palaiko 1.2 versijoje realizuotą penkių metodų taisyklę.
