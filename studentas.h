@@ -10,14 +10,19 @@ public:
     // Constructors
     Studentas();
     Studentas(const std::string& vardas, const std::string& pavarde);
+
     // Destructor
     ~Studentas();
+
     // Copy Constructor
     Studentas(const Studentas& other);
+
     // Copy Assignment Operator
     Studentas& operator=(const Studentas& other);
+
     // Move Constructor
     Studentas(Studentas&& other) noexcept;
+
     // Move Assignment Operator
     Studentas& operator=(Studentas&& other) noexcept;
 
