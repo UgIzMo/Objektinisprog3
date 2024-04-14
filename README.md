@@ -24,12 +24,37 @@
 
 # Move Constructor (Perkėlimo konstruktorius):
 
-Studentas(Studentas&& other) noexcept yra perkėlimo konstruktorius. 
-Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į naują objektą.
-Perkėlimo konstruktorius Studentas(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į naują Studentas objektą.
+  Studentas(Studentas&& other) noexcept yra perkėlimo konstruktorius. 
+  Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į naują objektą.
+  Perkėlimo konstruktorius Studentas(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į naują Studentas objektą.
 
 # Move Assignment Operator (Perkėlimo priskyrimo operatorius):
 
-Studentas& operator=(Studentas&& other) noexcept yra perkėlimo priskyrimo operatorius. 
-Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į jau egzistuojantį objektą.
-Perkėlimo priskyrimo operatorius Studentas& operator=(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į esamą Studentas objektą.
+  Studentas& operator=(Studentas&& other) noexcept yra perkėlimo priskyrimo operatorius. 
+  Jis naudojamas perkelti resursus iš laikinojo (temporary) objekto į jau egzistuojantį objektą.
+  Perkėlimo priskyrimo operatorius Studentas& operator=(Studentas&& other) noexcept naudoja std::move() funkciją perkelti duomenis iš other objekto į esamą Studentas objektą.
+
+
+# Įvesties ir išvesties operatoriai: 
+  std::ostream& operator<<(std::ostream& os, const Studentas& student) - Išvedimo operatorius, leidžiantis išvesti studento duomenis. 
+  std::istream& operator>>(std::istream& is, Studentas& student) - Įvedimo operatorius, leidžiantis nuskaityti studento duomenis.
+  Šie metodai yra esminiai norint turėti galimybę dirbti su Studentas objektais išoriniuose šaltiniuose, pvz., failuose.
+
+  Rankinis būdas:
+  operator>> metodas leidžia rankiniu būdu nuskaityti duomenis iš srauto (pvz., iš std::cin).
+  Naudojant šį metodą, galima tiesiogiai įvesti studento vardą, pavardę, egzamino rezultatą ir namų darbų rezultatus iš terminalo.
+
+  Automatinis būdas:
+  operator>> metodas taip pat gali būti naudojamas automatiškai nuskaitant duomenis iš kito šaltinio, pvz., iš failo.
+  Leidžia nuskaitinėti iš failo ir užpildyti Studentas objektą duomenimis.
+
+  Į ekraną:
+  operator<< metodas leidžia išvesti Studentas objekto duomenis į ekraną (pvz., į std::cout).
+  Išveda studento vardą, pavardę, egzamino rezultatą ir namų darbų rezultatus į terminalą.
+
+  Į failą:
+  operator<< metodas taip pat gali būti naudojamas išvesti duomenis į failą.
+  Leidžia įrašyti Studentas objekto duomenis į failą, kurie vėliau gali būti perskaityti.
+
+# Apibendrinant  
+Perdengti operator<< ir operator>> metodai Studentas klasei suteikia universalumą duomenų įvedimui ir išvedimui iš įvairių šaltinių (įskaitant terminalą ir failus). Jie leidžia naudotis Studentas klase patogiai ir efektyviai, manipuliuojant duomenimis ir integruojant įvairius šaltinius duomenų apdorojimui.
