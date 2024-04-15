@@ -1,7 +1,7 @@
 #ifndef STUDENTAS_H
 #define STUDENTAS_H
 
-#include "zmogus.h" // Include base class if needed
+#include "zmogus.h" 
 #include <iostream>
 #include <string>
 #include <vector>
