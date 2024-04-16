@@ -59,6 +59,12 @@
 # Apibendrinant  
 Perdengti operator<< ir operator>> metodai Studentas klasei suteikia universalumą duomenų įvedimui ir išvedimui iš įvairių šaltinių (įskaitant terminalą ir failus). Jie leidžia naudotis Studentas klase patogiai ir efektyviai, manipuliuojant duomenimis ir integruojant įvairius šaltinius duomenų apdorojimui.
 
+| Failas               | Skaitymas (s)            | Rūšiavimas (s)           | Studentų skirstymas (s)       | Rūšiavimas ir skirstymas faile (s) |
+|----------------------|--------------------------|--------------------------|-------------------------------|------------------------------------|
+| studentas1000.txt    | 0.0036162                | 0.0000001                | 0.0000001                     | 0.00606105                         |
+| studentas10000.txt   | 0.0065362                | 0.000000067              | 0.000000067                   | 0.0090507                          |
+| studentas100000.txt  | 0.0375042                | 0.000000167              | 0.000000033                   | 0.0403738                          |
+| studentas1000000.txt | 0.3171981                | 0.0000001                | 0.000000067                   | 0.3194002                          |
 
 ## V1.5
 
