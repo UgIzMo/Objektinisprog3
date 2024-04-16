@@ -59,75 +59,75 @@
 # Apibendrinant  
 Perdengti operator<< ir operator>> metodai Studentas klasei suteikia universalumą duomenų įvedimui ir išvedimui iš įvairių šaltinių (įskaitant terminalą ir failus). Jie leidžia naudotis Studentas klase patogiai ir efektyviai, manipuliuojant duomenimis ir integruojant įvairius šaltinius duomenų apdorojimui.
 
-Testavimas 
-
-    studentas10000.txt
+  Testavimas 
   
-  Skaitymas uztruko: 0.0113764s
-  Rusiavimas uztruko: 0.0000000s
-  Studentu skirstymas uztruko: 0.0000000s
-  Rusiavimas ir skirstymas faile studentai1000.txt: 0.0150300s
-
-  Skaitymas uztruko: 0.0040083s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai1000.txt: 0.0069164s
-
-  Skaitymas uztruko: 0.0032240s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai1000.txt: 0.0052057s
-  
-    studentas100000.txt
+      studentas10000.txt
     
-  Skaitymas uztruko: 0.0417487s
-  Rusiavimas uztruko: 0.0000002s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai10000.txt: 0.0437969s
+    Skaitymas uztruko: 0.0113764s
+    Rusiavimas uztruko: 0.0000000s
+    Studentu skirstymas uztruko: 0.0000000s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0150300s
   
-  Skaitymas uztruko: 0.0358946s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000000s
-  Rusiavimas ir skirstymas faile studentai10000.txt: 0.0379611s
+    Skaitymas uztruko: 0.0040083s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0069164s
   
-  Skaitymas uztruko: 0.0348692s
-  Rusiavimas uztruko: 0.0000002s
-  Studentu skirstymas uztruko: 0.0000000s
-  Rusiavimas ir skirstymas faile studentai10000.txt: 0.0393635s
-
-    studentas1000000.txt
-
-  Skaitymas uztruko: 0.3212307s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai100000.txt: 0.3232132s
+    Skaitymas uztruko: 0.0032240s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai1000.txt: 0.0052057s
+    
+      studentas100000.txt
+      
+    Skaitymas uztruko: 0.0417487s
+    Rusiavimas uztruko: 0.0000002s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0437969s
+    
+    Skaitymas uztruko: 0.0358946s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000000s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0379611s
+    
+    Skaitymas uztruko: 0.0348692s
+    Rusiavimas uztruko: 0.0000002s
+    Studentu skirstymas uztruko: 0.0000000s
+    Rusiavimas ir skirstymas faile studentai10000.txt: 0.0393635s
   
-  Skaitymas uztruko: 0.3127440s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai100000.txt: 0.3153796s
+      studentas1000000.txt
   
-  Skaitymas uztruko: 0.3176197s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000000s
-  Rusiavimas ir skirstymas faile studentai100000.txt: 0.3196079s
-
-    studentas10000000.txt
-
-  Skaitymas uztruko: 3.0777628s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai1000000.txt: 3.0798064s
+    Skaitymas uztruko: 0.3212307s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 0.3232132s
+    
+    Skaitymas uztruko: 0.3127440s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 0.3153796s
+    
+    Skaitymas uztruko: 0.3176197s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000000s
+    Rusiavimas ir skirstymas faile studentai100000.txt: 0.3196079s
   
-  Skaitymas uztruko: 3.1251866s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai1000000.txt: 3.1275145s
+      studentas10000000.txt
   
-  Skaitymas uztruko: 3.1296369s
-  Rusiavimas uztruko: 0.0000001s
-  Studentu skirstymas uztruko: 0.0000001s
-  Rusiavimas ir skirstymas faile studentai1000000.txt: 3.1318662s
+    Skaitymas uztruko: 3.0777628s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 3.0798064s
+    
+    Skaitymas uztruko: 3.1251866s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 3.1275145s
+    
+    Skaitymas uztruko: 3.1296369s
+    Rusiavimas uztruko: 0.0000001s
+    Studentu skirstymas uztruko: 0.0000001s
+    Rusiavimas ir skirstymas faile studentai1000000.txt: 3.1318662s
 
 | Failas               | Skaitymas (s)            | Rūšiavimas (s)           | Studentų skirstymas (s)       | Rūšiavimas ir skirstymas faile (s) |
 |----------------------|--------------------------|--------------------------|-------------------------------|------------------------------------|
@@ -136,19 +136,19 @@ Testavimas
 | studentas100000.txt  | 0.0375042                | 0.000000167              | 0.000000033                   | 0.0403738                          |
 | studentas1000000.txt | 0.3171981                | 0.0000001                | 0.000000067                   | 0.3194002                          |
 
-Skaitymo laikas: 
-Didėja su failo dydžiu. Programa efektyviai nuskaito duomenis, bet su didesniais failais laikas ilgėja.
-
-Rūšiavimo laikas: 
-Labai mažas, net su dideliais failais. Rūšiavimas veikia efektyviai.
-
-Skirstymo laikas: 
-Taip pat labai mažas net su dideliais failais. Duomenų analizė ir skirstymas veikia efektyviai.
-
-Rūšiavimo ir skirstymo faile laikas: 
-Proporcingai didėja su failo dydžiu. Su didesniais failais šie veiksmai gali trukti ilgiau.
-
-Iš šių išvadų matyti, kad programa gerai veikia su vidutinio dydžio ir dideliais failais. 
-Jei reikia gerinti veikimą su didesniais duomenų kiekiais, galima optimizuoti rūšiavimo ir skirstymo procesus.
+  Skaitymo laikas: 
+  Didėja su failo dydžiu. Programa efektyviai nuskaito duomenis, bet su didesniais failais laikas ilgėja.
+  
+  Rūšiavimo laikas: 
+  Labai mažas, net su dideliais failais. Rūšiavimas veikia efektyviai.
+  
+  Skirstymo laikas: 
+  Taip pat labai mažas net su dideliais failais. Duomenų analizė ir skirstymas veikia efektyviai.
+  
+  Rūšiavimo ir skirstymo faile laikas: 
+  Proporcingai didėja su failo dydžiu. Su didesniais failais šie veiksmai gali trukti ilgiau.
+  
+  Iš šių išvadų matyti, kad programa gerai veikia su vidutinio dydžio ir dideliais failais. 
+  Jei reikia gerinti veikimą su didesniais duomenų kiekiais, galima optimizuoti rūšiavimo ir skirstymo procesus.
 
 
