@@ -79,3 +79,98 @@ Perdengti operator<< ir operator>> metodai Studentas klasei suteikia universalum
   Įvesties/išvesties metodai: Kaip duomenys yra įvedami ir išvedami iš klasės.
   
   Programa veikia pagal 1.2 versijos taisykles, kurios apibrėžia klasės veikimo logiką ir reikalavimus. Tai užtikrina veiksmingą ir korektišką funkcionalumą.
+
+  Testavimas
+
+    studentas1000.txt
+
+      Skaitymas uztruko: 0.0109156s
+      Rusiavimas uztruko: 0.0000004s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0139504s
+      
+      Skaitymas uztruko: 0.0036917s
+      Rusiavimas uztruko: 0.0000003s
+      Studentu skirstymas uztruko: 0.0000002s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0066810s
+      
+      Skaitymas uztruko: 0.0036012s
+      Rusiavimas uztruko: 0.0000005s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai1000.txt: 0.0060274s
+  
+    studentas10000.txt  
+
+      Skaitymas uztruko: 0.0489442s
+      Rusiavimas uztruko: 0.0000003s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0507379s
+      
+      Skaitymas uztruko: 0.0418828s
+      Rusiavimas uztruko: 0.0000009s
+      Studentu skirstymas uztruko: 0.0000005s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0463429s
+      
+      Skaitymas uztruko: 0.0448249s
+      Rusiavimas uztruko: 0.0000006s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai10000.txt: 0.0473987s
+
+    studentas100000.txt
+
+      Skaitymas uztruko: 0.3696679s
+      Rusiavimas uztruko: 0.0000014s
+      Studentu skirstymas uztruko: 0.0000002s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.3716144s
+      
+      Skaitymas uztruko: 0.3607576s
+      Rusiavimas uztruko: 0.0000004s
+      Studentu skirstymas uztruko: 0.0000002s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.3629284s
+      
+      Skaitymas uztruko: 0.3627148s
+      Rusiavimas uztruko: 0.0000004s
+      Studentu skirstymas uztruko: 0.0000002s
+      Rusiavimas ir skirstymas faile studentai100000.txt: 0.3647824s
+
+    studentas10000000.txt
+
+      Skaitymas uztruko: 3.6412688s
+      Rusiavimas uztruko: 0.0000005s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 3.6433200s
+      
+      Skaitymas uztruko: 3.5545791s
+      Rusiavimas uztruko: 0.0000004s
+      Studentu skirstymas uztruko: 0.0000002s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 3.5565252s
+      
+      Skaitymas uztruko: 4.1009419s
+      Rusiavimas uztruko: 0.0000003s
+      Studentu skirstymas uztruko: 0.0000001s
+      Rusiavimas ir skirstymas faile studentai1000000.txt: 4.1030884s
+
+| Failas                | Skaitymas (s)         | Rūšiavimas(s)         | Studentų skirstymas (s)       | Rūšiavimas ir skirstymas faile (s) |
+|-----------------------|-----------------------|-----------------------|-------------------------------|------------------------------------|
+| studentas1000.txt     | 0.0064028             | 0.0000004             | 0.0000001                     | 0.0082196                          |
+| studentas10000.txt    | 0.0455506             | 0.0000006             | 0.0000003                     | 0.0487932                          |
+| studentas100000.txt   | 0.3640467             | 0.0000007             | 0.0000002                     | 0.3664417                          |
+| studentas10000000.txt | 3.7652633             | 0.0000004             | 0.0000001                     | 3.7679779                          |
+
+Skaitymo laikas:
+Skaitymo laikas ženkliai didėja, kai padidėja failo dydis. 
+Tai rodo, kad didesnių failų skaitymas užtrunka daugiau laiko, kas yra tikėtina dėl didesnio duomenų kiekio.
+
+Rūšiavimo laikas:
+Rūšiavimo laikas lieka stabiliai mažas nepaisant skirtingų failų dydžių, tai rodo, kad rūšiavimo operacija yra efektyvi ir nesąlygoja didelio duomenų apimties.
+
+Studentų skirstymo laikas:
+Studentų skirstymo laikas yra labai mažas ir pastovus visų failų dydžių atžvilgiu. 
+Ši operacija atliekama labai efektyviai nepriklausomai nuo duomenų apimties.
+
+Iš viso laikas rūšiavimui ir skirstymui faile:
+Iš viso laikas rūšiavimui ir duomenų skirstymui faile žymiai didėja su didėjančiu failo dydžiu. 
+Tai rodo, kad apdorojimo laikas proporcingai didėja su apdorojamų duomenų kiekiu.
+
+Programos veikimas (failų apdorojimo atžvilgiu) proporcingai gerėja su didėjančiu failo dydžiu, ypač atsižvelgiant į skaitymo laiką ir bendrą apdorojimo laiką. 
+Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes dauguma operacijų užtrunka labai trumpą laiką net su dideliais duomenų kiekiais. 
