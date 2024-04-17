@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <iostream>
+#include <cassert>
 
 // Constructors
 Studentas::Studentas() : egzaminas(0) {}
@@ -32,7 +33,7 @@ Studentas& Studentas::operator=(const Studentas& other) {
 // Move Constructor
 Studentas::Studentas(Studentas&& other) noexcept
     : vardas(std::move(other.vardas)), pavarde(std::move(other.pavarde)),
-      namuDarbai(std::move(other.namuDarbai)), egzaminas(other.egzaminas) {}
+      namuDarbai(std::move(other.namuDarbai)), egzaminas(other.egzaminas) {other.egzaminas=0;}
 
 // Move Assignment Operator
 Studentas& Studentas::operator=(Studentas&& other) noexcept {
@@ -41,6 +42,7 @@ Studentas& Studentas::operator=(Studentas&& other) noexcept {
         pavarde = std::move(other.pavarde);
         namuDarbai = std::move(other.namuDarbai);
         egzaminas = other.egzaminas;
+        other.egzaminas = 0;
     }
     return *this;
 }
@@ -64,6 +66,11 @@ std::string Studentas::getPavarde() const {
 
 void Studentas::setNamuDarbai(const std::vector<int>& nd) {
     namuDarbai = nd;
+}
+
+void Studentas::addNamuDarbas(int pazymys)
+{
+    namuDarbai.push_back(pazymys);
 }
 
 std::vector<int> Studentas::getNamuDarbai() const {
@@ -119,7 +126,7 @@ void Studentas::atsitiktiniaiStudentai() {
     atsitiktiniai();
 }
 
-// Output Operator (Serialization)
+// Output Operator (Serialization) ///gali pazymiu neprasyti, reikia universaliu
 std::ostream& operator<<(std::ostream& os, const Studentas& student) {
     os << student.vardas << " " << student.pavarde << " " << student.egzaminas << " ";
     for (int pazymys : student.namuDarbai) {
@@ -137,4 +144,38 @@ std::istream& operator>>(std::istream& is, Studentas& student) {
         student.namuDarbai.push_back(pazymys);
     }
     return is;
+}
+
+//testing
+void testRuleOfFive()
+{
+    // Create an original student
+    Studentas original("Ana", "Morena");
+    original.addNamuDarbas(8);
+    original.addNamuDarbas(9);
+    original.setEgzaminas(10);
+
+    // Test copy constructor
+    Studentas copy(original);
+    std::cout << copy << std::endl;
+    std::cout << original << std::endl;
+
+    // Test copy assignment
+    Studentas copyAssignment;
+    copyAssignment = original;
+    std::cout << copyAssignment << std::endl;
+    std::cout << original << std::endl;
+
+    // Test move constructor
+    Studentas moved(std::move(original));
+    std::cout << original << std::endl;
+    std::cout << moved << std::endl;
+
+    // Test move assignment
+    Studentas moveAssignment;
+    moveAssignment = std::move(moved);
+    std::cout << moved << std::endl;
+    std::cout << moveAssignment << std::endl;
+
+    std::cout << "Rule of Five veikia sekmingai" << std::endl;
 }
