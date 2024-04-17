@@ -119,3 +119,37 @@ std::istream& operator>>(std::istream& is, Studentas& student) {
     }
     return is;
 }
+
+//testing
+void testRuleOfFive()
+{
+    // Create an original student
+    Studentas original("Ana", "Morena");
+    original.addNamuDarbas(8);
+    original.addNamuDarbas(9);
+    original.setEgzaminas(10);
+
+    // Test copy constructor
+    Studentas copy(original);
+    std::cout << copy << std::endl;
+    std::cout << original << std::endl;
+
+    // Test copy assignment
+    Studentas copyAssignment;
+    copyAssignment = original;
+    std::cout << copyAssignment << std::endl;
+    std::cout << original << std::endl;
+
+    // Test move constructor
+    Studentas moved(std::move(original));
+    std::cout << original << std::endl;
+    std::cout << moved << std::endl;
+
+    // Test move assignment
+    Studentas moveAssignment;
+    moveAssignment = std::move(moved);
+    std::cout << moved << std::endl;
+    std::cout << moveAssignment << std::endl;
+
+    std::cout << "Rule of Five veikia sekmingai" << std::endl;
+}
