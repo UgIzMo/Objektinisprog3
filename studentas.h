@@ -32,6 +32,7 @@ public:
     void setPavarde(const std::string& pavarde);
     std::string getPavarde() const;
     void setNamuDarbai(const std::vector<int>& nd);
+    void addNamuDarbas(int pazymys);
     std::vector<int> getNamuDarbai() const;
     void setEgzaminas(int egzaminas);
     int getEgzaminas() const;
@@ -45,9 +46,13 @@ public:
     void atsitiktiniai();
     void atsitiktiniaiStudentai();
 
+// testing
+void testRuleOfFive();
+
     // Input/Output Operators
     friend std::ostream& operator<<(std::ostream& os, const Studentas& student);
     friend std::istream& operator>>(std::istream& is, Studentas& student);
+
 
 private:
     std::string vardas;
