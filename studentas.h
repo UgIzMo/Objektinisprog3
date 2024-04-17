@@ -43,6 +43,9 @@ public:
     void atsitiktiniai() override;
     void atsitiktiniaiStudentai() override;
     
+    // testing
+void testRuleOfFive();
+    
     friend std::ostream& operator<<(std::ostream& os, const Studentas& student);
     friend std::istream& operator>>(std::istream& is, Studentas& student);
 
