@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <chrono>
 #include <limits>
+
 #include "studentas.h"
 #include "functions_old.h"
 #include "functions.h"
@@ -38,7 +39,8 @@ int main()
                  << "5 - generuoti failus \n"
                  << "6 - rusiuoti studentus sugeneruotuose failuose \n"
                  << "7 - testavimas\n"
-                 << "8 - baigti darba \n";
+                 << "8 - testavimas rule of five \n"
+                 << "9 - baigti darba \n";
             try
             {
                 cin >> meniu;
@@ -277,7 +279,15 @@ int main()
                 break;
             }
 
+            void testRuleOfFive(); // Define the function before calling it
+
             case 8:
+            {
+                testRuleOfFive();
+                break;
+            }
+
+            case 9:
                 break;
 
             default:
@@ -294,7 +304,7 @@ int main()
 
         cout << "Visas sugaistas laikas: " << laikasGalutinis << " s" << endl;
 
-    } while (meniu != 8);
+    } while (meniu != 9);
 
     double vidurkis = visoLaikoSuma / testuSkaicius;                    // Suskaiciuojamas laiku vidurkis
     cout << "Keliu testu laiku vidurkis: " << vidurkis << " s" << endl; // Isvedamas laiku vidurkis
