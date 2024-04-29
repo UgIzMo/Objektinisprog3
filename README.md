@@ -231,16 +231,35 @@ Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes d
   
     Nuoseklumas ir Aiškumas: 
   Palaikykite nuoseklumą savo komentavimo stiliuje ir užtikrinkite aiškumą savo aprašymuose, padarydami ją lengvesnę vartotojams suprasti ir naršyti jūsų dokumentaciją.
-  
-
-
-
-
-
-
-
-
 
 
   Unit testai: Unit testai yra skirti testuoti atskiras programos dalis (vienetas) norint įsitikinti, ar jos veikia teisingai. 
   Tai padeda užtikrinti, kad kiekviena programos dalis atlieka numatytas funkcijas ir veikia kaip tikimasi.
+
+  Naudojau Visual Studio 2022 Unit testavimui, nes tai vienas iš geriausių integruotų kūrimo aplinkų šiam darbui. 
+  Taip pat galite naudoti JetBrains.
+  
+  Pasirinkau native framework.
+
+  Projekto failo paruošimas
+  
+  1. Pirmiausia atidarykite "Visual Studio"
+  2. Spauskite "Create new project"
+  3. Pasirinkite "Native Unit Testing", nes "VS" atliks visus reikiamus veiksmus, sukurs ir redaguos būtinus jūsų savybių failus
+  4. Kai projektas sukurtas, eikite į Projekc -> {failo pavadinimas} properties -> C/C++ -> All functions -> Precompiled Header ir pakeiskite į "Not Using Precompiled Headers"
+  5. Dabar spauskite "Apply" ir "Ok"
+  6. Dabar spauskite "Projektas" ir pridėkite esamus failus, kuriuos norite testuoti
+     
+  Paskutiniai kodavimo pakeitimai
+  Kai tai padarysite, tiesiog parašykite naujas funkcijas, kurios testuos tai, ko jums reikia
+  Kai viskas baigta, eikite į "Test" ir atidarykite "Test Explorer"
+  Dabar tiesiog spauskite "Paleisti visus testus" ir jūs tai turėsite
+
+
+
+
+
+
+
+
+
