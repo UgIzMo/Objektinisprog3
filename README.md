@@ -255,6 +255,36 @@ Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes d
   Kai viskas baigta, eikite į "Test" ir atidarykite "Test Explorer"
   Dabar tiesiog spauskite "Paleisti visus testus" ir jūs tai turėsite
 
+# Kaip paleisti kodą?
+## Makefile kūrimas
+>[!NOTE]
+> Makefile buvo sukurtas užtikrinti sėkmingą įvairių failų sąsajos užtikrinimą kode. Toliau bus pateikta instrukcija, kaip sukonfigūruoti ir naudoti Makefile kūrimo priemonę, kad būtų galima paleisti mano kodą.
+
+### Windows
+1. Apsilankykite šioje svetainėje: https://sourceforge.net/projects/gnuwin32/files/make/3.81/
+2. Atsisiųskite naujausią versiją.
+3. Susikonfiguruokite, nusistatykite viską. Yra pateikta gan aiški instrukcija, jei reikia išsamiau galite pasinaudoti video nuoroda: https://www.youtube.com/watch?v=taCJhnBXG_w
+4. Susitvarkę tai, grįžtame į savo turimą projektą failų naršyklėje.
+5. Nukopijuojame savo projekto kelią su visais failais (ĮSKAITANT MAKEFILE!)
+6. Atsidarome CMD (Command Prompt).
+7. Įveskite 'cd ' ir įklijuokite kelią. (cd C:\Users\Asus\Desktop\II pusmetis\bandymai\V1.0_galutinis)
+8. Tuomet parašome „mingw32-make“
+9. O vėliau „programa.exe“
+
+### Išmanusis būdas, kurį atradau pati
+1. Atsisiųskite Xcode arba MinGW kompiliatorių.
+2. Kai kompiliatorius yra įdiegtas ir sukonfigūruotas. Atidarykite VisualStudio Code (https://code.visualstudio.com/download).
+3. Dabar atidarykite projektą.
+4. Eikite į 'extensions' skirtuką ir ieškokite "Makefile Tools" By _Microsoft_.
+5. Atsisiųskite jį, tada paleiskite VSCode iš naujo, kad jis iš tikrųjų būtų įdiegtas į jūsų IDE.
+6. Kai tai padaryta, paspauskite 'extension' kairėje šoninėje juostoje, ir pamatysite 6 skirtingus kelius, kuriuos plėtinys reikalauja.
+7. Windows atveju:
+Redaguokite "Make" konfigūraciją naudoti mingw32-make.exe.
+Redaguokite "Makefile" konfigūraciją ir įklijuokite projekto kelią.
+8. Dabar tiesiog paspauskite "Build" mygtuką (viršutinį kairįjį), kuris sukurs projektą.
+9. Tada paspauskite "Run code" mygtuką, kuris jį paleis.
+
+
 
 
 
