@@ -181,6 +181,11 @@ Tai rodo, kad apdorojimo laikas proporcingai didėja su apdorojamų duomenų kie
 Programos veikimas (failų apdorojimo atžvilgiu) proporcingai gerėja su didėjančiu failo dydžiu, ypač atsižvelgiant į skaitymo laiką ir bendrą apdorojimo laiką. 
 Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes dauguma operacijų užtrunka labai trumpą laiką net su dideliais duomenų kiekiais. 
 
+  Išvados:
+  Atrodo, kad v1.5 paprastai turi šiek tiek mažesnį laiką duomenų skaitymui ir studentų pasiskirstymui visose studentų skaičiaus kategorijose. 
+  Tačiau v1.2 kai kuriuose atveju turi šiek tiek mažesnį laiką duomenų rūšiavimui.
+  Apskritai skirtumai tarp dviejų versijų yra santykinai nedideli, todėl pasirinkimas tarp jų gali nedidelės įtakos bendram veikimui ar duomenų interpretacijai.
+
 
 # V2.0
 
