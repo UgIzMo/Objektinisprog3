@@ -1,155 +1,168 @@
-#include "studentas.h"
+#ifndef STUDENTAS_H
+#define STUDENTAS_H
+
+#include "zmogus.h"
 #include <iostream>
-#include <algorithm>
-#include <cstdlib>
+#include <vector>
 
-// konstruktorius
-Studentas::Studentas() : egzaminas(0) {}
+/**
+ * @brief Klasė Studentas atstovauja studentą, paveldintį iš klasės Žmogus.
+ */
+class Studentas : public Human {
+public:
+    /**
+     * @brief Numatytasis Studentas klasės konstruktorius.
+     */
+    Studentas();
+    
+    /**
+     * @brief Konstruktorius su parametrais Studentas klasėje.
+     * @param vardas Studento vardas.
+     * @param pavarde Studento pavardė.
+     */
+    Studentas(const std::string& vardas, const std::string& pavarde);
+    
+    /**
+     * @brief Studentas klasės kopijavimo konstruktorius.
+     * @param other Kita Studentas klasės instancija.
+     */
+    Studentas(const Studentas& other);
+    
+    /**
+     * @brief Studentas klasės kopijavimo priskyrimo operatorius.
+     * @param other Kita Studentas klasės instancija.
+     * @return Nuoroda į priskirtą Studentas instanciją.
+     */
+    Studentas& operator=(const Studentas& other);
+    
+    /**
+     * @brief Studentas klasės perkėlimo konstruktorius.
+     * @param other Kita Studentas klasės instancija.
+     */
+    Studentas(Studentas&& other) noexcept;
+    
+    /**
+     * @brief Studentas klasės perkėlimo priskyrimo operatorius.
+     * @param other Kita Studentas klasės instancija.
+     * @return Nuoroda į perkeltą Studentas instanciją.
+     */
+    Studentas& operator=(Studentas&& other) noexcept;
+    
+    /**
+     * @brief Studentas klasės destruktorius.
+     */
+    ~Studentas() override;
 
-Studentas::Studentas(const std::string& vardas, const std::string& pavarde)
-    : vardas(vardas), pavarde(pavarde), egzaminas(0) {}
+    /**
+     * @brief Nustato studento vardą.
+     * @param vardas Studento vardas.
+     */
+    void setVardas(const std::string& vardas) override;
+    
+    /**
+     * @brief Gražina studento vardą.
+     * @return Studento vardas.
+     */
+    std::string getVardas() const override;
 
-Studentas::Studentas(const Studentas& other)
-    : vardas(other.vardas), pavarde(other.pavarde),
-      namuDarbai(other.namuDarbai), egzaminas(other.egzaminas) {}
+    /**
+     * @brief Nustato studento pavardę.
+     * @param pavarde Studento pavardė.
+     */
+    void setPavarde(const std::string& pavarde) override;
+    
+    /**
+     * @brief Gražina studento pavardę.
+     * @return Studento pavardė.
+     */
+    std::string getPavarde() const override;
 
-Studentas& Studentas::operator=(const Studentas& other) {
-    if (this != &other) {
-        vardas = other.vardas;
-        pavarde = other.pavarde;
-        namuDarbai = other.namuDarbai;
-        egzaminas = other.egzaminas;
-    }
-    return *this;
-}
+    /**
+     * @brief Nustato studento namų darbų rezultatus.
+     * @param nd Studento namų darbų rezultatų sąrašas.
+     */
+    void setNamuDarbai(const std::vector<int>& nd) override;
+    
+    /**
+     * @brief Gražina studento namų darbų rezultatus.
+     * @return Studento namų darbų rezultatų sąrašas.
+     */
+    std::vector<int> getNamuDarbai() const override;
 
-Studentas::Studentas(Studentas&& other) noexcept
-    : vardas(std::move(other.vardas)), pavarde(std::move(other.pavarde)),
-      namuDarbai(std::move(other.namuDarbai)), egzaminas(other.egzaminas) {
-    other.egzaminas = 0;
-}
+    /**
+     * @brief Prideda naują namų darbą prie studento namų darbų sąrašo.
+     * @param pazymys Pridedamas namų darbo rezultatas.
+     */
+    void addNamuDarbas(int pazymys) override;
 
-Studentas& Studentas::operator=(Studentas&& other) noexcept {
-    if (this != &other) {
-        vardas = std::move(other.vardas);
-        pavarde = std::move(other.pavarde);
-        namuDarbai = std::move(other.namuDarbai);
-        egzaminas = other.egzaminas;
-        other.egzaminas = 0;
-    }
-    return *this;
-}
-// destruktorius
-Studentas::~Studentas() {
-    namuDarbai.clear();
-    vardas.clear();
-    pavarde.clear();
-    egzaminas = 0;
-}
+    /**
+     * @brief Nustato studento egzamino rezultatą.
+     * @param egzaminas Studento egzamino rezultatas.
+     */
+    void setEgzaminas(int egzaminas) override;
+    
+    /**
+     * @brief Gražina studento egzamino rezultatą.
+     * @return Studento egzamino rezultatas.
+     */
+    int getEgzaminas() const override;
 
-void Studentas::setVardas(const std::string& vardas) { this->vardas = vardas; }
-std::string Studentas::getVardas() const { return vardas; }
+    /**
+     * @brief Skaičiuoja studento vidurkį.
+     * @return Vidurkis.
+     */
+    double skaiciuotiVidurki() const override;
+    
+    /**
+     * @brief Skaičiuoja studento medianą.
+     * @return Mediana.
+     */
+    double skaiciuotiMediana() const override;
+    
+    /**
+     * @brief Skaičiuoja galutinį studento rezultatą.
+     * @param naudotiVidurki Ar naudoti vidurkį.
+     * @return Galutinis rezultatas.
+     */
+    double skaiciuotiGalutini(bool naudotiVidurki) const override;
 
-void Studentas::setPavarde(const std::string& pavarde) { this->pavarde = pavarde; }
-std::string Studentas::getPavarde() const { return pavarde; }
+    /**
+     * @brief Generuoja atsitiktinius studento rezultatus.
+     */
+    void atsitiktiniai() override;
+    
+    /**
+     * @brief Generuoja atsitiktinius rezultatus studentams sąraše.
+     */
+    void atsitiktiniaiStudentai() override;
+    
+    // testavimas
+    /**
+     * @brief Testuoja penkių taisyklę Studentas klasėje.
+     */
+    void testRuleOfFive();
+    
+    /**
+     * @brief Perkrovimas << operatoriaus Studentas klasėje.
+     * @param os Išvesties srautas.
+     * @param student Studentas objektas.
+     * @return Išvesties srautas.
+     */
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& student);
+    
+    /**
+     * @brief Perkrovimas >> operatoriaus Studentas klasėje.
+     * @param is Įvesties srautas.
+     * @param student Studentas objektas.
+     * @return Įvesties srautas.
+     */
+    friend std::istream& operator>>(std::istream& is, Studentas& student);
 
-void Studentas::setNamuDarbai(const std::vector<int>& nd) { namuDarbai = nd; }
-std::vector<int> Studentas::getNamuDarbai() const { return namuDarbai; }
+private:
+    std::string vardas; ///< Studento vardas.
+    std::string pavarde; ///< Studento pavardė.
+    std::vector<int> namuDarbai; ///< Studento namų darbų rezultatai.
+    int egzaminas; ///< Studento egzamino rezultatas.
+};
 
-void Studentas::addNamuDarbas(int pazymys) { namuDarbai.push_back(pazymys); }
-
-void Studentas::setEgzaminas(int egzaminas) { this->egzaminas = egzaminas; }
-int Studentas::getEgzaminas() const { return egzaminas; }
-
-double Studentas::skaiciuotiVidurki() const {
-    double suma = 0.0;
-    for (int pazymys : namuDarbai) {
-        suma += pazymys;
-    }
-    return namuDarbai.empty() ? 0.0 : suma / namuDarbai.size();
-}
-
-double Studentas::skaiciuotiMediana() const {
-    if (namuDarbai.empty()) return 0.0;
-    std::vector<int> tempNamuDarbai = namuDarbai;
-    std::sort(tempNamuDarbai.begin(), tempNamuDarbai.end());
-    int dydis = tempNamuDarbai.size();
-    return (dydis % 2 == 0) ? (tempNamuDarbai[dydis / 2 - 1] + tempNamuDarbai[dydis / 2]) / 2.0
-                            : tempNamuDarbai[dydis / 2];
-}
-
-double Studentas::skaiciuotiGalutini(bool naudotiVidurki) const {
-    double galutinis = naudotiVidurki ? (0.4 * skaiciuotiVidurki() + 0.6 * egzaminas)
-                                        : (0.4 * skaiciuotiMediana() + 0.6 * egzaminas);
-    return galutinis;
-}
-
-void Studentas::atsitiktiniai() {
-    namuDarbai.resize(rand() % 10 + 1);
-    for (int& pazymys : namuDarbai) {
-        pazymys = rand() % 10 + 1;
-    }
-    egzaminas = rand() % 10 + 1;
-}
-
-void Studentas::atsitiktiniaiStudentai() {
-    const char* vardai[] = {"Morta", "Aina", "Guoda", "Marija", "Paulina"};
-    const char* pavardes[] = {"Petraityte", "Jurksaityte", "Mockute", "Macaite", "Liekyte"};
-    int vardasIndex = rand() % 5; // 5, nes masyvas prasideda nuo 0
-    int pavardeIndex = rand() % 5; // 5, nes masyvas prasideda nuo 0
-    vardas = vardai[vardasIndex];
-    pavarde = pavardes[pavardeIndex];
-    atsitiktiniai();
-}
-
-std::ostream& operator<<(std::ostream& os, const Studentas& student) {
-    os << student.vardas << " " << student.pavarde << " " << student.egzaminas << " ";
-    for (int pazymys : student.namuDarbai) {
-        os << pazymys << " ";
-    }
-    return os;
-}
-
-std::istream& operator>>(std::istream& is, Studentas& student) {
-    is >> student.vardas >> student.pavarde >> student.egzaminas;
-    student.namuDarbai.clear();
-    int pazymys;
-    while (is >> pazymys) {
-        student.namuDarbai.push_back(pazymys);
-    }
-    return is;
-}
-
-//testing
-void testRuleOfFive()
-{
-    // Create an original student
-    Studentas original("Ana", "Morena");
-    original.addNamuDarbas(8);
-    original.addNamuDarbas(9);
-    original.setEgzaminas(10);
-
-    // Test copy constructor
-    Studentas copy(original);
-    std::cout << copy << std::endl;
-    std::cout << original << std::endl;
-
-    // Test copy assignment
-    Studentas copyAssignment;
-    copyAssignment = original;
-    std::cout << copyAssignment << std::endl;
-    std::cout << original << std::endl;
-
-    // Test move constructor
-    Studentas moved(std::move(original));
-    std::cout << original << std::endl;
-    std::cout << moved << std::endl;
-
-    // Test move assignment
-    Studentas moveAssignment;
-    moveAssignment = std::move(moved);
-    std::cout << moved << std::endl;
-    std::cout << moveAssignment << std::endl;
-
-    std::cout << "Rule of Five veikia sekmingai" << std::endl;
-}
+#endif // STUDENTAS_H
