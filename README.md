@@ -233,7 +233,8 @@ Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes d
   Palaikykite nuoseklumą savo komentavimo stiliuje ir užtikrinkite aiškumą savo aprašymuose, padarydami ją lengvesnę vartotojams suprasti ir naršyti jūsų dokumentaciją.
 
 
-  Unit testai: Unit testai yra skirti testuoti atskiras programos dalis (vienetas) norint įsitikinti, ar jos veikia teisingai. 
+  # Unit testai: 
+  Unit testai yra skirti testuoti atskiras programos dalis (vienetas) norint įsitikinti, ar jos veikia teisingai. 
   Tai padeda užtikrinti, kad kiekviena programos dalis atlieka numatytas funkcijas ir veikia kaip tikimasi.
 
   Naudojau Visual Studio 2022 Unit testavimui, nes tai vienas iš geriausių integruotų kūrimo aplinkų šiam darbui. 
