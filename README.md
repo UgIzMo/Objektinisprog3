@@ -208,11 +208,37 @@ Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes d
 
   Svarbu paminėti, kad Doxygen dokumentacija reikalauja tik komentarų iš antraščių failų (.h). 
   
-  Komentaro formatas: 
+    Komentaro formatas: 
   Naudokite konkretų formatą komentarams, pripažintiems Doxygen, dažnai pradedant /** arba /*! norėdami nurodyti specialų komentarų bloką.
   
-  Dokumentacijos žymės: 
+    Dokumentacijos žymės: 
   Naudokite specialias žymes kaip @brief, @param, @return, @see ir kt., kad suteiktumėte struktūrizuotą informaciją apie jūsų kodo elementus.
+
+    Klasės Dokumentacija: 
+  Dokumentuokite klases naudodami /** blokus virš klasės deklaracijos, pateikdami aprašymus, naudojimo pastabas ir visą atitinkamą informaciją.
+    
+    Funkcijų Dokumentacija: 
+  Dokumentuokite funkcijas ir metodus su /** blokais prieš jų deklaracijas, įskaitant detalęs, tokias kaip parametrai, grąžinimo reikšmės ir naudojimo pavyzdžiai.
+
+    Kintamųjų Dokumentacija: 
+  Dokumentuokite kintamuosius naudodami /** blokus virš jų deklaracijų, nurodydami jų paskirtį, naudojimo gaires ir bet kokias papildomas detales.
+  
+    Grupavimas ir Organizavimas: 
+  Susiejus susijusius elementus naudokite \defgroup ir \addtogroup komandas, kurios sukuria logiškas hierarchijas jūsų dokumentacijoje.
+  
+    Failo Lygio Dokumentacija: 
+  Įtraukite failo lygio dokumentaciją naudodami /** blokus kiekviename šaltinio faile, aprašydami jo paskirtį, turinį ir naudojimą.
+  
+    Nuoseklumas ir Aiškumas: 
+  Palaikykite nuoseklumą savo komentavimo stiliuje ir užtikrinkite aiškumą savo aprašymuose, padarydami ją lengvesnę vartotojams suprasti ir naršyti jūsų dokumentaciją.
+  
+
+
+
+
+
+
+
 
 
 
