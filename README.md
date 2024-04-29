@@ -195,5 +195,26 @@ Lentelės duomenys rodo, kad jūsų programa veikia pakankamai efektyviai, nes d
   Jo veikimo principas yra paremtas specialiai parašytomis komentarų žymėmis šalia kodo. 
   Šios žymės, paprastai pradedamos simboliu /**, leidžia rašyti struktūrizuotą ir išsamią dokumentaciją apie kodo funkcijas, klasės narius, modulius ir kintamuosius. 
 
+  # Doxygen instrukcija
+  
+1. Pirma, eikite į oficialią Doxygen svetainę[https://www.doxygen.nl/manual/index.html]
+2. Paspauskite atsisiuntimo mygtuką ir įdiekite programą pasirinktai operacinei sistemai
+3. Sukonfigūruokite viską ir paleiskite Doxywizard
+4. Dabar pasirinkite savo projekto aplanką, kuriame rodomi visi failai
+5. Pavadinkite savo projektą, parašykite savo santrauką ir versiją, jei norite - pridėkite logotipą ir išsaugokite
+6. Eikite į paleidimo langą ir spauskite Paleisti Doxygen mygtuką
+7. Kai procesas baigsis, tiesiog eikite į savo projekto failus -> hmtl -> index.html
+8. Atidarę jį turėsite visą savo dokumentaciją
+
+  Svarbu paminėti, kad Doxygen dokumentacija reikalauja tik komentarų iš antraščių failų (.h). 
+  
+  Komentaro formatas: 
+  Naudokite konkretų formatą komentarams, pripažintiems Doxygen, dažnai pradedant /** arba /*! norėdami nurodyti specialų komentarų bloką.
+  
+  Dokumentacijos žymės: 
+  Naudokite specialias žymes kaip @brief, @param, @return, @see ir kt., kad suteiktumėte struktūrizuotą informaciją apie jūsų kodo elementus.
+
+
+
   Unit testai: Unit testai yra skirti testuoti atskiras programos dalis (vienetas) norint įsitikinti, ar jos veikia teisingai. 
   Tai padeda užtikrinti, kad kiekviena programos dalis atlieka numatytas funkcijas ir veikia kaip tikimasi.
