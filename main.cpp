@@ -8,7 +8,7 @@
 #include "functions_old.h"
 #include "functions.h"
 #include "functions_vector.h"
-
+#include "vector.h"
 
 using namespace std;
 
@@ -40,7 +40,8 @@ int main()
                  << "6 - rusiuoti studentus sugeneruotuose failuose \n"
                  << "7 - testavimas\n"
                  << "8 - testavimas rule of five \n"
-                 << "9 - baigti darba \n";
+                 << "9 - vektoriaus testavimas \n"
+                 << "10 - baigti darba \n";
             try
             {
                 cin >> meniu;
@@ -54,7 +55,7 @@ int main()
                 cerr << "Klaida: " << e.what() << endl;
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                continue; 
+                continue;
             }
 
             switch (meniu)
@@ -171,7 +172,7 @@ int main()
                     for (int i = 0; i < 6; i++)
                     {
                         Studentas naujasStudentas;
-                        naujasStudentas.atsitiktiniaiStudentai(); 
+                        naujasStudentas.atsitiktiniaiStudentai();
                         studentai.push_back(naujasStudentas);
 
                         double galutinisVidurkis = naujasStudentas.skaiciuotiGalutini(true);
@@ -210,7 +211,7 @@ int main()
                 }
                 catch (const std::exception &e)
                 {
-                    cerr << "Klaida skaitymo/metimo metu: " << e.what() << endl;
+                    cerr << "Klaida skaitymo metu: " << e.what() << endl;
                 }
                 break;
             }
@@ -240,7 +241,7 @@ int main()
                 std::cin >> choice;
                 if (choice < 1 || static_cast<size_t>(choice) > sizes.size())
                 {
-                    std::cout << "Netinkamas pasirinkimas. Rušiuojamas pirmasis failas" << std::endl;
+                    std::cout << "Netinkamas pasirinkimas. Rusiuojamas pirmasis failas" << std::endl;
                     choice = 1;
                 }
 
@@ -254,21 +255,21 @@ int main()
                 std::vector<Studentas> kietiakai;
 
                 surusiuotiKategorijas(studentai, vargsiukai, kietiakai, laikas);
-                laikasGalutinis+=laikas;
+                laikasGalutinis += laikas;
 
                 auto endTest = std::chrono::high_resolution_clock::now(); // pabaiga laiko skaiciavimo
                 std::chrono::duration<double> timeTest = endTest - startTest;
                 double laikas = timeTest.count();
                 std::cout << "Rusiavimas uztruko: " << laikas << " sekundziu." << std::endl;
-                laikasGalutinis+=laikas;
+                laikasGalutinis += laikas;
 
                 irasymasFaile(vargsiukai, "vargsiukai.txt", laikas);
                 std::cout << "Isvedimas i faila vargsiukai.txt: " << laikas << std::endl;
-                laikasGalutinis+=laikas;
-                
+                laikasGalutinis += laikas;
+
                 irasymasFaile(kietiakai, "kietiakai.txt", laikas);
                 std::cout << "Isvedimas i faila kietiakai.txt: " << laikas << std::endl;
-                laikasGalutinis+=laikas;
+                laikasGalutinis += laikas;
 
                 break;
             }
@@ -279,7 +280,7 @@ int main()
                 break;
             }
 
-            void testRuleOfFive(); // Define the function before calling it
+                void testRuleOfFive(); // Define the function before calling it
 
             case 8:
             {
@@ -288,6 +289,129 @@ int main()
             }
 
             case 9:
+            {
+                // Default constructor
+                Vector<int> intVector;
+                std::cout << "Vector contents after default construction: ";
+                for (size_t i = 0; i < intVector.size(); ++i)
+                {
+                    std::cout << intVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Constructor with push_back
+                Vector<int> intVector2;
+                intVector2.push_back(1);
+                intVector2.push_back(2);
+                intVector2.push_back(3);
+                intVector2.push_back(4);
+                intVector2.push_back(5);
+
+                std::cout << "Vector contents after push_back construction: ";
+                for (size_t i = 0; i < intVector2.size(); ++i)
+                {
+                    std::cout << intVector2[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Push back elements
+                intVector.push_back(10);
+                intVector.push_back(20);
+                std::cout << "Vector contents after push_back: ";
+                for (size_t i = 0; i < intVector.size(); ++i)
+                {
+                    std::cout << intVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Pop back element
+                intVector.pop_back();
+                std::cout << "Vector contents after pop_back: ";
+                for (size_t i = 0; i < intVector.size(); ++i)
+                {
+                    std::cout << intVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Size of vector
+                std::cout << "Size of the vector: " << intVector.size() << std::endl;
+
+                // Accessing elements using operator[]
+                std::cout << "Accessing elements using operator[]: ";
+                for (size_t i = 0; i < intVector.size(); ++i)
+                {
+                    std::cout << intVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Test copy constructor and copy assignment operator
+                Vector<int> copiedVector = intVector;
+                std::cout << "Copied vector contents: ";
+                for (size_t i = 0; i < copiedVector.size(); ++i)
+                {
+                    std::cout << copiedVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Test move constructor and move assignment operator
+                Vector<int> movedVector = std::move(intVector2);
+                std::cout << "Moved vector contents: ";
+                for (size_t i = 0; i < movedVector.size(); ++i)
+                {
+                    std::cout << movedVector[i] << " ";
+                }
+                std::cout << std::endl;
+
+                // Test clear
+                movedVector.clear();
+                std::cout << "Cleared vector size: " << movedVector.size() << std::endl;
+
+                // Test reserve
+                Vector<int> reservedVector;
+                reservedVector.reserve(10);
+                std::cout << "Reserved vector capacity: " << reservedVector.capacity() << std::endl;
+
+                // Test resize
+                Vector<int> resizedVector;
+                resizedVector.resize(5);
+                std::cout << "Resized vector size: " << resizedVector.size() << std::endl;
+
+                // Test empty
+                std::cout << "Is resizedVector empty? " << (resizedVector.empty() ? "Yes" : "No") << std::endl;
+
+                // Test front and back
+                std::cout << "Front element: " << resizedVector.front() << ", Back element: " << resizedVector.back() << std::endl;
+
+                // Perform time measurement task
+                std::cout << "\nElementu skaicius | std::vector laikas s       | Vector laikas s \n";
+                std::cout << "-----------------------------------------------------------------------------\n";
+
+                for (unsigned int sz : {10000, 100000, 1000000, 10000000, 100000000})
+                {
+                    // Measurement with std::vector
+                    auto start_v1 = std::chrono::high_resolution_clock::now();
+                    std::vector<int> v1;
+                    for (unsigned int i = 1; i <= sz; ++i)
+                        v1.push_back(i);
+                    auto finish_v1 = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed_v1 = finish_v1 - start_v1;
+
+                    // Measurement with your Vector class
+                    auto start_v2 = std::chrono::high_resolution_clock::now();
+                    Vector<int> v2;
+                    for (unsigned int i = 1; i <= sz; ++i)
+                        v2.push_back(i);
+                    auto finish_v2 = std::chrono::high_resolution_clock::now();
+                    std::chrono::duration<double> elapsed_v2 = finish_v2 - start_v2;
+
+                    // Print results in a table with proper formatting
+                    std::cout << std::setw(15) << sz << " | " << std::fixed << std::setprecision(6) << std::setw(28) << elapsed_v1.count() << " | " << std::setw(26) << elapsed_v2.count() << "\n";
+                }
+
+                break;
+            }
+
+            case 10:
                 break;
 
             default:
@@ -304,7 +428,7 @@ int main()
 
         cout << "Visas sugaistas laikas: " << laikasGalutinis << " s" << endl;
 
-    } while (meniu != 9);
+    } while (meniu != 10);
 
     double vidurkis = visoLaikoSuma / testuSkaicius;                    // Suskaiciuojamas laiku vidurkis
     cout << "Keliu testu laiku vidurkis: " << vidurkis << " s" << endl; // Isvedamas laiku vidurkis
