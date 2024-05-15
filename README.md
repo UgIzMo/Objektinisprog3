@@ -1,6 +1,12 @@
 # V3.0 dokumentacija
 
- Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gaunamr tuos pačius rezultatus naudojant Vector objektus.
+Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gaunamr tuos pačius rezultatus naudojant Vector objektus.
+
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/b7847d42-4d77-49b2-8d5f-83dde90c01b5)
+
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/81818d6b-9e94-4e82-a1e6-b0db73005eee)
+
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/bad97f0d-99ef-423d-bd53-f3f910727535)
 
 
 Pilnai ištestuotas sukurtas konteineris naudojant Unit Native Testing per Visual Studio.
