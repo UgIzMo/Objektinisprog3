@@ -3,6 +3,10 @@
  Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gaunamr tuos pačius rezultatus naudojant Vector objektus.
 
 
+Pilnai ištestuotas sukurtas konteineris naudojant Unit Native Testing per Visual Studio
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/4a9796be-1331-4d5e-9a96-7fe39c1b6474)
+
+
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
 Instrukcijos diegimui [Jūsų programos pavadinimas]
