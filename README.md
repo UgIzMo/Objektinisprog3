@@ -1,6 +1,6 @@
 # V3.0 dokumentacija
 
-Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gauname tuos pačius rezultatus naudojant Vector objektus.
+Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector. Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gauname tuos pačius rezultatus naudojant Vector objektus.
 
 Trumpai tariant, ši repozitorija yra dinaminio masyvo įgyvendinimas, panašus į std::vector, parašytas C++ kalba. 
 Vector klasės šablonas suteikia lankstų masyvą, kuris gali dinamiškai didėti pridedant elementus. 
