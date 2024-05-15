@@ -24,6 +24,7 @@ Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::v
 Išvados
 
 - Vector klasė demonstruoja gerokai didesnį našumą nei `std::vector`, ypač su dideliu elementų skaičiumi.
+- Vector klasė pasižymi greitesniu veikimu užpildant vektorius naudojant `push_back()` funkciją, palyginti su `std::vector`.
 - Naudojant Vector klasę, galima pastebėti reikšmingą našumo padidėjimą, ypač kai vektoriaus dydis didėja.
 - Vector klasė gali būti patrauklus pasirinkimas, norint pagerinti programos veikimo efektyvumą, ypač dirbant su dideliais duomenų kiekiais.
   [Tačiau reikėtų atsižvelgti į tai, kad našumo skirtumai gali kisti priklausomai nuo specifinių naudojamų operacijų ir aplinkos.]
