@@ -2,11 +2,31 @@
 
 Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gaunamr tuos pačius rezultatus naudojant Vector objektus.
 
+# Vector klasės našumo palyginimas su std::vector
+
+ Matuojame Vector klasės našumą palyginant su `std::vector`. Laikai yra išreikšti sekundėmis ir apskaičiuoti naudojant vidurkį iš kelių bandymų.
+
+| Elementų skaičius | std::vector laikas (s) | Vector laikas (s) |
+|-------------------|------------------------|-------------------|
+| 10000             | 0.000439               | 0.000201          |
+| 100000            | 0.004602               | 0.001430          |
+| 1000000           | 0.043796               | 0.015032          |
+| 10000000          | 0.328206               | 0.141058          |
+| 100000000         | 3.406001               | 1.419940          |
+
+
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/b7847d42-4d77-49b2-8d5f-83dde90c01b5)
 
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/81818d6b-9e94-4e82-a1e6-b0db73005eee)
 
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/bad97f0d-99ef-423d-bd53-f3f910727535)
+
+Išvados
+
+- Vector klasė demonstruoja gerokai didesnį našumą nei `std::vector`, ypač su dideliu elementų skaičiumi.
+- Naudojant Vector klasę, galima pastebėti reikšmingą našumo padidėjimą, ypač kai vektoriaus dydis didėja.
+- Vector klasė gali būti patrauklus pasirinkimas, norint pagerinti programos veikimo efektyvumą, ypač dirbant su dideliais duomenų kiekiais.
+  [Tačiau reikėtų atsižvelgti į tai, kad našumo skirtumai gali kisti priklausomai nuo specifinių naudojamų operacijų ir aplinkos.]
 
 
 Pilnai ištestuotas sukurtas konteineris naudojant Unit Native Testing per Visual Studio.
