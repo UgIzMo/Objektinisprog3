@@ -238,6 +238,8 @@ Galimi dokumentacijos formatai:
 
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
+C:\Users\Asus\source\repos\Projektas\Projektas\Debug
+
 Instrukcijos diegimui [Jūsų programos pavadinimas]
 Norėdami įdiegti [Jūsų programos pavadinimas], prašome laikytis šių žingsnių:
 1. Parsisiųskite pateiktą Setup.msi arba Setup.exe failą.
