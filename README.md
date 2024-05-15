@@ -231,6 +231,11 @@ Tai palengvina testų kūrimą ir vykdymą, nes nereikia naudoti atskirų įrank
 7. Kai procesas baigsis, tiesiog eikite į savo projekto failus -> hmtl -> index.html
 8. Atidarę jį turėsite visą savo dokumentaciją
 
+Galimi dokumentacijos formatai:
+  HTML: Rasta v3.0/html kataloge. Atidarykite index.html failą peržiūrai.
+  LaTeX: Rasta v3.0/latex kataloge. Galima sukompiliuoti į PDF naudojant LaTeX redaktorių.
+  PDF: Ankstesnis PDF dokumentas yra prieinamas saugykloje patogiam naudojimui.
+
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
 Instrukcijos diegimui [Jūsų programos pavadinimas]
