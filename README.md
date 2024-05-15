@@ -197,6 +197,40 @@ Apie testus:
 Įdomu tai, kad naudojant C++ Unit Testing platformą (CppUnitTest.h), galima lengvai kurti ir vykdyti testus tiesiogiai iš C++ kodo, todėl visi testai gali būti sukompiliuoti kartu su pagrindine programa. 
 Tai palengvina testų kūrimą ir vykdymą, nes nereikia naudoti atskirų įrankių ar aplinkų bei iškart matome, kurie testai įvyko sėkmingai, o kurie ne.
 
+# Plačiau apie Unit testus: 
+  Unit testai yra skirti testuoti atskiras programos dalis (vienetas) norint įsitikinti, ar jos veikia teisingai. 
+  Tai padeda užtikrinti, kad kiekviena programos dalis atlieka numatytas funkcijas ir veikia kaip tikimasi.
+
+  Naudojau Visual Studio 2022 Unit testavimui, nes tai vienas iš geriausių integruotų kūrimo aplinkų šiam darbui. 
+  Taip pat galite naudoti JetBrains.
+  
+  Pasirinkau native framework.
+
+  Projekto failo paruošimas
+  
+  1. Pirmiausia atidarykite "Visual Studio"
+  2. Spauskite "Create new project"
+  3. Pasirinkite "Native Unit Testing", nes "VS" atliks visus reikiamus veiksmus, sukurs ir redaguos būtinus jūsų savybių failus
+  4. Kai projektas sukurtas, eikite į Projekc -> {failo pavadinimas} properties -> C/C++ -> All functions -> Precompiled Header ir pakeiskite į "Not Using Precompiled Headers"
+  5. Dabar spauskite "Apply" ir "Ok"
+  6. Dabar spauskite "Projektas" ir pridėkite esamus failus, kuriuos norite testuoti
+     
+  Paskutiniai kodavimo pakeitimai
+  Kai tai padarysite, tiesiog parašykite naujas funkcijas, kurios testuos tai, ko jums reikia
+  Kai viskas baigta, eikite į "Test" ir atidarykite "Test Explorer"
+  Dabar tiesiog spauskite "Paleisti visus testus" ir jūs tai turėsite
+
+# Doxygen instrukcija
+  
+1. Pirma, eikite į oficialią Doxygen svetainę[https://www.doxygen.nl/manual/index.html]
+2. Paspauskite atsisiuntimo mygtuką ir įdiekite programą pasirinktai operacinei sistemai
+3. Sukonfigūruokite viską ir paleiskite Doxywizard
+4. Dabar pasirinkite savo projekto aplanką, kuriame rodomi visi failai
+5. Pavadinkite savo projektą, parašykite savo santrauką ir versiją, jei norite - pridėkite logotipą ir išsaugokite
+6. Eikite į paleidimo langą ir spauskite Paleisti Doxygen mygtuką
+7. Kai procesas baigsis, tiesiog eikite į savo projekto failus -> hmtl -> index.html
+8. Atidarę jį turėsite visą savo dokumentaciją
+
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
 Instrukcijos diegimui [Jūsų programos pavadinimas]
