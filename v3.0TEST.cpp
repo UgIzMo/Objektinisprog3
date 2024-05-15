@@ -9,16 +9,6 @@ namespace v30TEST
     {
     public:
 
-        TEST_METHOD_INITIALIZE(Initialize)
-        {
-            // Add any setup code here that you want to run before each test method
-        }
-
-        TEST_METHOD_CLEANUP(Cleanup)
-        {
-            // Add any cleanup code here that you want to run after each test method
-        }
-
         TEST_METHOD(InitiallyEmpty)
         {
             Vector<int> vec;
