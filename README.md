@@ -1,6 +1,143 @@
 # V3.0 dokumentacija
 
-Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gaunamr tuos pačius rezultatus naudojant Vector objektus.
+Vector konteineris veikia (funkcionalumo prasme) lygiai taip pat, kaip ir std::vector . Pasinaudodami std::vector konteinerio funkcijoms ir įsitikinkiname, kad gauname tuos pačius rezultatus naudojant Vector objektus.
+
+Trumpai tariant, ši repozitorija yra dinaminio masyvo įgyvendinimas, panašus į std::vector, parašytas C++ kalba. 
+Vector klasės šablonas suteikia lankstų masyvą, kuris gali dinamiškai didėti pridedant elementus. 
+Jis palaiko įvairias funkcijas, nuo pagrindinių operacijų iki pažangaus funkcionalumo, tokio kaip rūšiavimas ir bandymų vykdymas.
+
+Pagrindinės funkcijos, kurios yra naudojamos ir labiausiai paplitusios:
+ 1. Dinaminis dydžio keitimas: Automatiškai didėja dydis pridedant elementus.
+ 2. Iteratoriai: Suteikia tiek įprastinius, tiek konstantinius iteratorius elementų prieigai.
+ 3. Elementų prieiga: Palaiko operatorius[], front(), back() ir kitus prieigos metodus.
+ 4. Modifikatoriai: Įtraukia push_back(), pop_back(), insert(), erase(), clear(), reserve() ir resize() metodus.
+ 5. Algoritmai: Metodai rūšiavimui, atvirkštinimui ir dublikatų radimui.
+ 6. Naudingos funkcijos: Bandymai našumo matavimui ir elementų sukimo funkcijos.
+
+# Pavyzdžiai
+  NR. 1 Šis bandymas demonstruoja pagrindines operacijas, tokias kaip elementų pridėjimas, pašalinimas ir prieiga.
+
+Kodas:
+
+   #include "vector.h"
+   #include <iostream>
+   
+   int main() {
+       Vector<int> vec;
+       vec.push_back(10);
+       vec.push_back(20);
+       vec.push_back(30);
+   
+       std::cout << "Vector: " << vec << std::endl;
+   
+       vec.pop_back();
+       std::cout << "After pop_back: " << vec << std::endl;
+   
+       vec[0] = 15;
+       std::cout << "After modifying first element: " << vec << std::endl;
+   
+       return 0;
+   }
+
+Išvedimas turėtų gautis toks:
+   Vector: [10, 20, 30]
+   After pop_back: [10, 20]
+   After modifying first element: [15, 20]
+
+
+ NR. 2 Šis bandymas pristato pažangias funkcijas, tokiu kaip rūšiavimas, atvirkštinimas ir dublikatų paieška.
+
+Kodas:
+
+   #include "vector.h"
+   #include <iostream>
+   
+   int main() {
+       Vector<int> vec;
+       vec.push_back(3);
+       vec.push_back(1);
+       vec.push_back(2);
+       vec.push_back(2);
+   
+       vec.sort();
+       std::cout << "After sorting: " << vec << std::endl;
+   
+       vec.reverse();
+       std::cout << "After reversing: " << vec << std::endl;
+   
+       try {
+           int duplicate = vec.first_duplicate();
+           std::cout << "First duplicate: " << duplicate << std::endl;
+       } catch (const std::logic_error &e) {
+           std::cout << e.what() << std::endl;
+       }
+   
+       return 0;
+   }
+
+ Išvedimas turėtų gautis toks:
+  After sorting: [1, 2, 2, 3]
+  After reversing: [3, 2, 2, 1]
+  First duplicate: 2
+
+
+ NR.3 Šis bandymas iliustruoja kopijavimo ir perkėlimo konstruktoriaus bei priskyrimo operatorių veikimą.
+
+Kodas:
+
+   #include "vector.h"
+   #include <iostream>
+   
+   int main() {
+       Vector<int> vec1;
+       vec1.push_back(1);
+       vec1.push_back(2);
+       vec1.push_back(3);
+   
+       Vector<int> vec2 = vec1; // Copy constructor
+       Vector<int> vec3 = std::move(vec1); // Move constructor
+   
+       std::cout << "vec2 (after copy): " << vec2 << std::endl;
+       std::cout << "vec3 (after move): " << vec3 << std::endl;
+   
+       return 0;
+   }
+
+ Išvedimas turėtų gautis toks:
+  vec2 (after copy): [1, 2, 3]
+  vec3 (after move): [1, 2, 3]
+
+  KITI galimi testai:
+
+1. Testas su `push_back` ir `size`:
+
+    Vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    assert(vec.size() == 2);
+   
+3. Testas `pop_back` ir `empty`:
+
+    Vector<int> vec;
+    vec.push_back(1);
+    vec.pop_back();
+    assert(vec.empty());
+   
+3. Bandymas elementų prieigos su operator[] metodu:
+
+   Vector<int> vec;
+   vec.push_back(10);
+   assert(vec[0] == 10);
+
+4. Testas `sort` methodų:
+
+   Vector<int> vec;
+   vec.push_back(3);
+   vec.push_back(1);
+   vec.push_back(2);
+   vec.sort();
+   assert(vec[0] == 1 && vec[1] == 2 && vec[2] == 3);
+
 
 # Vector klasės našumo palyginimas su std::vector
 
