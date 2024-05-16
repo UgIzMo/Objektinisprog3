@@ -238,6 +238,9 @@ Galimi dokumentacijos formatai:
 
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/3b900072-17cf-41e6-bd2e-e46aed480a16)
+
+
 C:\Users\Asus\source\repos\Projektas\Projektas\Debug
 
 Instrukcijos diegimui [Jūsų programos pavadinimas]
