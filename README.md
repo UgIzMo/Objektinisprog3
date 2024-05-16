@@ -125,18 +125,18 @@ Kodas:
    
 3. Bandymas elementų prieigos su operator[] metodu:
 
-      Vector<int> vec;
-      vec.push_back(10);
-      assert(vec[0] == 10);
+       Vector<int> vec;
+       vec.push_back(10);
+       assert(vec[0] == 10);
 
 4. Testas `sort` methodų:
 
-      Vector<int> vec;
-      vec.push_back(3);
-      vec.push_back(1);
-      vec.push_back(2);
-      vec.sort();
-      assert(vec[0] == 1 && vec[1] == 2 && vec[2] == 3);
+       Vector<int> vec;
+       vec.push_back(3);
+       vec.push_back(1);
+       vec.push_back(2);
+       vec.sort();
+       assert(vec[0] == 1 && vec[1] == 2 && vec[2] == 3);
 
 
 # Vector klasės našumo palyginimas su std::vector
