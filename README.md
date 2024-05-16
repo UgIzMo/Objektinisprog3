@@ -111,32 +111,32 @@ Kodas:
 
 1. Testas su `push_back` ir `size`:
 
-     Vector<int> vec;
-     vec.push_back(1);
-     vec.push_back(2);
-     assert(vec.size() == 2);
+      Vector<int> vec;
+      vec.push_back(1);
+      vec.push_back(2);
+      assert(vec.size() == 2);
    
 3. Testas `pop_back` ir `empty`:
 
-     Vector<int> vec;
-     vec.push_back(1);
-     vec.pop_back();
-     assert(vec.empty());
+      Vector<int> vec;
+      vec.push_back(1);
+      vec.pop_back();
+      assert(vec.empty());
    
 3. Bandymas elementų prieigos su operator[] metodu:
 
-    Vector<int> vec;
-    vec.push_back(10);
-    assert(vec[0] == 10);
+     Vector<int> vec;
+     vec.push_back(10);
+     assert(vec[0] == 10);
 
 4. Testas `sort` methodų:
 
-    Vector<int> vec;
-    vec.push_back(3);
-    vec.push_back(1);
-    vec.push_back(2);
-    vec.sort();
-    assert(vec[0] == 1 && vec[1] == 2 && vec[2] == 3);
+     Vector<int> vec;
+     vec.push_back(3);
+     vec.push_back(1);
+     vec.push_back(2);
+     vec.sort();
+     assert(vec[0] == 1 && vec[1] == 2 && vec[2] == 3);
 
 
 # Vector klasės našumo palyginimas su std::vector
