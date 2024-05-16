@@ -240,12 +240,14 @@ Galimi dokumentacijos formatai:
 
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/3b900072-17cf-41e6-bd2e-e46aed480a16)
 
-
-C:\Users\Asus\source\repos\Projektas\Projektas\Debug
+Parsisiunčiau Setup.exe failą naudodama Inno Setup Compiler iš https://inno-setup-compiler.en.lo4d.com/windows. 
+Taip sukūriau .iss scenarijų. 
+Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
+Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
 
 Instrukcijos diegimui [Jūsų programos pavadinimas]
 Norėdami įdiegti [Jūsų programos pavadinimas], prašome laikytis šių žingsnių:
-1. Parsisiųskite pateiktą Setup.msi arba Setup.exe failą.
+1. Parsisiųskite pateiktą failą.
 2. Paleiskite parsisiųstą failą, kad pradėtumėte diegimo procesą.
 3. Sekite ekrane pateiktas instrukcijas diegimo vedlyje.
 4. Kai bus prašoma pasirinkti diegimo katalogą, pasirinkite C:/Program files/VU/Vardenis-Pavardenis.
