@@ -242,6 +242,9 @@ Galimi dokumentacijos formatai:
 
 Parsisiunčiau Setup.exe failą naudodama Inno Setup Compiler iš https://inno-setup-compiler.en.lo4d.com/windows. 
 Taip sukūriau .iss scenarijų. 
+
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/c7e0504e-f6bf-418b-855f-307db8f9601e)
+
 Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
 Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
 
@@ -253,3 +256,6 @@ Norėdami įdiegti [Jūsų programos pavadinimas], prašome laikytis šių žing
 4. Kai bus prašoma pasirinkti diegimo katalogą, pasirinkite C:/Program files/VU/Vardenis-Pavardenis.
 5. Baigę diegimą, spustelėkite "Baigti" arba sekitės papildomų nurodymų.
 6. Kai diegimas bus baigtas, galėsite paleisti [Jūsų programos pavadinimas] iš Starto meniu arba darbalaukio sutrumpinimo.
+
+Po viso šio žingsnio matome gražiai iššokanti meniu:
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/77bf0e58-6ae8-40d6-a6eb-4cd0b9d6c92c)
