@@ -238,8 +238,6 @@ Galimi dokumentacijos formatai:
 
 # Setup.msi/exe failas programos diegimui į "C:/Program files/VU/Vardenis-Pavardenis" aplankalą
 
-![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/3b900072-17cf-41e6-bd2e-e46aed480a16)
-
 Parsisiunčiau Setup.exe failą naudodama Inno Setup Compiler iš https://inno-setup-compiler.en.lo4d.com/windows. 
 (Siunčiantis buvo problemų su Avira antivirusine, nes gavau įspėjimą dėl viruso, bet viską atkūrus, viskas veikė ir virusai neaplankė.)
 Taip sukūriau .iss scenarijų. 
@@ -252,6 +250,9 @@ Tada spauskite "Run" mygtuką ir palaukite, kol kodas baigs darbą. Jei viską p
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/c7e0504e-f6bf-418b-855f-307db8f9601e)
 
 Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
+
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/3b900072-17cf-41e6-bd2e-e46aed480a16)
+
 Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
 
 # Instrukcijos diegimui 
