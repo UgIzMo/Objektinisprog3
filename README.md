@@ -254,5 +254,18 @@ Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo gel
 
 # Instrukcijos diegimui 
 
-Po viso šio žingsnio matome gražiai iššokanti meniu:
+1. Norėdami pradėti kurti diegimo failą, turime paleisti programą ir paspausti "Create new Inno Setup Script".
+2. Tada pirmame puslapyje galite keisti viską, kaip pageidaujate (programos pavadinimas, jos versija, leidėjas ir svetainė).
+3. Antroje ekranoje nieko nedarome ir paspaudžiame "Next".
+4. Trečiame lange turime surasti projekto .exe failą ir nurodyti jo vietą.
+5. Tada turime pridėti visą projekto aplanką, kuriame yra visi failai, ir paspausti "Next".
+6. Ketvirtame lange turime paspausti "Next".
+7. Dabar penktame lange turime pažymėti "Allow user to create a desktop shorcut" langelį, nes tai buvo nurodyta užduotyje.
+8. Programos dokumentacijos lange nieko nedarome ir einame toliau.
+9. Tas pats su kitu lange.
+10. Kitame lange taip pat praleidžiame viską ir spaudžiame "Next".
+11. Kompiliatoriaus nustatymų lange turime sukurti naują aplanką, kuriame bus įdiegto projekto išvestis, ir nurodyti jo vietą.
+12. Tada galite pasirinktinai nurodyti piktogramos failo vietą, jei turite, ir tada paspausti "Next".
+13. Dabar paskutiniame lange spaudžiame "Next", o po to "Finish".
+14. Po visų šių žingsnių matome gražiai iššokantį meniu:
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/77bf0e58-6ae8-40d6-a6eb-4cd0b9d6c92c)
