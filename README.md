@@ -246,7 +246,9 @@ Taip sukūriau .iss scenarijų.
 
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/81676560-54b6-4b0c-87c6-0281491b0fdd)
 
-
+Kai jau sukūrėme diegimo failą, pirmiausia turime paleisti kodą, kad sukurtume setup.exe failą:
+Kartą sukūrus, du kartus spauskite "Taip" ir pasirinkite savo projekto diegimo failo vietą.
+Tada spauskite "Run" mygtuką ir palaukite, kol kodas baigs darbą. Jei viską padarėte teisingai, tai turėtų būti ekranas po to, kai kodas baigs kurti diegimo failą:
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/c7e0504e-f6bf-418b-855f-307db8f9601e)
 
 Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
