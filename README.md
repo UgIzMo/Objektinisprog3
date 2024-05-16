@@ -244,19 +244,15 @@ Parsisiunčiau Setup.exe failą naudodama Inno Setup Compiler iš https://inno-s
 (Siunčiantis buvo problemų su Avira antivirusine, nes gavau įspėjimą dėl viruso, bet viską atkūrus, viskas veikė ir virusai neaplankė.)
 Taip sukūriau .iss scenarijų. 
 
+![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/81676560-54b6-4b0c-87c6-0281491b0fdd)
+
+
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/c7e0504e-f6bf-418b-855f-307db8f9601e)
 
 Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
 Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
 
-Instrukcijos diegimui [Jūsų programos pavadinimas]
-Norėdami įdiegti [Jūsų programos pavadinimas], prašome laikytis šių žingsnių:
-1. Parsisiųskite pateiktą failą.
-2. Paleiskite parsisiųstą failą, kad pradėtumėte diegimo procesą.
-3. Sekite ekrane pateiktas instrukcijas diegimo vedlyje.
-4. Kai bus prašoma pasirinkti diegimo katalogą, pasirinkite C:/Program files/VU/Vardenis-Pavardenis.
-5. Baigę diegimą, spustelėkite "Baigti" arba sekitės papildomų nurodymų.
-6. Kai diegimas bus baigtas, galėsite paleisti [Jūsų programos pavadinimas] iš Starto meniu arba darbalaukio sutrumpinimo.
+# Instrukcijos diegimui 
 
 Po viso šio žingsnio matome gražiai iššokanti meniu:
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/77bf0e58-6ae8-40d6-a6eb-4cd0b9d6c92c)
