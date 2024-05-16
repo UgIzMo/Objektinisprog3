@@ -253,7 +253,7 @@ Setup.exe failas įdiegtas į C:/Program files/VU/Laboratorinis darbas aplanką.
 
 ![image](https://github.com/UgIzMo/Objektinisprog3/assets/152986822/3b900072-17cf-41e6-bd2e-e46aed480a16)
 
-Taip pat buvo sueiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
+Taip pat buvo suteiktos administratoriaus teisės, buvo iššokęs pranešimo geltonas laukelis.
 
 # Instrukcijos diegimui 
 
